@@ -9,4 +9,10 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class UserModule { }
+export class UserModule { 
+  name:String;
+  email:String;
+  password:String;
+  phNo:number;
+
+}
