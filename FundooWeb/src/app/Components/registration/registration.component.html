@@ -1,10 +1,27 @@
-<p>registration works!</p>
-<div class="medium-list " fxLayoutAlign="center center">
+<div class ="header">
+<H2 class="heading">Fundoo Notes</H2>
+</div>
+<mat-card class="regimatcard">
+    <mat-form-field class="label1">
+        <mat-label class="label2">Name:</mat-label>
+        <input matInput>
+    </mat-form-field><br>
+    <mat-form-field class="label1">
+        <mat-label class="label2">Email:</mat-label>
+        <input matInput>
+    </mat-form-field><br>
 
-    <mat-card style="width:600px; box-shadow: 1px 2px 4px 2px; opacity: 0.8;">
-        <mat-card-title class="row threed"
-            style="align-content:center; font-style: unset;font-size: 60vp;background-color: rgb(241, 234, 234); font-variant: normal; text-align: center;text-transform: capitalize;text-decoration-style: wavy;">
-            <h2>Fundoo Notes</h2>
-        </mat-card-title>
+         <mat-form-field class="label1">
+        <mat-label class="label2">MobileNumber:</mat-label>
+        <input matInput>
+    </mat-form-field><br>
+
+    <mat-form-field class="label1">
+        <mat-label class="label2">Password:</mat-label>
+        <input matInput type="password">
+    </mat-form-field>
+    <button mat-button color="primary" class="subbmit">Submit</button>
+    <a mat-button routerLink="/login">Alerday registered</a>
+</mat-card>
 
        
