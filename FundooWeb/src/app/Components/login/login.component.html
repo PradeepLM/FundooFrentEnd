@@ -1,22 +1,33 @@
-<div class ="header">
-    <H2 class="heading">Fundoo Notes</H2>
-    </div>
-    <mat-card class="loginmatcard">
-      
-        <mat-form-field class="label1">
-            <mat-label class="label2">Email:</mat-label>
-            <input matInput>
-        </mat-form-field><br>
-    
+<div class="login" >
+    <mat-card class="border">
+      <mat-card-header>
+       <div mat-card-avatar  ></div>
+        <mat-card-title >
+          <h2 class="h2">Login</h2>
+        </mat-card-title>
+      </mat-card-header>
+
+      <div class="content" >
+        <mat-card-content >
+            
+        <mat-form-field class="label1" appearance="outline" >
+          <!-- <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon">home</mat-icon> -->
+            <input matInput placeholder="E-mail" [formControl]="emailId" type="email"  >
+            <mat-error  *ngIf="emailId.invalid">{{errorEmailMessage()}}</mat-error>
+         </mat-form-field>
              
     
-        <mat-form-field class="label1">
+        <mat-form-field class="label1" appearance="outline">
+       <!-- <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon">lock</mat-icon> -->
             <mat-label class="label2">Password:</mat-label>
             <input matInput type="password">
+            <mat-error  *ngIf="password.invalid">{{errorPasswordMessage()}}</mat-error>
         </mat-form-field>
         <button mat-button color="primary" class="subbmit">Login</button>
         <a mat-button routerLink="/registration">Register</a>
-    </mat-card>
     
-           
+</mat-card-content>
+</div>
+</mat-card>
+</div>     
     
