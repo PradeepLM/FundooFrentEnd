@@ -10,7 +10,7 @@
       <div class="content" >
         <mat-card-content >
             
-        <mat-form-field class="label1" appearance="outline" >
+        <mat-form-field class="label1"  appearance="outline" >
           <!-- <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon">home</mat-icon> -->
             <input matInput placeholder="E-mail" [formControl]="emailId" type="email"  >
             <mat-error  *ngIf="emailId.invalid">{{errorEmailMessage()}}</mat-error>
@@ -24,7 +24,8 @@
             <mat-error  *ngIf="password.invalid">{{errorPasswordMessage()}}</mat-error>
         </mat-form-field>
         <button mat-button color="primary" class="subbmit">Login</button>
-        <a mat-button routerLink="/registration">Register</a>
+        <a mat-button routerLink="/registration">CreateAccount</a>
+        <a mat-button routerLink="/forgotpassword">forgotpassword</a>
     
 </mat-card-content>
 </div>
