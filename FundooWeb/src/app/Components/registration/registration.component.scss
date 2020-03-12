@@ -1,5 +1,6 @@
 
 .registeration{
+   background-image: url(../../../assets/images/background.jpg);
   margin: 0;
   height: 100vh;
    align-content: center;
@@ -11,13 +12,17 @@
   
   
 }
+.header{
+   margin-left:1em;
+   font-size: 1.5em;
+}
  .content{
   border-radius: 2em;
   box-shadow:2px,6px,7px,1px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 60vh;
   width:50vh;
    
  }
@@ -28,4 +33,9 @@
   .subbmit{
      background-color:rgb(43, 127, 223);
      color:white;
+     margin-left: 4em;
+  }
+  .label1{
+   align-content: center;
+   width: 45vh;
   }

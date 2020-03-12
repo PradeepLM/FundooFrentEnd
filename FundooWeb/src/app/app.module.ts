@@ -11,7 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +29,7 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
     MatButtonModule,
     MatInputModule,
     MatIconModule,
+    MatSnackBarModule
     
     
     

@@ -3,14 +3,15 @@
     <mat-card-header>
      <div mat-card-avatar  ></div>
       <mat-card-title >
-        <h2 >Registration</h2>
+        <h2 class="header">Registration</h2>
       </mat-card-title>
     </mat-card-header>
     <div class="content" >
       <mat-card-content >
-
+        <form [formGroup]="registerationForm" (ngsubmit)="registerationForm.valid && OnReg"
             <div>
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline" class="label1">
+                  <mat-label class="label2">Name:</mat-label> 
                     <input matInput placeholder="Name" type="text"  [formControl]="Name" >
                     <mat-error  *ngIf="Name.invalid">{{errorNameMessage()}}</mat-error>
                 </mat-form-field>
@@ -18,29 +19,33 @@
 
 
               <div>
-                <mat-form-field appearance="outline" >
+                <mat-form-field appearance="outline"class="label1" >
+                  <mat-label class="label2">Email:</mat-label> 
                     <input matInput placeholder="Email" type="email"  [formControl]="email" >
                     <mat-error  *ngIf="email.invalid">{{errorEmailMessage()}}</mat-error>
                 </mat-form-field>
               </div>
               
           <div>
-              <mat-form-field appearance="outline" >
+              <mat-form-field appearance="outline"class="label1" >
+                <mat-label class="label2">PhoneNumber:</mat-label> 
                 <input matInput placeholder="Phone Number" type="text"  [formControl]="phoneNumber">
                 <mat-error  *ngIf="phoneNumber.invalid">{{errorPhoneNumberMessage()}}</mat-error>
               </mat-form-field>
          </div>
 
             <div>
-                <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline"class="label1">
+                  <mat-label class="label2">Password:</mat-label> 
                   <input matInput placeholder="Password" type="password"  [formControl]="password">
                   <mat-error  *ngIf="password.invalid">{{errorPasswordMessage()}}</mat-error>
                 </mat-form-field>
           </div>
               
        
-    <button mat-button class="subbmit">Submit</button>
   <a mat-button routerLink="/login" class="a">Already registered</a>
+
+  <button mat-button class="subbmit">Submit</button>
 </mat-card-content>
 </div>
 </mat-card>

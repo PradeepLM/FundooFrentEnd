@@ -12,7 +12,8 @@
             
         <mat-form-field class="label1"  appearance="outline" >
           <!-- <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon">home</mat-icon> -->
-            <input matInput placeholder="E-mail" [formControl]="emailId" type="email"  >
+          <mat-label class="label2">Email:</mat-label> 
+          <input matInput placeholder="E-mail" [formControl]="emailId" type="email"  >
             <mat-error  *ngIf="emailId.invalid">{{errorEmailMessage()}}</mat-error>
          </mat-form-field>
              
@@ -23,10 +24,9 @@
             <input matInput type="password">
             <mat-error  *ngIf="password.invalid">{{errorPasswordMessage()}}</mat-error>
         </mat-form-field>
-        <button mat-button color="primary" class="subbmit">Login</button>
+        <a mat-button routerLink="/forgotpassword">forgotpassword</a><br><br>
         <a mat-button routerLink="/registration">CreateAccount</a>
-        <a mat-button routerLink="/forgotpassword">forgotpassword</a>
-    
+        <button mat-button  class="subbmit">Login</button>
 </mat-card-content>
 </div>
 </mat-card>

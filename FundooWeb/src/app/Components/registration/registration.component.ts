@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormControl, FormGroup } from '@angular/forms';
-import { UserserviceService } from 'src/app/Service/userservice.service';
+import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { UserService } from 'src/app/Service/user.service';
+import { UserModule } from 'src/app/Model/user/user.module';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-registration',
@@ -8,8 +12,12 @@ import { UserserviceService } from 'src/app/Service/userservice.service';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-  user:UserserviceService=new UserserviceService();
-  constructor() { }
+  user:UserModule=new UserModule();
+  registerForm:FormGroup;
+  submitted:boolean=false;
+  showMsg:boolean=false;
+
+  constructor(private formBuilder:FormBuilder,private userservice:UserService,private router:Router,private matSnackBar:MatSnackBar) { }
   
 
   ngOnInit(): void {
@@ -41,4 +49,17 @@ export class RegistrationComponent implements OnInit {
    this.password.hasError('minlength')? "Enter Min len 6":
      "";
    }
+
+
+   onreigsterSubmit(){
+    this.userservice.registerUser(this.registerForm.value).subscribe((user)=>{
+      this.router.navigate(['/login']);
+      this.showMsg=true;
+      this.submitted=true;
+      this.matSnackBar.open('Sucessfully Registration','OK',{duration:5000});
+    },
+    (error:any)=>{
+      this.matSnackBar.open('Bad Creadiantial','OK',{duration:5000});
+    });
+  }
 }

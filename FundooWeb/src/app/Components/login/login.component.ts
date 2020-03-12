@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormControl, FormGroup } from '@angular/forms';
+import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/Service/user.service';
+import { UserModule } from 'src/app/Model/user/user.module';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +11,14 @@ import { Validators, FormControl, FormGroup } from '@angular/forms';
   
 })
 export class LoginComponent implements OnInit {
+  user:UserModule=new UserModule();
+  loginForm:FormGroup;
 
-  constructor() { }
-  emailId = new FormControl(null,[Validators.required,Validators.email,
-    // Validators.pattern('([\w.+\-]+@gmail\.com)')
-    ]);
+  constructor(private formBuilder:FormBuilder,private router:Router,private userservice:UserService) { }
+  onloginSubmit(){
+    
+  }
+   emailId = new FormControl(null,[Validators.required,Validators.email]);
    password= new FormControl(null,[Validators.required,Validators.minLength(6)]);
   ngOnInit(): void {
   }
