@@ -26,4 +26,8 @@ export class UserService {
   {
     return this.httpService.post(this.userApiURL+environment.forgotpasswordURl,forgotpassword,this.httpOptions);
   }
+  resetPasswordUser(resetpassword:any):Observable<any>
+  {
+    return this.httpService.put(this.userApiURL,resetpassword,this.httpOptions);
+  }
 }

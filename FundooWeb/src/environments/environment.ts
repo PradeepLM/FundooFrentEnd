@@ -5,5 +5,6 @@ export const environment = {
   userApiURL:'http://localhost:8080/user',
   registerURL:'/register',
   loginURL:'/login',
-  forgotpasswordURl:'/forgotpassword'
+  forgotpasswordURl:'/forgotpassword',
+  resetpasswordURl:'/update'
 };
