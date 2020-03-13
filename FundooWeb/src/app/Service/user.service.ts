@@ -22,4 +22,8 @@ export class UserService {
   {
     return this.httpService.post(this.userApiURL+environment.loginURL,login,this.httpOptions);
   }
+  forgotPasswordUser(forgotpassword:any):Observable<any>
+  {
+    return this.httpService.post(this.userApiURL+environment.forgotpasswordURl,forgotpassword,this.httpOptions);
+  }
 }
