@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/Service/user.service';
-import { UserModule } from 'src/app/Model/user/user.module';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Login } from 'src/app/Model/login.model';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +12,10 @@ import { UserModule } from 'src/app/Model/user/user.module';
   
 })
 export class LoginComponent implements OnInit {
-  user:UserModule=new UserModule();
+  login:Login=new Login();
   loginForm:FormGroup;
 
-  constructor(private formBuilder:FormBuilder,private router:Router,private userservice:UserService) { }
+  constructor(private formBuilder:FormBuilder,private router:Router,private matsnackbar:MatSnackBar,  private userservice:UserService) { }
   onloginSubmit(){
     
   }
@@ -35,4 +36,16 @@ errorEmailMessage(){
  this.password.hasError('minlength')? "Enter Min len 6":
    "";
  }
+
+ onLoginSubmit(){
+      this.login.password=this.password.value;
+      this.login.email=this.emailId.value;
+      this.userservice.loginUser(this.login).subscribe(  
+      (response:any) =>{
+         this.matsnackbar.open("sucessfull", "ok", {duration:5000})
+      },
+      error=> {
+        this.matsnackbar.open("failed", "", {duration:5000})
+      });
+    }
 }

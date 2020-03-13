@@ -8,7 +8,6 @@
     </mat-card-header>
     <div class="content" >
       <mat-card-content >
-        <form [formGroup]="registerationForm" (ngsubmit)="registerationForm.valid && OnReg"
             <div>
                 <mat-form-field appearance="outline" class="label1">
                   <mat-label class="label2">Name:</mat-label> 
@@ -41,11 +40,21 @@
                   <mat-error  *ngIf="password.invalid">{{errorPasswordMessage()}}</mat-error>
                 </mat-form-field>
           </div>
+
+          <div>
+            <mat-form-field appearance="outline"class="label1">
+              <mat-label class="label2">ConformPassword:</mat-label> 
+              <input matInput placeholder="Password" type="password"  [formControl]="conformpassword">
+              <mat-error  *ngIf="password.invalid">{{errorPasswordMessage()}}</mat-error>
+            </mat-form-field>
+      </div>
               
        
   <a mat-button routerLink="/login" class="a">Already registered</a>
 
-  <button mat-button class="subbmit">Submit</button>
+<button mat-button type="submit" (click)="OnRegisterSubmit()" class="submit">Register</button>
+
+
 </mat-card-content>
 </div>
 </mat-card>

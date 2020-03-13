@@ -15,7 +15,11 @@ export class UserService {
   constructor(private httpService:HttpService) { }
   registerUser(user:any):Observable<any>
   {
-    console.log("User Email",user.email);
     return this.httpService.post(this.userApiURL+environment.registerURL,user,this.httpOptions);
+  }
+
+  loginUser(login:any):Observable<any>
+  {
+    return this.httpService.post(this.userApiURL+environment.loginURL,login,this.httpOptions);
   }
 }

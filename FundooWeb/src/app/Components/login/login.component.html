@@ -18,15 +18,16 @@
          </mat-form-field>
              
     
+         
         <mat-form-field class="label1" appearance="outline">
        <!-- <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon">lock</mat-icon> -->
             <mat-label class="label2">Password:</mat-label>
-            <input matInput type="password">
+            <input matInput type="password" [formControl]="password">
             <mat-error  *ngIf="password.invalid">{{errorPasswordMessage()}}</mat-error>
         </mat-form-field>
         <a mat-button routerLink="/forgotpassword">forgotpassword</a><br><br>
         <a mat-button routerLink="/registration">CreateAccount</a>
-        <button mat-button  class="subbmit">Login</button>
+        <button mat-button type="submit" (click)="onLoginSubmit()" class="submit">Login</button>
 </mat-card-content>
 </div>
 </mat-card>
