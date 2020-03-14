@@ -40,7 +40,12 @@ errorEmailMessage(){
       this.login.email=this.emailId.value;
       this.userservice.loginUser(this.login).subscribe(  
       (response:any) =>{
-         this.matsnackbar.open("sucessfull", "ok", {duration:5000})
+        if(response.statusCode===200){
+
+          localStorage.setItem('token',response.token);
+          this.matsnackbar.open("sucessfull", "ok", {duration:5000})
+          this.router.navigate(["/registration"]);
+        }
       },
       error=> {
         this.matsnackbar.open("failed", "", {duration:5000})

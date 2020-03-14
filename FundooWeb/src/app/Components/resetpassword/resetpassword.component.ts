@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/Service/user.service';
 import { Resetpassword } from 'src/app/Model/resetpassword.model';
@@ -14,35 +14,48 @@ export class ResetpasswordComponent implements OnInit {
 
   constructor(private formBuilder:FormBuilder,private router:Router,private matsnackbar:MatSnackBar,  private userservice:UserService) { }
   resetpassword:Resetpassword=new Resetpassword();
+  //token:String;
   ngOnInit(): void {
+    //this.token=this.router.snapshot.paramMap.get("token");
   }
-  emailId = new FormControl(null,[Validators.required,Validators.email]);
-  password= new FormControl(null,[Validators.required,Validators.minLength(6)]);
+  
+  newPassword= new FormControl(null,[Validators.required,Validators.minLength(6)]);
+  conformPassword= new FormControl(null,[Validators.required,Validators.minLength(6)]);
 
 
-errorEmailMessage(){
-  return this.emailId.hasError('required')? "Enter Fields":
-   this.emailId.hasError('email')? "Enter Email-Id":
-   this.emailId.hasError('pattern')?"Enter Email-Id - abc@gmail.com":
-   "";
- }
+
   errorPasswordMessage(){
-    return this.password.hasError('required')? "Enter Fields":
-   this.password.hasError('minlength')? "Enter Min len 6":
+    return this.newPassword.hasError('required')? "Enter Fields":
+   this.newPassword.hasError('minlength')? "Enter Min len 6":
+     "";
+   }
+
+   errorgetPasswordMessage(){
+    return this.newPassword.hasError('required')? "Enter Fields":
+   this.newPassword.hasError('minlength')? "Enter Min len 6":
      "";
    }
 
    onResetSubmit(){
-     this.resetpassword.newPassword=this.password.value;
-     this.resetpassword.confirmPassword=this.password.value;
-     this.resetpassword.email=this.emailId.value;
+     console.log('1',this.newPassword.value);
+     console.log('2 ',this.conformPassword.value)
+    if(this.newPassword.value===this.conformPassword.value){
+
+    
+     this.resetpassword.newPassword=this.newPassword.value;
+     this.resetpassword.confirmPassword=this.conformPassword.value;
+
+     
      this.userservice.resetPasswordUser(this.resetpassword).subscribe(  
       (response:any) =>{
+        console.log("From backend ")
+        this.router.navigate(["/login"]);
          this.matsnackbar.open("sucessfull", "ok", {duration:5000})
       },
       error=> {
         this.matsnackbar.open("failed", "", {duration:5000})
       });
+    }
    }
 
 }

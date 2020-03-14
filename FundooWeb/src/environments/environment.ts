@@ -6,5 +6,5 @@ export const environment = {
   registerURL:'/register',
   loginURL:'/login',
   forgotpasswordURl:'/forgotpassword',
-  resetpasswordURl:'/update'
+  resetpasswordURl:'/resetpassword'
 };

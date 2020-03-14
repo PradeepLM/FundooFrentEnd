@@ -28,6 +28,6 @@ export class UserService {
   }
   resetPasswordUser(resetpassword:any):Observable<any>
   {
-    return this.httpService.put(this.userApiURL,resetpassword,this.httpOptions);
+    return this.httpService.put(this.userApiURL+environment.resetpasswordURl,resetpassword,{headers:new HttpHeaders({'token':localStorage.token})});
   }
 }
