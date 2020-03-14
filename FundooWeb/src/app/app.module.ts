@@ -14,13 +14,19 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
     ForgotpasswordComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,10 @@ import { ResetpasswordComponent } from './Components/resetpassword/resetpassword
     MatInputModule,
     MatIconModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    //MatSlideToggleModule
     
     
     

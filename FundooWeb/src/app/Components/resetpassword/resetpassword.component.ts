@@ -37,15 +37,9 @@ export class ResetpasswordComponent implements OnInit {
    }
 
    onResetSubmit(){
-     console.log('1',this.newPassword.value);
-     console.log('2 ',this.conformPassword.value)
     if(this.newPassword.value===this.conformPassword.value){
-
-    
      this.resetpassword.newPassword=this.newPassword.value;
      this.resetpassword.confirmPassword=this.conformPassword.value;
-
-     
      this.userservice.resetPasswordUser(this.resetpassword).subscribe(  
       (response:any) =>{
         console.log("From backend ")

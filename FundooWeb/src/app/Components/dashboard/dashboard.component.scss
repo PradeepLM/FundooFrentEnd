@@ -1,0 +1,23 @@
+.container{
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  position: fixed;
+}
+mat-sidenav-container{
+  display: flex;
+}
+mat-sidenav-content{
+  justify-content: center;
+  overflow: scroll;
+}
+mat-sidenav{
+  margin-top: 0px;
+  border-color: 1px whitesmoke;
+  background-color:white;
+  width: 355px;
+  justify-content: center !important;
+}
