@@ -6,18 +6,52 @@
   top: 0;
   overflow: hidden;
   position: fixed;
+  background-color:greenyellow;
 }
 mat-sidenav-container{
   display: flex;
+  width: 100%; 
+  height: 100%; 
+  background-color: blue;
 }
 mat-sidenav-content{
   justify-content: center;
   overflow: scroll;
+  background-color: rgb(155, 151, 151);
+  width: 100%;
+  align-content:center; 
+  padding:30px;
 }
 mat-sidenav{
   margin-top: 0px;
   border-color: 1px whitesmoke;
   background-color:white;
+ //background-color: hotpink;
   width: 355px;
   justify-content: center !important;
+  background-color: transparent;
+}
+.image{
+  height: 40px;
+  width: 40px;
+}
+.search{
+  border: 1px solid lightgray;
+  border-radius: 7px;
+  width: 650px;
+  margin-left:15%;
+  outline: none;
+}
+.search_icon{
+  margin-left: 100%;
+  position: absolute;
+}
+.searchInput{
+  border:none;
+  height: 25px;
+  width: 550px;
+  margin-left: 10px;
+}
+.cancel{
+
 }

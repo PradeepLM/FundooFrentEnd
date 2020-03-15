@@ -2,17 +2,31 @@
 <div class="container">
   <div>
       <mat-toolbar >
+      <mat-toolbar-row>
+       
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    </mat-toolbar>
+        <img class="image" src="assets/images/keep-512.png" alt="Keep">
+        <span><mat-label style="font-family: sans-serif; padding-left: 5px;">Keep</mat-label>
+        </span>
+        <div class="search">
+        <button mat-icon-button class="search-icon">
+          <mat-icon>search</mat-icon>
+        </button>
+        <input class="searchInput" placeholder="Search" >
+        <button mat-icon-button class="cancel">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+      </mat-toolbar-row>
+     </mat-toolbar>
   </div>
       <div style="height: 100%; width: 100%;   overflow: auto;">
-  <mat-sidenav-container  style="width: 100%; height: 100%;  display: flex;">
-    <mat-sidenav #snav mode="side" style="background-color: transparent;" >
-    </mat-sidenav>
-      
-   
-    <mat-sidenav-content style="background-color: rgb(155, 151, 151); width: 100%; align-content:center; padding:30px;">
+  <mat-sidenav-container  >
+     <mat-sidenav #snav mode="side">
+     </mat-sidenav>
+    <mat-sidenav-content >
       <router-outlet ></router-outlet>Main content
-  </mat-sidenav-content>
+   </mat-sidenav-content>
   </mat-sidenav-container>
+  </div>
 </div>
