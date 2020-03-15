@@ -17,12 +17,30 @@
           <mat-icon>clear</mat-icon>
         </button>
       </div>
+      <div class="rightside">
+        <button mat-icon-button class="refresh">
+          <mat-icon>refresh</mat-icon>
+        </button>
+        <button mat-icon-button class="list">
+          <mat-icon>grid_view</mat-icon>
+        </button>
+        <button mat-icon-button class="sttings">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <button mat-icon-button class="apps">
+          <mat-icon>apps</mat-icon>
+        </button>
+      </div>
       </mat-toolbar-row>
      </mat-toolbar>
   </div>
-      <div style="height: 100%; width: 100%;   overflow: auto;">
+      <div class="upmat" >
   <mat-sidenav-container  >
-     <mat-sidenav #snav mode="side">
+     <mat-sidenav #snav mode="side" class="matsidenav"> 
+       <div class="notediv">
+        <button mat-button class="notebutton"><mat-icon>lightbulb_outline</mat-icon>Notes</button><br>
+        <!-- <button mat-button class="notebutton"><mat-icon>notifications</mat-icon>Remainders</button> -->
+      </div>
      </mat-sidenav>
     <mat-sidenav-content >
       <router-outlet ></router-outlet>Main content
