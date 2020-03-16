@@ -1,0 +1,33 @@
+.main{
+    display: flex;
+    justify-content: center;
+    width: 10px;
+    margin-top: 20px;
+    margin-bottom: 4%;
+    margin-left: 20%;
+}
+.searchBar
+{
+   border:none;
+   outline:none;
+}
+mat-card{
+    width: 47em;
+    border-radius: 13px;
+    padding: 0px;
+}
+textarea{
+    border: none;
+    height: 1.2em;
+    margin-bottom: 0px;
+    padding: 16px;
+    font-weight: bolder;
+    outline: none;
+}
+input:placeholder-shown{
+
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'Product Sans',Arial,sans-serif;
+  }
+  

@@ -5,6 +5,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { CreatenotesComponent } from './Components/createnotes/createnotes.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'forgotpassword',component:ForgotpasswordComponent},
   {path:'resetpassword',component:ResetpasswordComponent},
-  {path:'dashboard',component:DashboardComponent}
+  {path:'dashboard',component:DashboardComponent},
+  {path:'createnotes',component:CreatenotesComponent}
 ];
 
 @NgModule({

@@ -1,1 +1,14 @@
 <p>createnotes works!</p>
+<div class="main" >
+    <mat-card style="height: 4em; border: 1px gray; padding:20px;"  *ngIf="!open" >
+        <input matInput class="searchBar" placeholder="Take a note...">
+    </mat-card>
+    <mat-card style="height: 12em;"  *ngIf="open"  fxLayout="column">
+       
+            <textarea id="title"  style="border: none;" matInput type="text" class="input" placeholder="Title"></textarea>
+        <textarea id="desc" style="border: none; " matInput type="text" class="input" placeholder="Take a note"></textarea>
+            <div class="icon" >
+                <div class="div-button"  ><button style="border: none; padding-right: 45px;">Close</button></div>
+            </div>
+    </mat-card>
+</div>
