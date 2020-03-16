@@ -6,7 +6,8 @@
   top: 0;
   overflow: hidden;
   position: fixed;
-  background-color:greenyellow;
+  display: flex;
+  
 }
 mat-sidenav-container{
   display: flex;
@@ -72,7 +73,49 @@ mat-sidenav{
   margin-left: 15%;
 }
 .notediv{
-  margin-left: 10%;
-  margin-top: 10%;
+  width: 100%;
+  height: 20%;
+
+}
+.icondiv{
+  float: left;
+  margin-top: 2.5%;
+}
+.notebutton{
+  width: 100%;
+  height: 50%;
+  font-size: medium;
+  border-radius: 1em;
+}
+.notebutton:hover{
+  background-color: rgb(250, 236, 211);
+}
+.remindbutton{
+  width: 100%;
+  height: 50%;
+  font-size: medium;
+  border-radius: 1em;
+}
+.remindbutton:hover{
+  background-color: rgb(250, 236, 211);
+}
+.labeldiv{
+ 
+  width: 100%;
+  height: 20%;
+}
+.labelbutton{
   
+  width: 100%;
+  height: 50%;
+  font-size: medium;
+  border-radius: 1em;
+}
+.labelbutton:hover{
+  background-color: rgb(250, 236, 211);
+}
+.labelmat{
+  float: left;
+  margin-top:5%;
+  margin-left:9%;
 }

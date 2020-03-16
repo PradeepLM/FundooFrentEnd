@@ -34,13 +34,59 @@
       </mat-toolbar-row>
      </mat-toolbar>
   </div>
-      <div class="upmat" >
+ <div class="upmat" >
   <mat-sidenav-container  >
      <mat-sidenav #snav mode="side" class="matsidenav"> 
        <div class="notediv">
-        <button mat-button class="notebutton"><mat-icon>lightbulb_outline</mat-icon>Notes</button><br>
-        <!-- <button mat-button class="notebutton"><mat-icon>notifications</mat-icon>Remainders</button> -->
+        <button mat-button class="notebutton">
+          <div class="icondiv">
+            <mat-icon>lightbulb_outline</mat-icon>
+          </div>
+          <span > Notes</span>
+        </button>
+    
+        <button mat-button class="remindbutton">
+          <div class="icondiv">
+            <mat-icon>notifications</mat-icon>
+          </div>
+          <span>Reminder</span>
+        </button>
       </div>
+      <mat-divider></mat-divider>
+      
+      <diV class="labeldiv">
+        <mat-label class="labelmat">LABELS</mat-label>
+        
+        <button mat-button class="labelbutton">
+          <div class="icondiv">
+            <mat-icon>edit</mat-icon>
+          </div>
+          <span >Edit labels</span>
+        </button>
+      </diV>
+
+      <mat-divider></mat-divider>
+      <diV class="notediv">
+      
+        <button mat-button class="notebutton">
+          <div class="icondiv">
+            <mat-icon>archive</mat-icon>
+          </div>
+          <span > Archive</span>
+        </button>
+    
+        <button mat-button class="remindbutton">
+          <div class="icondiv">
+            <mat-icon>delete</mat-icon>
+          </div>
+          <span>Trashed</span>
+        </button>
+        
+      </diV>
+
+      
+
+      <mat-divider></mat-divider>
      </mat-sidenav>
     <mat-sidenav-content >
       <router-outlet ></router-outlet>Main content

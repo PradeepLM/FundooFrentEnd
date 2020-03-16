@@ -17,7 +17,7 @@ import { ResetpasswordComponent } from './Components/resetpassword/resetpassword
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     HttpClientModule,
     MatSidenavModule,
     MatToolbarModule,
-    //MatSlideToggleModule
+    MatDividerModule
+    
     
     
     
