@@ -85,7 +85,8 @@ mat-sidenav{
   width: 100%;
   height: 50%;
   font-size: medium;
-  border-radius: 1em;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
 }
 .notebutton:hover{
   background-color: rgb(250, 236, 211);
@@ -94,8 +95,10 @@ mat-sidenav{
   width: 100%;
   height: 50%;
   font-size: medium;
-  border-radius: 1em;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
 }
+
 .remindbutton:hover{
   background-color: rgb(250, 236, 211);
 }
@@ -109,7 +112,8 @@ mat-sidenav{
   width: 100%;
   height: 50%;
   font-size: medium;
-  border-radius: 1em;
+  border-top-right-radius: 2em;
+  border-bottom-right-radius: 2em;
 }
 .labelbutton:hover{
   background-color: rgb(250, 236, 211);

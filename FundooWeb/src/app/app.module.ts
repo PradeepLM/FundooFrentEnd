@@ -18,6 +18,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
+import { CreatenotesComponent } from './Components/createnotes/createnotes.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatDividerModule} from '@angular/material/divider';
     LoginComponent,
     ForgotpasswordComponent,
     ResetpasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreatenotesComponent
   ],
   imports: [
     BrowserModule,
