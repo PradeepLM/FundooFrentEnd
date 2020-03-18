@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private formBuilder:FormBuilder,private userservice:UserService,private router:Router,private matSnackBar:MatSnackBar) { }
   
-
+                         
   ngOnInit(): void {
   }
   phoneNumber=new FormControl(null,[Validators.required,Validators.pattern('[0-9]{10,10}')]);
@@ -59,7 +59,6 @@ export class RegistrationComponent implements OnInit {
         this.user.email=this.email.value;
         this.user.name=this.Name.value;
         this.user.mobileNumber=this.phoneNumber.value;
-        console.log("lsdsjbdsbdusbdb")
         this.userservice.registerUser(this.user).subscribe(  
         (response:any) =>{
            this.matSnackBar.open(response.message, "succesfull", {duration:5000})

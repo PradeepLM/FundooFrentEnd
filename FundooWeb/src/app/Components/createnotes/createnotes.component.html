@@ -1,14 +1,20 @@
 <p>createnotes works!</p>
-<div class="main" >
-    <mat-card style="height: 4em; border: 1px gray; padding:20px;"  *ngIf="!open" >
+<div class="container" >
+    <mat-card  class="matcard" *ngIf="!open" (click)="onopen()">
         <input matInput class="searchBar" placeholder="Take a note...">
+        <div class="icondiv">
+            <mat-icon style="margin-left: 10px;">event_available</mat-icon>
+            <mat-icon style="margin-left: 10px;">edit</mat-icon>
+            <mat-icon style="margin-left: 10px;">image</mat-icon>
+        </div>
     </mat-card>
-    <mat-card style="height: 12em;"  *ngIf="open"  fxLayout="column">
-       
-            <textarea id="title"  style="border: none;" matInput type="text" class="input" placeholder="Title"></textarea>
-        <textarea id="desc" style="border: none; " matInput type="text" class="input" placeholder="Take a note"></textarea>
+    <mat-card class="matcard1"  *ngIf="open"  fxLayout="column">
+         <textarea id="title"  style="border: none;" matInput type="text" class="input" placeholder="Title"></textarea>
+            <textarea id="desc" style="border: none; " matInput type="text" class="input" placeholder="Take a note"></textarea>
             <div class="icon" >
-                <div class="div-button"  ><button style="border: none; padding-right: 45px;">Close</button></div>
+                <div class="div-button" (click)="open=!open">
+                    <button style="border: none; padding-right: 45px;">Close</button>
+                </div>
             </div>
     </mat-card>
 </div>
