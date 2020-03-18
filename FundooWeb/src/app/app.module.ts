@@ -20,6 +20,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 import { CreatenotesComponent } from './Components/createnotes/createnotes.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { CreatenotesComponent } from './Components/createnotes/createnotes.compo
     ForgotpasswordComponent,
     ResetpasswordComponent,
     DashboardComponent,
-    CreatenotesComponent
+    CreatenotesComponent,
+  
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<p>createnotes works!</p>
+
 <div class="container" >
     <mat-card  class="matcard" *ngIf="!open" (click)="onopen()">
         <input matInput class="searchBar" placeholder="Take a note...">
@@ -9,11 +9,11 @@
         </div>
     </mat-card>
     <mat-card class="matcard1"  *ngIf="open"  fxLayout="column">
-         <textarea id="title"  style="border: none;" matInput type="text" class="input" placeholder="Title"></textarea>
-            <textarea id="desc" style="border: none; " matInput type="text" class="input" placeholder="Take a note"></textarea>
+         <textarea id="title"  style="border: none;" [formControl] ="titleFormControl" matInput type="text" class="input" placeholder="Title"></textarea>
+            <textarea id="description" style="border: none; "  [formControl] ="descriptionFormControl" matInput type="text" class="input" placeholder="Take a note"></textarea>
             <div class="icon" >
-                <div class="div-button" (click)="open=!open">
-                    <button style="border: none; padding-right: 45px;">Close</button>
+                <div (click)="open=!open">
+                    <button (click)="onCreateNote()" >Close</button>
                 </div>
             </div>
     </mat-card>
