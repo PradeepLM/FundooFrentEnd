@@ -15,6 +15,8 @@ export class CreatenotesComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,private noteservice:NotesService,private router:Router,private matSnackBar:MatSnackBar) { }
   open: boolean = false;
   notes:Notes=new Notes();
+  isPinned:boolean;
+
   ngOnInit(): void {
   }
   titleFormControl=new FormControl('',[Validators.required]);
@@ -23,6 +25,10 @@ export class CreatenotesComponent implements OnInit {
 onopen(){
   this.open=true;
 }
+onPin(){
+  this.notes.isPin=this.isPinned;
+}
+
 onCreateNote(){
   
   this.notes.title=this.titleFormControl.value;

@@ -34,7 +34,7 @@
     
 }
 .matcard1{
-    display: flex;
+    display: block;
     justify-content: center;
     width: 35%;
     border-radius: 1em;
@@ -72,26 +72,26 @@ input:placeholder-shown{
 }
 icon{
     padding-top: 10px;
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
+    display: flex;
 }
-button{
-     background-color: whitesmoke;
-     border: none;
-     color: black;
-     text-align: center;
-     text-decoration: none;
-     display: flex;
-     font-size: 16px;
-     padding: 10px;
-     margin-left: 10%;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    outline: none;
-    margin-top: 85%;
-    padding-right: 45px;
-  }
+// button{
+//      background-color: rgb(216, 29, 29);
+//      border: none;
+//      color: black;
+//      text-align: center;
+//      text-decoration: none;
+//      display: flex;
+//      font-size: 16px;
+//      padding: 10px;
+//      margin-left: 10%;
+//     font-family: 'Open Sans', sans-serif;
+//     font-weight: bold;
+//     outline: none;
+//     margin-top: 85%;
+//     padding-right: 45px;
+//   }
  
 //   button:active{
 //       background-color: gainsboro;

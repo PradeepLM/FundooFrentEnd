@@ -19,6 +19,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 import { CreatenotesComponent } from './Components/createnotes/createnotes.component';
+import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CreatenotesComponent } from './Components/createnotes/createnotes.compo
     ResetpasswordComponent,
     DashboardComponent,
     CreatenotesComponent,
+    DisplaynotesComponent,
   
   ],
   imports: [

@@ -2,18 +2,19 @@
 <div class="container" >
     <mat-card  class="matcard" *ngIf="!open" (click)="onopen()">
         <input matInput class="searchBar" placeholder="Take a note...">
-        <div class="icondiv">
-            <mat-icon style="margin-left: 10px;">event_available</mat-icon>
-            <mat-icon style="margin-left: 10px;">edit</mat-icon>
-            <mat-icon style="margin-left: 10px;">image</mat-icon>
+        <div id="pindiv">
+            <!-- <app-pin-notes id="pin"></app-pin-notes> -->
+            <a><img id="pin" src="assets/icon/unpin.swebp" *ngIf="!isPinned"></a>
+            <a><img id="pin" src="assets/icon/pinned.png" *ngIf="isPinned" ></a>
+
         </div>
     </mat-card>
     <mat-card class="matcard1"  *ngIf="open"  fxLayout="column">
-         <textarea id="title"  style="border: none;" [formControl] ="titleFormControl" matInput type="text" class="input" placeholder="Title"></textarea>
-            <textarea id="description" style="border: none; "  [formControl] ="descriptionFormControl" matInput type="text" class="input" placeholder="Take a note"></textarea>
+         <textarea id="title"  style="border: none;display: block;" [formControl] ="titleFormControl" matInput type="text" class="input" placeholder="Title"></textarea>
+            <textarea id="description" style="border: none; display: block;"  [formControl] ="descriptionFormControl" matInput type="text" class="input" placeholder="Take a note"></textarea>
             <div class="icon" >
                 <div (click)="open=!open">
-                    <button (click)="onCreateNote()" >Close</button>
+                    <button mat-icon-button (click)="onCreateNote()" >Close</button>
                 </div>
             </div>
     </mat-card>
