@@ -3,9 +3,6 @@
     <mat-card  class="matcard" *ngIf="!open" (click)="onopen()">
         <input matInput class="searchBar" placeholder="Take a note..">
         <div id="pindiv">
-            <a><img id="pin" src="assets/icon/unpin.png" ></a>
-            <a><img id="pin" src="assets/icon/pinned.png"></a>
-
         </div>
     </mat-card>
     <mat-card class="matcard1"  *ngIf="open"  fxLayout="column">

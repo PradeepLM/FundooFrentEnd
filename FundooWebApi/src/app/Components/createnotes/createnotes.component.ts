@@ -35,7 +35,7 @@ onSubmit(){
   this.notes.description=this.descriptionFormControl.value;
   this.noteservice.createNotes(this.notes).subscribe(  
     (response:any) =>{
-       this.matSnackBar.open(response.message, "succesfull", {duration:5000})
+       this.matSnackBar.open(response.message, "ok", {duration:5000})
     },
     (error:any)=> {
       this.matSnackBar.open(error.error.message, "failed", {duration:5000})
