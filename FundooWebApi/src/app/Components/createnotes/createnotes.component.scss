@@ -48,6 +48,7 @@ textarea{
     padding: 16px;
     font-weight: bolder;
     outline: none;
+    resize: none;
 }
 input:placeholder-shown{
     font-size: 20px;
@@ -75,26 +76,36 @@ icon{
     flex-direction: row;
     justify-content: space-between;
     display: flex;
+    
 }
-// button{
-//      background-color: rgb(216, 29, 29);
-//      border: none;
-//      color: black;
-//      text-align: center;
-//      text-decoration: none;
-//      display: flex;
-//      font-size: 16px;
-//      padding: 10px;
-//      margin-left: 10%;
-//     font-family: 'Open Sans', sans-serif;
-//     font-weight: bold;
-//     outline: none;
-//     margin-top: 85%;
-//     padding-right: 45px;
-//   }
+button{
+     //background-color:whitesmoke;
+      border: none;
+     color: black;
+      text-align: center;
+     text-decoration: none;
+      display: flex;
+      font-size: 16px;
+     margin-left: 90%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+     outline: none;
+    
+  }
  
-//   button:active{
-//       background-color: gainsboro;
-//   }
+  button:active{
+      background-color: gainsboro;
+  }
   
+  #pin{
+    height: 30px;
+    width:30px;
+    font-weight: bolder;
+}
+#pindiv{
+     display: flex;
+    flex-direction: row;
+     justify-content: flex-end;
+     padding-right: 2em;
+}
  

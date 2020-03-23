@@ -1,0 +1,15 @@
+.allnotes{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 15em;
+    padding-right: 2em;
+    background-color: red;
+}
+mat-card{
+    padding: 0px;
+    padding-right: 0px;
+    border-radius: 0.5em;
+    margin-bottom: 2em;
+    background-color: rgb(4, 1, 153);
+}
