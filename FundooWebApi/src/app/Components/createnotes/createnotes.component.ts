@@ -16,6 +16,7 @@ export class CreatenotesComponent implements OnInit {
   open: boolean = false;
   notes:Notes=new Notes();
   isPinned:boolean;
+  token:string
 
   ngOnInit(): void {
   }
@@ -29,8 +30,7 @@ onPin(){
   this.notes.isPin=this.isPinned;
 }
 
-onCreateNote(){
-  
+onSubmit(){
   this.notes.title=this.titleFormControl.value;
   this.notes.description=this.descriptionFormControl.value;
   this.noteservice.createNotes(this.notes).subscribe(  
