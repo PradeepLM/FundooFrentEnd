@@ -30,24 +30,24 @@ export class RegistrationComponent implements OnInit {
 
 
   errorPhoneNumberMessage(){
-    return this.phoneNumber.hasError('required')? "Enter Fields":
+    return this.phoneNumber.hasError('required')? "Enter Valid mobrle number":
     this.phoneNumber.hasError('pattern')? "Enter 10 Digits":
     "";
    }
 
   errorNameMessage(){
-    return this.Name.hasError('required')? "Enter Fields":
+    return this.Name.hasError('required')? "Enter valid Name":
     this.Name.hasError('pattern')?"Enter Characters":
      "";
    }
 
   errorEmailMessage(){
-    return this.email.hasError('required')? "Enter Fields":
+    return this.email.hasError('required')? "Enter valid email":
      this.email.hasError('email')? "Enter Email-Id":
      "";
    }
    errorPasswordMessage(){
-    return this.password.hasError('required')? "Enter Fields":
+    return this.password.hasError('required')? "Enter alid password":
    this.password.hasError('minlength')? "Enter Min len 6":
      "";
    }

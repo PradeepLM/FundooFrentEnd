@@ -20,6 +20,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDividerModule} from '@angular/material/divider';
 import { CreatenotesComponent } from './Components/createnotes/createnotes.component';
 import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.co
     HttpClientModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule
     
     
     

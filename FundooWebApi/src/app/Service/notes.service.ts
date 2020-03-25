@@ -4,9 +4,16 @@ import{environment} from'src/environments/environment'
 import { Subject, Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 
+
+const httpOptions =
+{headers: new HttpHeaders({"Content-Type":"application/json",
+"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.Yx4T3nLcGpGAbKB7m2D4KskGISJA9NLP29A1hVHQuLw"
+})
+};
 @Injectable({
   providedIn: 'root'
 })
+
 export class NotesService {
    notesApiURL=environment.notesApiURL;
   private Title=new Subject<any>();
@@ -15,6 +22,8 @@ export class NotesService {
 
   createNotes(note:any):Observable<any>
   {
-    return this.httpService.post(this.notesApiURL+environment.createnote,note,{headers:new HttpHeaders({"token":localStorage.token})});
+    
+    return this.httpService.post(this.notesApiURL+environment.createnote,note,httpOptions);
+    
   }
 }

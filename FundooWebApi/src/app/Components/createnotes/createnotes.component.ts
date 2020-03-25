@@ -32,13 +32,17 @@ onPin(){
 
 onSubmit(){
   this.notes.title=this.titleFormControl.value;
+  //console.log(this.titleFormControl.value+this.descriptionFormControl.value);
   this.notes.description=this.descriptionFormControl.value;
   this.noteservice.createNotes(this.notes).subscribe(  
     (response:any) =>{
        this.matSnackBar.open(response.message, "ok", {duration:5000})
+       //console.log(response);
     },
     (error:any)=> {
       this.matSnackBar.open(error.error.message, "failed", {duration:5000})
+     //console.log(error);
+     //console.log(error.error);
     });
   }
 }

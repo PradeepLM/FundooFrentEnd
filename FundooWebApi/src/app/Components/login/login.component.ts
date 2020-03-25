@@ -17,20 +17,20 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder:FormBuilder,private router:Router,private matsnackbar:MatSnackBar,  private userservice:UserService) { }
 
-   emailId = new FormControl(null,[Validators.required,Validators.email]);
-   password= new FormControl(null,[Validators.required,Validators.minLength(6)]);
+   emailId = new FormControl('',[Validators.required,Validators.email]);
+   password= new FormControl('',[Validators.required,Validators.minLength(6)]);
   ngOnInit(): void {
   }
 
 
 errorEmailMessage(){
-  return this.emailId.hasError('required')? "Enter Fields":
+  return this.emailId.hasError('required')? "Email required ":
    this.emailId.hasError('email')? "Enter Email-Id":
    this.emailId.hasError('pattern')?"Enter Email-Id - abc@gmail.com":
    "";
  }
  errorPasswordMessage(){
-  return this.password.hasError('required')? "Enter Fields":
+  return this.password.hasError('required')? "Password requred":
  this.password.hasError('minlength')? "Enter Min len 6":
    "";
  }
@@ -39,16 +39,19 @@ errorEmailMessage(){
       this.login.password=this.password.value;
       this.login.email=this.emailId.value;
       this.userservice.loginUser(this.login).subscribe(  
-      (response:any) =>{
+      (response:any) =>{ 
+        console.log(response.statusCode);
+        
         if(response.statusCode===200){
-
           localStorage.setItem('token',response.token);
-          this.matsnackbar.open("sucessfull", "ok", {duration:5000})
+          this.matsnackbar.open("sucessfull", "ok", {duration:3000})
           this.router.navigate(["/registration"]);
+        }else{
+          this.matsnackbar.open("Login failed", "", {duration:3000})
         }
       },
-      error=> {
-        this.matsnackbar.open("failed", "", {duration:5000})
+      (error:any)=> {
+        this.matsnackbar.open("failed", "", {duration:3000})
       });
     }
 }
