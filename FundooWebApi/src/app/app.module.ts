@@ -21,6 +21,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { CreatenotesComponent } from './Components/createnotes/createnotes.component';
 import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { NotesComponent } from './Components/notes/notes.component';
 
 
 
@@ -34,6 +35,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     DashboardComponent,
     CreatenotesComponent,
     DisplaynotesComponent,
+    NotesComponent,
   
   ],
   imports: [

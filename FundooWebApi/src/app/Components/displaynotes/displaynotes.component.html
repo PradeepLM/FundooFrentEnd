@@ -1,11 +1,11 @@
 <p>displaynotes works!</p>
-<div class="maindiv">
-    <div class="allnotes"  >
+<div class="maindiv" >
+    <div class="allnotes"   style="flex-direction: row;  display: flex; margin-left: 15%;">
         <mat-card class="getnote" >
             <div class="matdiv">
-                <mat-card-title> </mat-card-title>
+                <mat-card-title >  {{note.title}}</mat-card-title>
                     <mat-card-content >
-                      
+                        {{note.description}}
                     </mat-card-content>
                     <div class="icon">
                        
@@ -16,3 +16,4 @@
     </div>
 
 </div>
+

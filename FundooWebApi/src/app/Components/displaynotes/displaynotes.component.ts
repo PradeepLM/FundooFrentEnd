@@ -20,9 +20,11 @@ export class DisplaynotesComponent implements OnInit {
     this.displayNotes();
   }
  public displayNotes(){
-    this.noteservice.getAllNote().subscribe((Response:any)=>{
-      this.notes=Response.note;
+    this.noteservice.getAllNote().subscribe((response:any)=>{
+      this.notes=response.note;
     })
   }
+
+  
 
 }
