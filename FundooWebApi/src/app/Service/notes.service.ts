@@ -26,4 +26,8 @@ export class NotesService {
     return this.httpService.post(this.notesApiURL+environment.createnote,note,httpOptions);
     
   }
+
+  getAllNote(): Observable<any> { 
+    return this.httpService.get(this.notesApiURL+environment.getAllNotes,httpOptions);
+}
 }

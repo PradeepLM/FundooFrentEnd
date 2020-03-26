@@ -30,7 +30,7 @@ export class RegistrationComponent implements OnInit {
 
 
   errorPhoneNumberMessage(){
-    return this.phoneNumber.hasError('required')? "Enter Valid mobrle number":
+    return this.phoneNumber.hasError('required')? "Enter Valid mobile number":
     this.phoneNumber.hasError('pattern')? "Enter 10 Digits":
     "";
    }
@@ -47,7 +47,7 @@ export class RegistrationComponent implements OnInit {
      "";
    }
    errorPasswordMessage(){
-    return this.password.hasError('required')? "Enter alid password":
+    return this.password.hasError('required')? "Enter valid password":
    this.password.hasError('minlength')? "Enter Min len 6":
      "";
    }
