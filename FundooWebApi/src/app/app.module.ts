@@ -23,6 +23,7 @@ import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.co
 import {MatDialogModule} from '@angular/material/dialog';
 import { NotesComponent } from './Components/notes/notes.component';
 import { IconsComponent } from './Components/icons/icons.component';
+import { PinnotesComponent } from './Components/pinnotes/pinnotes.component';
 
 
 
@@ -38,6 +39,7 @@ import { IconsComponent } from './Components/icons/icons.component';
     DisplaynotesComponent,
     NotesComponent,
     IconsComponent,
+    PinnotesComponent,
   
   ],
   imports: [
