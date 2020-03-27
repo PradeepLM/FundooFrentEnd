@@ -1,4 +1,5 @@
-
+<div style="padding-left: 100px;font-family: fantasy;color: darkgray;">Pinnotes</div>
+<div style="flex-wrap: wrap;">
 <div class="maindiv" >
     <div class="allnotes"   style="flex-direction: row;  display: flex; margin-left: 15%;">
         <mat-card class="getnote" >
@@ -17,13 +18,12 @@
 
 </div>
 
-<div style="padding-left: 100px;font-family: fantasy;color: darkgray;"></div>
 
 <div style="flex-wrap: wrap;">
 
-    <div class="getAllNotes" >
+    <div class="getAllNotes" *ngFor="let note of notes">
 
-        <mat-card class="getNotesMat" *ngFor="let note of notes">
+        <mat-card class="getNotesMat" >
 
             <mat-card-title>{{note.title}}
             </mat-card-title>

@@ -8,6 +8,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { CreatenotesComponent } from './Components/createnotes/createnotes.component';
 import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
 import { NotesComponent } from './Components/notes/notes.component';
+import { IconsComponent } from './Components/icons/icons.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
     {path:'',component:NotesComponent},
     {path:'notes',component:NotesComponent},
   {path:'createnotes',component:CreatenotesComponent},
-  {path:'displaynotes',component:DisplaynotesComponent}
+  {path:'displaynotes',component:DisplaynotesComponent},
+  {path:'icons',component:IconsComponent}
   ]},
 ];
 
