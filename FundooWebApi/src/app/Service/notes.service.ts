@@ -28,6 +28,6 @@ export class NotesService {
   }
 
   getAllNote(): Observable<any> { 
-    return this.httpService.get(this.notesApiURL+environment.getAllNotes,httpOptions);
+    return this.httpService.get(this.notesApiURL+environment.getAllNotes,{headers:new HttpHeaders({'token':localStorage.token})});
 }
 }

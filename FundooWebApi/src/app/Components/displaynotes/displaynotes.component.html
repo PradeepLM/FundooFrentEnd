@@ -1,4 +1,4 @@
-<p>displaynotes works!</p>
+
 <div class="maindiv" >
     <div class="allnotes"   style="flex-direction: row;  display: flex; margin-left: 15%;">
         <mat-card class="getnote" >
@@ -13,6 +13,29 @@
             </div>
 
         </mat-card>
+    </div>
+
+</div>
+
+<div style="padding-left: 100px;font-family: fantasy;color: darkgray;"></div>
+
+<div style="flex-wrap: wrap;">
+
+    <div class="getAllNotes" >
+
+        <mat-card class="getNotesMat" *ngFor="let note of notes">
+
+            <mat-card-title>{{note.title}}
+            </mat-card-title>
+                    
+                    <br>
+
+                    {{note.description}}
+
+         
+
+        </mat-card>
+
     </div>
 
 </div>

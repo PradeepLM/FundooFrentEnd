@@ -21,7 +21,8 @@ export class DisplaynotesComponent implements OnInit {
   }
  public displayNotes(){
     this.noteservice.getAllNote().subscribe((response:any)=>{
-      this.notes=response.note;
+      this.notes=response.list;
+      console.log(this.notes)
     })
   }
 
