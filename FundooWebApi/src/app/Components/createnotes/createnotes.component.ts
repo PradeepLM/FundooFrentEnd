@@ -27,7 +27,7 @@ onopen(){
   this.open=true;
 }
 onPin(){
-  this.notes.isPin=this.isPinned;
+  this.notes.isPinned=this.isPinned;
 }
 
 onSubmit(){

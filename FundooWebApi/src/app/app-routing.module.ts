@@ -9,6 +9,7 @@ import { CreatenotesComponent } from './Components/createnotes/createnotes.compo
 import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.component';
 import { NotesComponent } from './Components/notes/notes.component';
 import { IconsComponent } from './Components/icons/icons.component';
+import { PinnotesComponent } from './Components/pinnotes/pinnotes.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
     {path:'notes',component:NotesComponent},
   {path:'createnotes',component:CreatenotesComponent},
   {path:'displaynotes',component:DisplaynotesComponent},
+  {path:'pinnotes',component:PinnotesComponent},
   {path:'icons',component:IconsComponent}
   ]},
 ];

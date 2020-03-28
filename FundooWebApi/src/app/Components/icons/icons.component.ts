@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NotesService } from 'src/app/Service/notes.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-icons',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-
-  constructor() { }
+  isPinned:boolean;
+  token=localStorage.getItem('token')
+  constructor(private noteservice:NotesService,private snackBar:MatSnackBar,) { }
 
   ngOnInit(): void {
   }
-
+  pinnedNote(){
+  }
 }

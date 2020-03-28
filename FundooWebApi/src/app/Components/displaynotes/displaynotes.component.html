@@ -18,12 +18,13 @@
 
 </div>
 
+<div style="padding-left: 100px;font-family: fantasy;color: darkgray;">others</div>
 
 <div style="flex-wrap: wrap;">
 
-    <div class="getAllNotes" *ngFor="let note of notes">
+    <div class="getAllNotes"  *ngFor="let note of notes" >
 
-        <mat-card class="getNotesMat" >
+        <mat-card class="getNotesMat">
 
             <mat-card-title>{{note.title}}
             </mat-card-title>

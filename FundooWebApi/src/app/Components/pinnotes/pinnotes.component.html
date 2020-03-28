@@ -1,1 +1,4 @@
-<p>pinnotes works!</p>
+
+<button *ngIf="isPinned" mat-icon-button matTooltip="unpin" (click)="pinnedNote()" class="button"></button>
+
+<button *ngIf="!isPinned" mat-icon-button matTooltip="pin" (click)="pinnedNote()" class="button"></button>

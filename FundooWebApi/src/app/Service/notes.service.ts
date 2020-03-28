@@ -3,6 +3,7 @@ import { HttpService } from './http.service';
 import{environment} from'src/environments/environment'
 import { Subject, Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { Notes } from '../Model/notes.model';
 
 
 const httpOptions =
@@ -15,9 +16,19 @@ const httpOptions =
 })
 
 export class NotesService {
-   notesApiURL=environment.notesApiURL;
+    private noteId;
+    private notes:Notes[];
+    private pinNoteList = new Subject<any>();
+    private archiveNoteList = new Subject<any>();
+    private trashedNoteList = new Subject<any>();
+
+
+   private notesApiURL=environment.notesApiURL;
   private Title=new Subject<any>();
+  private token=(localStorage.token)
   private httpOptions={headers:new HttpHeaders({'content-type':'application/json'})};
+  
+  
   constructor( private httpService:HttpService) { }
 
   createNotes(note:any):Observable<any>
@@ -29,5 +40,15 @@ export class NotesService {
 
   getAllNote(): Observable<any> { 
     return this.httpService.get(this.notesApiURL+environment.getAllNotes,{headers:new HttpHeaders({'token':localStorage.token})});
+}
+
+pinNote(note:any): Observable<any> { 
+  return this.httpService.get(this.notesApiURL+environment.pinNote+note.id,{headers:new HttpHeaders({'token':this.token})});
+
+}
+
+getPinnedAllNote(): Observable<any> { 
+  return this.httpService.get(this.notesApiURL+environment.getPinNote,{headers:new HttpHeaders({'token':this.token})});
+
 }
 }
