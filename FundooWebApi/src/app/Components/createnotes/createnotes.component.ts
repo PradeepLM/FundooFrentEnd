@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { NotesService } from 'src/app/Service/notes.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -16,9 +16,11 @@ export class CreatenotesComponent implements OnInit {
   open: boolean = false;
   notes:Notes=new Notes();
   isPinned:boolean;
-  token:string
+  token:string;
+  noteId:Notes[];
+  createNoteForm:FormGroup;
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
   titleFormControl=new FormControl('',[Validators.required]);
   descriptionFormControl=new FormControl('',[Validators.required]);

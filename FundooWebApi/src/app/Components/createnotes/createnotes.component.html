@@ -8,10 +8,10 @@
     <mat-card class="matcard1"  *ngIf="open"  fxLayout="column">
          <textarea id="title"   [formControl] ="titleFormControl" matInput type="text" class="input" placeholder="Title"></textarea>
             <textarea id="description"   [formControl] ="descriptionFormControl" matInput type="text" class="input" placeholder="Take a note"></textarea>
-            <div class="icon" >
+            <div class="icondiv" >
                 <div (click)="open=!open">
                     <app-icons ></app-icons>
-                    <button mat-icon-button (click)="onSubmit()" >Close</button>
+                    <button mat-icon-button (click) ="onSubmit()" >Close</button>
                 </div>
             </div>
     </mat-card>
