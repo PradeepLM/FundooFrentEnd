@@ -14,6 +14,8 @@ export class DisplaynotesComponent implements OnInit {
   note:Notes=new Notes();
   notes:Notes[];
   getallNotes:[];
+  pinnotes: Notes[];
+  unpinnotes:Notes[]
   constructor(private formBuilder: FormBuilder,  private noteservice: NotesService, private matSnackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
@@ -23,6 +25,8 @@ export class DisplaynotesComponent implements OnInit {
     this.noteservice.getAllNote().subscribe((response:any)=>{
       this.notes=response.list;
       console.log(this.notes)
+      console.log(response);
+      
     })
   }
 

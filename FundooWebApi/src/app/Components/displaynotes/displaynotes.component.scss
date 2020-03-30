@@ -1,67 +1,21 @@
-// .allnotes{
-//     display: flex;
-//     flex-wrap: wrap;
-//     height: auto;
-//     width: 15em;
-//     padding-right: 2em;
-// //background-color: red;
-// }
-// .getAllNotes {
-//   display: flex;
-//   flex-wrap: wrap;
-//   flex-direction: row;
-//   box-sizing: border-box;
-//   margin-left: 15%;
-  
-//    height: auto;
-//     width: auto;
-//     padding-right: 2em;
-
-// }
-// mat-card{
-//     padding: 0px;
-//     padding-right: 0px;
-//     border-radius: 0.5em;
-//     margin-bottom: 2em;
-//   //  background-color: rgb(4, 1, 153);
-// }
-// .main-div {
-//     display: flex;
-//     position: relative;
-//      flex-wrap: wrap;
-//      flex-direction: row;
-//      justify-content: center;
-//      align-items: center;
-//      z-index: 3001;
-//     // background-color: rgb(204, 42, 96);
-//   }
-// .matdiv {
-//     display: flex;
-//     flex-wrap: wrap;
-//    // background-color: yellow;
-//   }
-//   mat-card-content {
-//     padding-left: 0.8em;
-//     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-//     height: auto;
-//     font-size: 22px;
-//     font-weight: lighter;
-//     padding-right: 0.2em;
-//   }
-//   mat-card-title {
-//     padding-left: 0.8em;
-//     height: auto;
-//     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-//     font-size: 28px;
-//   }
 .getNotesMat{
-  display: flex;
-  flex-wrap: wrap;
   width: 220px;
   min-height: 100px;
   border-radius: 15px;
   margin: 10px;
-  //background-color: purple;
-  margin-top: -25%;
-  margin-left: 20%;
+}
+.title{
+  margin-top: 30%;
+}
+.getAllNotes {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: yellow;
+  flex-direction: row;  
+  display: flex; 
+  margin-left: 15%;
+}
+.pinNotes {
+  display: inline;
+  padding-left: 180px;
 }
