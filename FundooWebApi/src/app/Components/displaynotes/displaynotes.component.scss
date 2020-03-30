@@ -10,7 +10,7 @@
 .getAllNotes {
   display: flex;
   flex-wrap: wrap;
-  background-color: yellow;
+ 
   flex-direction: row;  
   display: flex; 
   margin-left: 15%;
@@ -18,4 +18,18 @@
 .pinNotes {
   display: inline;
   padding-left: 180px;
+}
+.container {
+  display: flow-root;
+  flex-direction: column;
+  align-items: center;
+  display: block;
+}
+.others{font-family: fantasy;color: darkgray;
+ 
+  flex-wrap: wrap;
+ 
+  flex-direction: row;  
+  display: flex; 
+  margin-left: 15%;
 }

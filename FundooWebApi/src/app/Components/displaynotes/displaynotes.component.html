@@ -1,6 +1,9 @@
-<div style="padding-left: 100px;font-family: fantasy;color: darkgray;">Pinnotes</div>
-<div style="flex-wrap: wrap;">
+<div class="container" >
+
+<!-- <div style="flex-wrap: wrap;">
+    
     <div class="getAllNotes" *ngFor="let note of pinnotes">
+        <mat-label style="font-family: fantasy;color: darkgray; position: absolute;">Pinnotes</mat-label>
         <mat-card class="getNotesMat" >
             <div class="matdiv">
                 <mat-card-title >  {{note.title}}</mat-card-title><br>
@@ -8,11 +11,14 @@
             </div>
         </mat-card>
     </div>
-</div>
+</div> -->
 
-<div style="padding-left: 100px;font-family: fantasy;color: darkgray;">others</div>
+
 <div style="flex-wrap: wrap;">
-    <div class="getAllNotes"  *ngFor="let note of notes" >
+
+    <div class="others">others</div>
+    <div class="getAllNotes" fxLayout="row" *ngFor="let note of notes" >
+        
         <mat-card class="getNotesMat">
             <div class="matdiv">
             <mat-card-title>{{note.title}}</mat-card-title> <br>
@@ -20,5 +26,6 @@
             </div>
         </mat-card>
     </div>
+</div>
 </div>
 
