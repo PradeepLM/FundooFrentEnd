@@ -24,6 +24,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { NotesComponent } from './Components/notes/notes.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { PinnotesComponent } from './Components/pinnotes/pinnotes.component';
+import { ArchieveComponent } from './Components/archieve/archieve.component';
 
 
 
@@ -40,6 +41,7 @@ import { PinnotesComponent } from './Components/pinnotes/pinnotes.component';
     NotesComponent,
     IconsComponent,
     PinnotesComponent,
+    ArchieveComponent,
   
   ],
   imports: [

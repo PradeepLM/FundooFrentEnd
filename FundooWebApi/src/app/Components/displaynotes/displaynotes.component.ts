@@ -40,6 +40,8 @@ export class DisplaynotesComponent implements OnInit {
   this.trash=false;
   this.archieve=false;
   this.notes = this.Notes.getNotesList()
+  console.log(this.notes);
+  
   this.pinnotes = this.Notes.getPinNotesList()
   }
 
