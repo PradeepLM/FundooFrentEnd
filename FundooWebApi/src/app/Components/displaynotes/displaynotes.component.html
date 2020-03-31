@@ -1,4 +1,4 @@
-<div class="container" >
+<div class="container" fxLayout="rowGrid" >
 
 <!-- <div style="flex-wrap: wrap;">
     
@@ -15,12 +15,13 @@
 
 
 <div style="flex-wrap: wrap;">
-
-    <div class="others">others</div>
-    <div class="getAllNotes" fxLayout="row" *ngFor="let note of notes" >
-        
+    <div class="others" *ngIf="!trash || !archieve">others</div>
+    <div class="getAllNotes"   *ngFor="let note of notes" >   
         <mat-card class="getNotesMat">
             <div class="matdiv">
+                <div class="pinNotes">
+                    <app-pinnotes [note]="note" ></app-pinnotes>
+                </div>
             <mat-card-title>{{note.title}}</mat-card-title> <br>
             <mat-card-content > {{note.description}} </mat-card-content> 
             </div>

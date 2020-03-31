@@ -41,12 +41,13 @@
   <mat-sidenav-container  >
      <mat-sidenav #snav mode="side" class="matsidenav"> 
        <div class="notediv">
+        <a [routerLink]="['notes']" [queryParams]="{ page: 'display' }">
         <button mat-button class="notebutton">
           <div class="icondiv">
             <mat-icon>lightbulb_outline</mat-icon>
           </div>
           <span > Notes</span>
-        </button>
+        </button></a>
     
         <button mat-button class="remindbutton">
           <div class="icondiv">
@@ -70,20 +71,21 @@
 
       <mat-divider></mat-divider>
       <diV class="notediv">
-      
+        <a [routerLink]="['notes']" [queryParams]="{ page: 'archive' }">
         <button mat-button class="notebutton">
           <div class="icondiv">
             <mat-icon>archive</mat-icon>
           </div>
           <span > Archive</span>
-        </button>
+        </button></a>
     
+        <a [routerLink]="['notes']" [queryParams]="{ page: 'trash' }">
         <button mat-button class="remindbutton">
           <div class="icondiv">
             <mat-icon>delete</mat-icon>
           </div>
           <span>Trashed</span>
-        </button>
+        </button></a>
         
       </diV>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder } from '@angular/forms';
 import { NotesService } from 'src/app/Service/notes.service';
@@ -11,25 +11,48 @@ import { Notes } from 'src/app/Model/notes.model';
   styleUrls: ['./displaynotes.component.scss']
 })
 export class DisplaynotesComponent implements OnInit {
+  [x: string]: any;
   note:Notes=new Notes();
   notes:Notes[];
   getallNotes:[];
   pinnotes: Notes[];
-  unpinnotes:Notes[]
-  constructor(private formBuilder: FormBuilder,  private noteservice: NotesService, private matSnackBar: MatSnackBar, private router: Router) { }
+  unpinnotes:Notes[];
+  trash:boolean=false;
+  archieve:boolean=false;
+  constructor(private formBuilder: FormBuilder,  private noteservice: NotesService, private matSnackBar: MatSnackBar, private router: Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.displayNotes();
+    this.route.queryParams.subscribe(params => {
+      this.param = params['page'] || '';
+      if (this.param == "archive") {    
+        this.getArchieveNote();
+      }
+      else  if (this.param == "trash") {
+          this.getTrashNote();
+      }
+      else{
+      this.displayNotes();
+      }
+    });
   }
+  
  public displayNotes(){
-    this.noteservice.getAllNote().subscribe((response:any)=>{
-      this.notes=response.list;
-      console.log(this.notes)
-      console.log(response);
-      
-    })
+  this.trash=false;
+  this.archieve=false;
+  this.notes = this.Notes.getNotesList()
+  this.pinnotes = this.Notes.getPinNotesList()
   }
 
-  
+ public getTrashNote(){
+    this.trash=true;
+    this.archieve=false;
+    this.notes=this.Notes.getTrashedNotesList()
+  }
+
+ public getArchieveNote(){
+    this.trash=false;
+    this.archieve=true;
+    this.notes=this.Notes.getarchieveNotesList()
+  }
 
 }
