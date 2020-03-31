@@ -9,21 +9,22 @@
 }
 .getAllNotes {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;  
-  display: flex; 
+  flex-wrap: wrap; 
   margin-left: 15%;
-}
+  flex-direction: row; 
+  box-sizing: border-box;
+ 
+} 
 .pinNotes {
   display: inline;
   padding-left: 180px;
 }
-.container {
-  display: flow-root;
-  flex-direction: column;
-  align-items: center;
-  display: block;
-}
+// .container {
+//   display: flow-root;
+//   flex-direction: column;
+//   align-items: center;
+//   display: block;
+// }
 .others{
   font-family: fantasy;
   color: darkgray;

@@ -25,6 +25,7 @@ import { NotesComponent } from './Components/notes/notes.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { PinnotesComponent } from './Components/pinnotes/pinnotes.component';
 import { ArchieveComponent } from './Components/archieve/archieve.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -59,7 +60,8 @@ import { ArchieveComponent } from './Components/archieve/archieve.component';
     MatSidenavModule,
     MatToolbarModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    FlexLayoutModule
     
     
     

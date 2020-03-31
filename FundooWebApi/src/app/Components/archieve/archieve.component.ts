@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Notes } from 'src/app/Model/notes.model';
+import { GetnotesService } from 'src/app/Service/getnotes.service';
 
 @Component({
   selector: 'app-archieve',
@@ -9,10 +10,12 @@ import { Notes } from 'src/app/Model/notes.model';
 export class ArchieveComponent implements OnInit {
   archievednotes:Notes[]
   note:Notes=new Notes()
-  constructor() { }
+  constructor(private getNote:GetnotesService) { }
 
   ngOnInit(): void {
-    this.archievednotes=this.g.getarchieveNotesList()
+    this.archievednotes=this.getNote.getarchieveNotesList()
+    console.log(this.archievednotes);
+    
   }
 
 }

@@ -1,0 +1,27 @@
+.getNotesMat{
+    width: 220px;
+    min-height: 100px;
+    border-radius: 15px;
+    margin: 10px;
+    align-self: center;
+}
+
+
+
+.title{
+    margin-top: 30%;
+}
+
+
+
+.getAllNotes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.archievednotes {
+    display: inline;
+    padding-left: 180px;
+}

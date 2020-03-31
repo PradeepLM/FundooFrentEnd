@@ -27,15 +27,11 @@ export class DisplaynotesComponent implements OnInit {
       if (this.param == "archive") {    
         this.getArchieveNote();
       }
-      else  if (this.param == "trash") {
-          this.getTrashNote();
-      }
       else{
       this.displayNotes();
       }
     });
   }
-  
  public displayNotes(){
   this.trash=false;
   this.archieve=false;
@@ -44,17 +40,12 @@ export class DisplaynotesComponent implements OnInit {
   
   this.pinnotes = this.Notes.getPinNotesList()
   }
-
- public getTrashNote(){
-    this.trash=true;
-    this.archieve=false;
-    this.notes=this.Notes.getTrashedNotesList()
-  }
-
- public getArchieveNote(){
+  public getArchieveNote(){
     this.trash=false;
     this.archieve=true;
     this.notes=this.Notes.getarchieveNotesList()
   }
+
+  
 
 }

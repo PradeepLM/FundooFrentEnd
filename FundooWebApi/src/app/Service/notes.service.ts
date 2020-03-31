@@ -16,12 +16,7 @@ const httpOptions =
 })
 
 export class NotesService {
-    private noteId;
-    private notes:Notes[];
-    private pinNoteList = new Subject<any>();
-    private archiveNoteList = new Subject<any>();
-    private trashedNoteList = new Subject<any>();
-
+    
 
    private notesApiURL=environment.notesApiURL;
   private Title=new Subject<any>();
@@ -49,6 +44,11 @@ pinNote(note:any): Observable<any> {
 
 getPinnedAllNote(): Observable<any> { 
   return this.httpService.get(this.notesApiURL+environment.getPinNote,{headers:new HttpHeaders({'token':this.token})});
+
+}
+
+getArchieveNote(): Observable<any> { 
+  return this.httpService.get(this.notesApiURL+environment.getArchieveNote,{headers:new HttpHeaders({'token':this.token})});
 
 }
 }

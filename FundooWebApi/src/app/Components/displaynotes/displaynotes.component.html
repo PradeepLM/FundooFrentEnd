@@ -1,14 +1,20 @@
-<div class="container" fxLayout="rowGrid" >
+<div class="container"  >
 
 <!-- <div style="flex-wrap: wrap;">
-    
+    <div class="others"  *ngIf="!trash && !archieve">Pinnotes</div>
     <div class="getAllNotes" *ngFor="let note of pinnotes">
         <mat-label style="font-family: fantasy;color: darkgray; position: absolute;">Pinnotes</mat-label>
         <mat-card class="getNotesMat" >
             <div class="matdiv">
+                <div class="pinNotes">
+                    <button *ngIf="!isPinned" mat-icon-button matTooltip="pin" class="button">
+                        <img class="image" style="border: none; width: 93%;" src="../../../assets/images/pinned.png" height="50%" id="imgRem">
+                     </button>
+                </div>
                 <mat-card-title >  {{note.title}}</mat-card-title><br>
                     <mat-card-content > {{note.description}} </mat-card-content>
             </div>
+            <app-icons [note]='note' ></app-icons>
         </mat-card>
     </div>
 </div> -->
@@ -16,7 +22,7 @@
 
 <div style="flex-wrap: wrap;">
     <div class="others" *ngIf="!trash || !archieve">others</div>
-    <div class="getAllNotes"   *ngFor="let note of notes" >   
+    <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15"  *ngFor="let note of notes" >   
         <mat-card class="getNotesMat">
             <div class="matdiv">
                 <div class="pinNotes">
