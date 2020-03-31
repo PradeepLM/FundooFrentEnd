@@ -1,6 +1,6 @@
 
 <div class="container" >
-    <mat-card  class="matcard" *ngIf="!open" (click)="onopen()" fxLayout="row">
+    <mat-card  class="matcard" *ngIf="!open" (click)="onopen()" >
         <input matInput class="searchBar" placeholder="Take a note..">
         <div id="pindiv">
         </div>
@@ -9,12 +9,12 @@
          <textarea id="title"   [formControl] ="titleFormControl" matInput type="text" class="input" placeholder="Title"></textarea>
             <textarea id="description"   [formControl] ="descriptionFormControl" matInput type="text" class="input" placeholder="Take a note"></textarea>
             <div class="icondiv" >
-                <div (click)="open=!open">
+                <div >
                     <app-icons ></app-icons>
                 </div>
             </div>
-            <div class="close">
-                    <button mat-icon-button (click) ="onSubmit()" class="close" >Close</button> 
+            <div class="close" (click)="open=!open">
+                    <button mat-icon-button (click) ="onSubmit()" class="close"  >Close</button> 
             </div>
     </mat-card>
 </div>

@@ -17,21 +17,21 @@ export class IconsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  archieveNote(){
-    console.log('id---',this.note.id); 
-        this.noteservice.getPinnedAllNote(this.note).subscribe((response) => {
-        if (this.note.isArchieved == true) {  
-          this.snackBar.open("UnArchived", "OK", { duration: 5000 });
-        }
-        if (this.note.isPinned = true) {
-          this.snackBar.open("Note unpinned and Archived", "OK", { duration: 5000 });
-        }
-        else {
-          this.snackBar.open("Note Archived", "OK", { duration: 5000 });
-        }
-      },
-        error => {
-          this.snackBar.open("error in Note archieve operation", "OK", { duration: 5000 });
-        });
-    }
+  // archieveNote(){
+  //   console.log('id---',this.note.id); 
+  //       this.noteservice.getPinnedAllNote(this.note).subscribe((response) => {
+  //       if (this.note.isArchieved == true) {  
+  //         this.snackBar.open("UnArchived", "OK", { duration: 5000 });
+  //       }
+  //       if (this.note.isPinned = true) {
+  //         this.snackBar.open("Note unpinned and Archived", "OK", { duration: 5000 });
+  //       }
+  //       else {
+  //         this.snackBar.open("Note Archived", "OK", { duration: 5000 });
+  //       }
+  //     },
+  //       error => {
+  //         this.snackBar.open("error in Note archieve operation", "OK", { duration: 5000 });
+  //       });
+  //   }
 }

@@ -1,4 +1,7 @@
 
-<button *ngIf="isPinned" mat-icon-button matTooltip="unpin" (click)="pinnedNote()" class="button"></button>
-
-<button *ngIf="!isPinned" mat-icon-button matTooltip="pin" (click)="pinnedNote()" class="button"></button>
+<button *ngIf="isPinned" mat-icon-button matTooltip="unpin" (click)="pinnedNote()" class="button">
+<img class="image" style="border: none; width: 93%;" src="../../../assets/images/pinned.png" height="50%" id="imgRem">
+</button>
+<button *ngIf="!isPinned" mat-icon-button matTooltip="pin" (click)="pinnedNote()" class="button">
+<img class="image" style="border: none; width: 93%;" src="../../../assets/images/unpin.png" height="50%" id="imgRem">
+</button>
