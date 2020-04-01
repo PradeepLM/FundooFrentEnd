@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./pinnotes.component.scss']
 })
 export class PinnotesComponent implements OnInit {
+  [x: string]: any;
  @Input() note: Notes;
   isPinned: boolean;
   Token=localStorage.getItem('token');
@@ -16,6 +17,8 @@ export class PinnotesComponent implements OnInit {
   ngOnInit(): void {
   }
   pinnedNote() {
+    console.log(this.note.id);
+    
        this.noteservice.pinNote(this.note.id).subscribe(response => {
       if (this.note.isPinned) {
         this.isPinned = false;

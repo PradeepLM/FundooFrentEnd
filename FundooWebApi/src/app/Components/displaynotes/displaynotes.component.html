@@ -1,9 +1,9 @@
-<div class="container"  >
 
-<!-- <div style="flex-wrap: wrap;">
-    <div class="others"  *ngIf="!trash && !archieve">Pinnotes</div>
+
+<div style="flex-wrap: wrap;">
+    <div class="others"  *ngIf="!trash && !archieve">Pinnotes
     <div class="getAllNotes"  fxLayout="{{view}}" fxFlexOffset="15" *ngFor="let note of pinnotes">
-        <mat-label style="font-family: fantasy;color: darkgray; position: absolute;">Pinnotes</mat-label>
+        <!-- <mat-label style="font-family: fantasy;color: darkgray; position: absolute;">Pinnotes</mat-label> -->
         <mat-card class="getNotesMat" >
             <div class="matdiv">
                 <div class="pinNotes">
@@ -14,14 +14,14 @@
                 <mat-card-title >  {{note.title}}</mat-card-title><br>
                     <mat-card-content > {{note.description}} </mat-card-content>
             </div>
-            <app-icons [note]='note' ></app-icons>
+            <app-icons [note]='note'></app-icons>
         </mat-card>
     </div>
-</div> -->
-
+</div>
+</div>
 
 <div style="flex-wrap: wrap;">
-    <div class="others" *ngIf="!trash || !archieve">others</div>
+    <div class="others" *ngIf="!trash || !archieve">others
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15"  *ngFor="let note of notes" >   
         <mat-card class="getNotesMat">
             <div class="matdiv">
@@ -31,6 +31,7 @@
             <mat-card-title>{{note.title}}</mat-card-title> <br>
             <mat-card-content > {{note.description}} </mat-card-content> 
             </div>
+            <app-icons [note]='note' ></app-icons>
         </mat-card>
     </div>
 </div>

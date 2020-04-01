@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Notes } from 'src/app/Model/notes.model';
+import { NotesService } from 'src/app/Service/notes.service';
+import { GetnotesService } from 'src/app/Service/getnotes.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-notes',
@@ -18,9 +21,82 @@ export class NotesComponent implements OnInit {
   trashednotes:Notes[];
   trash:boolean=false;  
 
-  constructor() { }
+  constructor(private noteService:NotesService,private getNotes:GetnotesService,private router:Router,private route:ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.route.queryParams.subscribe(params => {
+      this.param = params['page'] || '';
+      if (this.param == "archive") {
+        this.getArchieveNote();
+      } 
+      else  if (this.param == "trash") {
+        this.getTrashNote();
+      }
+      else{
+      this.displayNotes();
+      }
+    });
+  }
+
+  setnotes() {
+    this.getNotes.setNotesList(this.notes);
+  }
+
+  setpinnotes() {
+    this.getNotes.setPinNotesList(this.pinnotes);
+  }
+
+  setarchievenotes(){
+    this.getNotes.setarchieveNotesList(this.archievenotes);
+  }
+
+  setTrashednotes(){
+    this.getNotes.setaTrashedNotesList(this.trashednotes);
+  }
+
+  
+  public displayNotes(){
+    this.trash=true;
+    this.noteService.getAllNote().subscribe((response:any)=>{
+      this.notes=response.list;
+    
+      
+      
+      this.setnotes();
+    })
+    this.noteService.getPinnedAllNote().subscribe((data)=>{
+      this.pinnotes=data.list;
+    
+      
+      
+      this.setpinnotes();
+    })
+  }
+
+  public getArchieveNote(){
+    console.log('hubjbjb');
+    
+    this.trash=false;
+    this.noteService.getArchieveNote().subscribe(
+      (response:any) => {
+        console.log('lp');
+        
+        this.archievenotes = response.list;
+        console.log(response.list);
+        console.log(this.archievenotes);
+        
+        
+        this.setarchievenotes();
+    })
+  }
+
+  public getTrashNote(){
+    this.trash=false;
+    this.noteservice.gettrashedNote().subscribe(
+      (data) => {
+        this.trashednotes = data.note;
+        this.setTrashednotes();
+    })
   }
 
 }

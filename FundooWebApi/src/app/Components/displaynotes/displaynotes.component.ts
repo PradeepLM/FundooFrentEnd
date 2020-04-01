@@ -28,6 +28,8 @@ export class DisplaynotesComponent implements OnInit {
       this.param = params['page'] || '';
       if (this.param == "archive") {    
         this.getArchieveNote();
+      }else  if (this.param == "trash") {
+        this.getTrashNote();
       }
       else{
       this.displayNotes();
@@ -48,6 +50,8 @@ export class DisplaynotesComponent implements OnInit {
     this.trash=false;
     this.archieve=true;
     this.notes=this.getNotes.getarchieveNotesList()
+    console.log(this.notes);
+    
   }
 
   
