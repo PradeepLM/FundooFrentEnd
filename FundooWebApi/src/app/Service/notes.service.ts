@@ -50,6 +50,13 @@ getArchieveNote(): Observable<any> {
 
 getTrashedNote(): Observable<any> {  
   return this.httpService.get(this.notesApiURL+environment.getTrashNotes,{headers:new HttpHeaders({'token':this.token})});
+}
+
+archieveNote(note:any): Observable<any> { 
+
+  return this.httpService.put(this.notesApiURL+environment.archieveNote+note.id,{},{headers:new HttpHeaders({'token':this.token})});
+
+  
 
 }
 

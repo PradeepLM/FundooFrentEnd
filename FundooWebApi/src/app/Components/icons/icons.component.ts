@@ -12,26 +12,28 @@ export class IconsComponent implements OnInit {
   @Input() note: Notes;
   id: number;
   isArchieved: boolean = false;
-  constructor(private noteservice:NotesService,private snackBar:MatSnackBar) { }
+  constructor(private noteService:NotesService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
-  // archieveNote(){
-  //   console.log('id---',this.note.id); 
-  //       this.noteservice.getPinnedAllNote(this.note).subscribe((response) => {
-  //       if (this.note.isArchieved == true) {  
-  //         this.snackBar.open("UnArchived", "OK", { duration: 5000 });
-  //       }
-  //       if (this.note.isPinned = true) {
-  //         this.snackBar.open("Note unpinned and Archived", "OK", { duration: 5000 });
-  //       }
-  //       else {
-  //         this.snackBar.open("Note Archived", "OK", { duration: 5000 });
-  //       }
-  //     },
-  //       error => {
-  //         this.snackBar.open("error in Note archieve operation", "OK", { duration: 5000 });
-  //       });
-  //   }
+  public archiveButton(){
+    console.log('wewewewe',this.id);
+    this.noteService.archieveNote(this.note).subscribe((response:any)=>{
+      console.log(response);
+      
+      if(this.note.isArchieved==true){
+        this.snackBar.open("unArchieve","OK",{duration:4000});
+      }
+     else if(this.note.isPinned==true){
+        this.snackBar.open("Note Archieved and unpinned","OK",{duration:4000});
+      }
+      else{
+        this.snackBar.open("Note Archived", "OK", { duration:4000});
+      }
+    },
+    error => {
+      this.snackBar.open("error in Note archieve operation", "OK", { duration: 400 });
+    });
+  }
 }
