@@ -14,6 +14,6 @@ export const environment = {
   pinNote:'/pin/',
   getPinNote:'/getPinned/',
   archieveNote:'/archieve/',
-  getArchieveNote:'/getArchieve/',
-  getTrashNotes:'/getTrashed'
+  getArchieveNote:'/getArchieve',
+  getTrashNotes:'/getTrashed/'
 };

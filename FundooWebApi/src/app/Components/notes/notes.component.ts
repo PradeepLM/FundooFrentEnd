@@ -29,7 +29,7 @@ export class NotesComponent implements OnInit {
       if (this.param == "archive") {
         this.getArchieveNote();
       } 
-      else  if (this.param == "trash") {
+      else  if(this.param == "trash") {
         this.getTrashNote();
       }
       else{
@@ -59,42 +59,33 @@ export class NotesComponent implements OnInit {
     this.trash=true;
     this.noteService.getAllNote().subscribe((response:any)=>{
       this.notes=response.list;
-    
-      
-      
       this.setnotes();
     })
     this.noteService.getPinnedAllNote().subscribe((data)=>{
       this.pinnotes=data.list;
-    
-      
-      
       this.setpinnotes();
     })
   }
 
   public getArchieveNote(){
-    console.log('hubjbjb');
-    
     this.trash=false;
     this.noteService.getArchieveNote().subscribe(
       (response:any) => {
-        console.log('lp');
-        
         this.archievenotes = response.list;
         console.log(response.list);
         console.log(this.archievenotes);
-        
-        
         this.setarchievenotes();
-    })
+    })  
   }
 
   public getTrashNote(){
     this.trash=false;
-    this.noteservice.gettrashedNote().subscribe(
-      (data) => {
-        this.trashednotes = data.note;
+    console.log('thre',this.trash);
+    this.noteService.getTrashedNote().subscribe(
+      (response:any) => {
+        console.log('ALL THE BEST');
+        this.trashednotes = response.list;
+        console.log(response.list);
         this.setTrashednotes();
     })
   }

@@ -49,11 +49,15 @@ export class DisplaynotesComponent implements OnInit {
   public getArchieveNote(){
     this.trash=false;
     this.archieve=true;
-    this.notes=this.getNotes.getarchieveNotesList()
+    this.notes=this.getNotes.getarchieveNotesList();
     console.log(this.notes);
     
   }
-
+  getTrashNote(){
+    this.trash=true;
+    this.archieve=false;
+    this.notes=this.getNotes.getTrashedNotesList();
+  }
   
 
 }

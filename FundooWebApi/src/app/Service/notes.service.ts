@@ -18,7 +18,7 @@ const httpOptions =
 export class NotesService {
     
 
-   private notesApiURL=environment.notesApiURL;
+  private notesApiURL=environment.notesApiURL;
   private Title=new Subject<any>();
   private token=(localStorage.token)
   private httpOptions={headers:new HttpHeaders({'content-type':'application/json'})};
@@ -27,10 +27,8 @@ export class NotesService {
   constructor( private httpService:HttpService) { }
 
   createNotes(note:any):Observable<any>
-  {
-    
-    return this.httpService.post(this.notesApiURL+environment.createnote,note,httpOptions);
-    
+  { 
+    return this.httpService.post(this.notesApiURL+environment.createnote,note,httpOptions); 
   }
 
   getAllNote(): Observable<any> { 
@@ -39,7 +37,6 @@ export class NotesService {
 
 pinNote(note:any): Observable<any> { 
   return this.httpService.get(this.notesApiURL+environment.pinNote+note.id,{headers:new HttpHeaders({'token':this.token})});
-
 }
 
 getPinnedAllNote(): Observable<any> { 
@@ -49,6 +46,11 @@ getPinnedAllNote(): Observable<any> {
 
 getArchieveNote(): Observable<any> { 
   return this.httpService.get(this.notesApiURL+environment.getArchieveNote,{headers:new HttpHeaders({'token':this.token})});
+}
+
+getTrashedNote(): Observable<any> {  
+  return this.httpService.get(this.notesApiURL+environment.getTrashNotes,{headers:new HttpHeaders({'token':this.token})});
 
 }
+
 }
