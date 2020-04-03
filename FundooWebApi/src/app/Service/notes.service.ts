@@ -53,11 +53,12 @@ getTrashedNote(): Observable<any> {
 }
 
 archieveNote(note:any): Observable<any> { 
-
   return this.httpService.put(this.notesApiURL+environment.archieveNote+note.id,{},{headers:new HttpHeaders({'token':this.token})});
-
-  
-
 }
+
+colorNote(note:any,color:String): Observable<any> { 
+  return this.httpService.post(this.notesApiURL+environment.addcolor+note.id+'?color='+color,{},{headers:new HttpHeaders({'token':this.token})});  
+}
+
 
 }

@@ -27,7 +27,8 @@ const routes: Routes = [
   {path:'displaynotes',component:DisplaynotesComponent},
   {path:'pinnotes',component:PinnotesComponent},
   {path:'icons',component:IconsComponent},
-  {path:'archieve',component:ArchieveComponent}
+  {path:'archieve',component:ArchieveComponent},
+ 
   ]},
 ];
 

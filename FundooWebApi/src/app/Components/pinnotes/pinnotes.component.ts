@@ -16,9 +16,10 @@ export class PinnotesComponent implements OnInit {
   constructor(private noteservice:NotesService,private matsnacakBar:MatSnackBar) { }
   ngOnInit(): void {
   }
+
+
   pinnedNote() {
     console.log(this.note.id);
-    
        this.noteservice.pinNote(this.note.id).subscribe(response => {
       if (this.note.isPinned) {
         this.isPinned = false;

@@ -15,5 +15,6 @@ export const environment = {
   getPinNote:'/getPinned/',
   archieveNote:'/archieve/',
   getArchieveNote:'/getArchieve',
-  getTrashNotes:'/getTrashed/'
+  getTrashNotes:'/getTrashed/',
+  addcolor:'/addcolor'
 };

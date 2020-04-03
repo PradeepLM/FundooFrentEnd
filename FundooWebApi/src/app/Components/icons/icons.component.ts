@@ -20,7 +20,7 @@ export class IconsComponent implements OnInit {
   public archiveButton(){
     console.log('wewewewe',this.id);
     this.noteService.archieveNote(this.note).subscribe((response:any)=>{
-      console.log(response);
+      console.log(response,'zzz');
       
       if(this.note.isArchieved==true){
         this.snackBar.open("unArchieve","OK",{duration:4000});
@@ -36,4 +36,41 @@ export class IconsComponent implements OnInit {
       this.snackBar.open("error in Note archieve operation", "OK", { duration: 400 });
     });
   }
+
+
+  setColor(color){
+    this.noteService.colorNote(this.note,color).subscribe((response:any)=>{
+
+    })
+  }
+  
+
+  arrayOfColors = [
+    [
+      { color: "white", name: "white" },
+      { color: "red", name: "red" },
+      { color: "rgb(255, 153, 0)", name: "orange" },
+      { color: "rgb(200, 232, 104)", name: "yellow" },
+    ],
+    [
+      
+      { color: "rgb(97, 191, 82)", name: "green" },
+      {color:"rgb(185, 247, 238)",name:"teal"},
+      { color: "rgb(153, 221, 255)", name: "light blue" },
+      { color: "darkblue", name: "darkblue" },
+    ],
+    [
+      { color: "purple", name: "purple" },
+      { color: "deeppink", name: "pink" },
+      { color: " brown", name: "brown" },
+      { color: "slategray", name: "grey" },
+
+    ]
+
+  ]
+
 }
+
+
+
+
