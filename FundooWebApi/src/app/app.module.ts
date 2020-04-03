@@ -26,6 +26,8 @@ import { IconsComponent } from './Components/icons/icons.component';
 import { PinnotesComponent } from './Components/pinnotes/pinnotes.component';
 import { ArchieveComponent } from './Components/archieve/archieve.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -43,6 +45,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     IconsComponent,
     PinnotesComponent,
     ArchieveComponent,
+    
   
   ],
   imports: [
@@ -61,7 +64,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatDividerModule,
     MatDialogModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatMenuModule,
+    MatTooltipModule
     
     
     

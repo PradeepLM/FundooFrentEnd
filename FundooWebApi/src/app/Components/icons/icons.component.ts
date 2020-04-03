@@ -36,21 +36,20 @@ export class IconsComponent implements OnInit {
 
 
   setColor(color){
-    this.noteService.colorNote(this.note,color).subscribe((response:any)=>{
-
+    this.noteService.colorNote(this.note.id,color).subscribe((response:any)=>{
+      this.snackBar.open("color changed", "OK"),{duration:4000}
     })
   }
   
 
   arrayOfColors = [
     [
-      { color: "white", name: "white" },
-      { color: "red", name: "red" },
+      { color: "rgb(255, 179, 255)", name: "pink" },
+      { color: "rgb(255, 255, 128)", name: "darkGolden" },
       { color: "rgb(255, 153, 0)", name: "orange" },
       { color: "rgb(200, 232, 104)", name: "yellow" },
     ],
     [
-      
       { color: "rgb(97, 191, 82)", name: "green" },
       {color:"rgb(185, 247, 238)",name:"teal"},
       { color: "rgb(153, 221, 255)", name: "light blue" },
@@ -58,14 +57,11 @@ export class IconsComponent implements OnInit {
     ],
     [
       { color: "purple", name: "purple" },
-      { color: "deeppink", name: "pink" },
+      { color: "red", name: "red" },
       { color: " brown", name: "brown" },
       { color: "slategray", name: "grey" },
-
     ]
-
   ]
-
 }
 
 
