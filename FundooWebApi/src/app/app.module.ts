@@ -28,6 +28,7 @@ import { ArchieveComponent } from './Components/archieve/archieve.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { SearchnotePipe } from './pipe/searchnote.pipe';
 
 
 
@@ -45,6 +46,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     IconsComponent,
     PinnotesComponent,
     ArchieveComponent,
+    SearchnotePipe,
     
   
   ],
