@@ -11,17 +11,14 @@ import { Notes } from 'src/app/Model/notes.model';
 export class IconsComponent implements OnInit {
   @Input() note: Notes;
   id: number;
-  isArchieved: boolean = false;
+  //isArchieved: boolean = false;
   constructor(private noteService:NotesService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
   public archiveButton(){
-    console.log('wewewewe',this.id);
-    this.noteService.archieveNote(this.note).subscribe((response:any)=>{
-      console.log(response,'zzz');
-      
+    this.noteService.archieveNote(this.note).subscribe((response:any)=>{      
       if(this.note.isArchieved==true){
         this.snackBar.open("unArchieve","OK",{duration:4000});
       }

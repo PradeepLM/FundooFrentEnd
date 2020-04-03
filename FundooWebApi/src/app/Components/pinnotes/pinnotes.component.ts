@@ -22,7 +22,7 @@ export class PinnotesComponent implements OnInit {
     console.log(this.note.id);
        this.noteservice.pinNote(this.note.id).subscribe(response => {
       if (this.note.isPinned) {
-        this.isPinned = false;
+        this.isPinned = true;
         this.matsnacakBar.open("Note unPinned Successfully", 'Ok', { duration: 3000 }); 
       }
       else if (!this.note.isPinned) {

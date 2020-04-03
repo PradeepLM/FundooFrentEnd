@@ -8,9 +8,23 @@
     <span class="material-icons"> person_add</span> 
 </button>
 
+<div [matMenuTriggerFor]="colorlist" matTooltip="Add Color">
 <button mat-icon-button>
     <span class="material-icons">color_lens</span>        
 </button>
+
+<mat-menu #colorlist="matMenu" [overlapTrigger]="false">
+    <ng-template matMenuContent>
+        <div>
+            <div fxLayout="row" fxLayoutGap="10px" style="margin-top: 1px" *ngFor="let colors of arrayOfColors">
+                <div *ngFor="let color of colors">
+                    <button [ngStyle]="{ 'background-color': color.color }"(click)="setColor((color.color)) "
+                        matTooltip="{{ color.name }}" mat-mini-fab></button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</mat-menu>
 
 <button mat-icon-button>
     <span class="material-icons">insert_photo</span>
