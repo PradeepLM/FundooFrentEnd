@@ -21,6 +21,9 @@ export class DisplaynotesComponent implements OnInit {
   unpinnotes:Notes[];
   trash:boolean=false;
   archieve:boolean=false;
+  searchnote:any;
+  searchNotes:boolean;
+
   constructor(private formBuilder: FormBuilder,  private getNotes:GetnotesService, private matSnackBar: MatSnackBar, private router: Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -40,10 +43,9 @@ export class DisplaynotesComponent implements OnInit {
   this.trash=false;
   this.archieve=false;
   this.notes = this.getNotes.getNotesList();
-  console.log(this.notes);
-  
+
   this.pinnotes = this.getNotes.getPinNotesList();
-  console.log(this.pinnotes);
+  
   
   }
   public getArchieveNote(){
@@ -58,6 +60,16 @@ export class DisplaynotesComponent implements OnInit {
     this.archieve=false;
     this.notes=this.getNotes.getTrashedNotesList();
   }
-  
+  getSearchNoteData(){
+    this.noteService.getSearchNoteData().subscribe((message)=>{
+      console.log("search data",message.notes);
+        this.searchnote=message.notes;
+        this.searchNotes=true;
+        if(message.notes==""){
+          this.searchNotes=false;
+        }
+    });
+  }
+
 
 }

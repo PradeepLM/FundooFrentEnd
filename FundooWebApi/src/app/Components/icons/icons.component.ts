@@ -36,7 +36,11 @@ export class IconsComponent implements OnInit {
 
 
   setColor(color){
+    console.log(this.note,'coloer-s-s--s-');
+    
     this.noteService.colorNote(this.note.id,color).subscribe((response:any)=>{
+      console.log('dmdmdmdmdm');
+      
       this.snackBar.open("color changed", "OK"),{duration:4000}
     })
   }

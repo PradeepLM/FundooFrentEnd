@@ -20,7 +20,8 @@ export class NotesService {
 
   private notesApiURL=environment.notesApiURL;
   private Title=new Subject<any>();
-  private token=(localStorage.token)
+  private token=(localStorage.token);
+  private searchNoteData=new Subject<any>();
   private httpOptions={headers:new HttpHeaders({'content-type':'application/json'})};
   
   
@@ -57,7 +58,14 @@ archieveNote(note:any): Observable<any> {
 }
 
 colorNote(note:any,color:String): Observable<any> { 
-  return this.httpService.post(this.notesApiURL+environment.addcolor+note.id+'?color='+color,{},{headers:new HttpHeaders({'token':this.token})});  
+  console.log('ddddeded',this.token);
+  return this.httpService.post(this.notesApiURL+environment.addcolor+note.id+'?color'+color,{},{headers:new HttpHeaders({'token':this.token})});  
+}
+setSearchNoteData(message:any){
+  return this.searchNoteData.next({notes:message});
+}
+getSearchNoteData():Observable<any>{
+  return this.searchNoteData.asObservable();
 }
 
 
