@@ -29,6 +29,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { SearchnotePipe } from './pipe/searchnote.pipe';
+import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
 
 
 
@@ -47,6 +48,7 @@ import { SearchnotePipe } from './pipe/searchnote.pipe';
     PinnotesComponent,
     ArchieveComponent,
     SearchnotePipe,
+    UpdatenoteComponent,
     
   
   ],
