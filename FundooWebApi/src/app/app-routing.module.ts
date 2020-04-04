@@ -11,6 +11,7 @@ import { NotesComponent } from './Components/notes/notes.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { PinnotesComponent } from './Components/pinnotes/pinnotes.component';
 import { ArchieveComponent } from './Components/archieve/archieve.component';
+import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:'pinnotes',component:PinnotesComponent},
   {path:'icons',component:IconsComponent},
   {path:'archieve',component:ArchieveComponent},
+  {path:'updatenote',component:UpdatenoteComponent}
  
   ]},
 ];
