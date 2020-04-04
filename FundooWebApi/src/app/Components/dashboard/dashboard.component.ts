@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
   searchNote() {
-    console.log();
+    console.log('wawawawa');
     this.noteService.setSearchNoteData(this.title);
   }
 

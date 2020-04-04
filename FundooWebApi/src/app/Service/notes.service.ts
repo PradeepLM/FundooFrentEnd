@@ -37,7 +37,7 @@ export class NotesService {
 }
 
 pinNote(note:any): Observable<any> { 
-  return this.httpService.get(this.notesApiURL+environment.pinNote+note.id,{headers:new HttpHeaders({'token':this.token})});
+  return this.httpService.post(this.notesApiURL+environment.pinNote+note.id,{},{headers:new HttpHeaders({'token':this.token})});
 }
 
 getPinnedAllNote(): Observable<any> { 
@@ -59,9 +59,12 @@ archieveNote(note:any): Observable<any> {
 
 colorNote(note:any,color:String): Observable<any> { 
   console.log('ddddeded',this.token);
-  return this.httpService.post(this.notesApiURL+environment.addcolor+note.id+'?color'+color,{},{headers:new HttpHeaders({'token':this.token})});  
+  return this.httpService.post(this.notesApiURL+environment.addcolor+note.id+'?color='+color,{},{headers:new HttpHeaders({'token':this.token})});  
 }
+
+
 setSearchNoteData(message:any){
+  console.log('searching',this.Title);
   return this.searchNoteData.next({notes:message});
 }
 getSearchNoteData():Observable<any>{

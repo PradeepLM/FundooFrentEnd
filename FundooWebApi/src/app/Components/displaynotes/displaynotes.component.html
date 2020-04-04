@@ -7,7 +7,7 @@
         <mat-card class="getNotesMat"  [ngStyle]="{'background':note.colour}" >
             <div class="matdiv">
                 <div class="pinNotes">
-                    <button *ngIf="!isPinned" mat-icon-button matTooltip="pin" class="button">
+                    <button *ngIf="!isPinned" mat-icon-button matTooltip="pin" class="button"(click)="unpin('note')">
                         <img class="image" style="border: none; width: 93%;" src="../../../assets/images/pinned.png" height="50%" id="imgRem">
                      </button>
                 </div>

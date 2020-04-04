@@ -24,7 +24,7 @@ export class DisplaynotesComponent implements OnInit {
   searchnote:any;
   searchNotes:boolean;
 
-  constructor(private formBuilder: FormBuilder,  private getNotes:GetnotesService, private matSnackBar: MatSnackBar, private router: Router,private route:ActivatedRoute) { }
+  constructor(private formBuilder: FormBuilder,private noteService:NotesService,  private getNotes:GetnotesService, private matSnackBar: MatSnackBar, private router: Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -61,15 +61,22 @@ export class DisplaynotesComponent implements OnInit {
     this.notes=this.getNotes.getTrashedNotesList();
   }
   getSearchNoteData(){
-    this.noteService.getSearchNoteData().subscribe((message)=>{
+    this.noteService.getSearchNoteData().subscribe((message:any)=>{
       console.log("search data",message.notes);
         this.searchnote=message.notes;
         this.searchNotes=true;
         if(message.notes==""){
           this.searchNotes=false;
         }
-    });
+    });   
   }
-
-
+unpin(note:any){
+  console.log(this.note.id)
+  this.noteService.pinNote(this.note).subscribe(response => {
+    
+  
+      this.matsnacakBar.open("Note Pinned Successfully", 'Ok', { duration:3000 });
+    
+})
+}
 }

@@ -16,5 +16,5 @@ export const environment = {
   archieveNote:'/archieve/',
   getArchieveNote:'/getArchieve',
   getTrashNotes:'/getTrashed/',
-  addcolor:'/addcolor'
+  addcolor:'/addcolor/'
 };
