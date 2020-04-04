@@ -71,5 +71,8 @@ getSearchNoteData():Observable<any>{
   return this.searchNoteData.asObservable();
 }
 
+updateNote(user: any): Observable<any> { 
+  return this.httpService.put(this.notesApiURL+environment.updateNote,user,{headers:new HttpHeaders({'token':this.token})});
+}
 
 }

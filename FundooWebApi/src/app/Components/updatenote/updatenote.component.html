@@ -1,12 +1,12 @@
 <div style="height: 13em; width: 100%; padding: 0px 0px;margin: 0px 0px;" mat-dialog-content fxLayout="column" fxFlex>
-    <textarea id="title"  style="border: none;" matInput type="text" class="input sizeof" placeholder="Title"></textarea>
-    <textarea id="desc" style="border: none; " matInput type="text" class="input sizeof" placeholder="Take a note" ></textarea>
+    <textarea id="title" [(ngModel)]="note.title" style="border: none;" matInput type="text" class="input sizeof" placeholder="Title"></textarea>
+    <textarea id="desc" style="border: none; " matInput type="text" class="input sizeof" placeholder="Take a note" [(ngModel)]="note.description"></textarea>
     <div class="lastEdit">
-        <span></span>
+        <span>Last Edit:{{note.updaTimestamp}</span>
     </div>
     <div class="icon" mat-dialog-actions>
         <app-icons class="app-note-list sizeof"></app-icons>
-        <div class="div-button" button >
+        <div class="div-button" button (click)="onSubmit()">
             <button style="border: none; padding-right: 45px;">Close</button>
         </div>
     </div>
