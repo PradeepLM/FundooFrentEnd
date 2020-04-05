@@ -25,7 +25,7 @@ export class UpdatenoteComponent implements OnInit {
         this.snackbar.open("Note Updated SuccessFully","ok",{duration:5000});
     },
     (error:any)=>{
-      this.snackbar.open("Failed","ok",{duration:5000});
+     
     });
   }
 }

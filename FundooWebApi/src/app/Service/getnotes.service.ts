@@ -40,6 +40,8 @@ export class GetnotesService {
   }
 
   setSearchNoteData(message:any){
+    console.log('===============');
+    
     return this.searchNoteData.next({notes:message});
   }
   getSearchNoteData():Observable<any>{

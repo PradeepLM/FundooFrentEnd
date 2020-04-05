@@ -6,6 +6,7 @@ import { NotesService } from 'src/app/Service/notes.service';
 import { Notes } from 'src/app/Model/notes.model';
 import { GetnotesService } from 'src/app/Service/getnotes.service';
 import { UpdatenoteComponent } from '../updatenote/updatenote.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-displaynotes',
@@ -25,7 +26,7 @@ export class DisplaynotesComponent implements OnInit {
   searchnote:any;
   searchNotes:boolean;
 
-  constructor(private formBuilder: FormBuilder,private noteService:NotesService,  private getNotes:GetnotesService, private matSnackBar: MatSnackBar, private router: Router,private route:ActivatedRoute) { }
+  constructor(private formBuilder: FormBuilder,private noteService:NotesService,  private getNotes:GetnotesService, private matSnackBar: MatSnackBar, private router: Router,private route:ActivatedRoute,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -39,6 +40,7 @@ export class DisplaynotesComponent implements OnInit {
       this.displayNotes();
       }
     });
+    this.getSearchNoteData();
   }
  public displayNotes(){
   this.trash=false;
@@ -72,6 +74,7 @@ export class DisplaynotesComponent implements OnInit {
     });
   }
   getSearchNoteData(){
+
     this.getNotes.getSearchNoteData().subscribe((message:any)=>{
       console.log("search data",message.notes);
         this.searchnote=message.notes;

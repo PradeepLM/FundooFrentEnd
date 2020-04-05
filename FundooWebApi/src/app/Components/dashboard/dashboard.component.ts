@@ -30,6 +30,7 @@ export class DashboardComponent implements OnInit {
   searchNote() {
     console.log('wawawawa');
     this.getNote.setSearchNoteData(this.title);
+    console.log('hyhy');
   }
 
   getlabels(){
