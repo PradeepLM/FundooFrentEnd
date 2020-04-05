@@ -60,7 +60,13 @@
       
       <diV class="labeldiv">
         <mat-label class="labelmat">LABELS</mat-label>
-        
+        <button *ngFor="let label of labels"  mat-button class="labelbutton">
+         <div class="icondiv">
+          <img src="../../../assets/images/label.png"  style="margin-right: 10%;">
+         </div>
+           <span> {{label.name}}  </span>
+        </button>
+
         <button mat-button class="labelbutton">
           <div class="icondiv">
             <mat-icon>edit</mat-icon>

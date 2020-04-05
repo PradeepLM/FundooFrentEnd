@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { NotesService } from 'src/app/Service/notes.service';
 import { Notes } from 'src/app/Model/notes.model';
 import { GetnotesService } from 'src/app/Service/getnotes.service';
+import { LabelService } from 'src/app/Service/label.service';
+import { Label } from 'src/app/Model/label.model';
 
 
 @Component({
@@ -15,8 +17,9 @@ export class DashboardComponent implements OnInit {
   notes: Notes[];
   title: String;
   description: String;
+  labels: Label[];
 
-  constructor(private router:Router,private getNote:GetnotesService) { }
+  constructor(private router:Router,private getNote:GetnotesService,private labelService:LabelService) { }
 
   ngOnInit(): void {
   }
