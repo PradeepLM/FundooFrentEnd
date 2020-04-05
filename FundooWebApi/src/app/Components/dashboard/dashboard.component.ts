@@ -29,5 +29,13 @@ export class DashboardComponent implements OnInit {
     this.getNote.setSearchNoteData(this.title);
   }
 
+  getlabels(){
+    this.labelService.getAlllabel().subscribe((data) => {
+        console.log(data.labels)
+        this.labels = data.labels;
+        console.log(this.labels)
+    })
+  }
+
 
 }

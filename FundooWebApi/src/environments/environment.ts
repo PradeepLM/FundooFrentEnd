@@ -16,7 +16,11 @@ export const environment = {
   archieveNote:'/archieve/',
   getArchieveNote:'/getArchieve',
   getTrashNotes:'/getTrashed/',
+
   addcolor:'/addcolor/',
-  updateNote:'/update'
+  updateNote:'/update',
+
+  labelurl:'http://localhost:8080/label',
+  getalllabels:'/getLabel'
 
 };
