@@ -5,6 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { NotesService } from 'src/app/Service/notes.service';
 import { Notes } from 'src/app/Model/notes.model';
 import { GetnotesService } from 'src/app/Service/getnotes.service';
+import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 
 @Component({
   selector: 'app-displaynotes',
@@ -60,8 +61,18 @@ export class DisplaynotesComponent implements OnInit {
     this.archieve=false;
     this.notes=this.getNotes.getTrashedNotesList();
   }
+  openDialog(note): void {
+    const dialogRef = this.dialog.open(UpdatenoteComponent, {
+      width: 'auto',
+      panelClass: 'custom-dialog-container',
+      data: { note }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
   getSearchNoteData(){
-    this.noteService.getSearchNoteData().subscribe((message:any)=>{
+    this.getNotes.getSearchNoteData().subscribe((message:any)=>{
       console.log("search data",message.notes);
         this.searchnote=message.notes;
         this.searchNotes=true;

@@ -58,20 +58,14 @@ archieveNote(note:any): Observable<any> {
 }
 
 colorNote(note:any,color:String): Observable<any> { 
-  console.log('ddddeded',this.token);
   return this.httpService.post(this.notesApiURL+environment.addcolor+note.id+'?color='+color,{},{headers:new HttpHeaders({'token':this.token})});  
 }
 
 
-setSearchNoteData(message:any){
-  console.log('searching',this.Title);
-  return this.searchNoteData.next({notes:message});
-}
-getSearchNoteData():Observable<any>{
-  return this.searchNoteData.asObservable();
-}
+
 
 updateNote(user: any): Observable<any> { 
+  console.log(this.token,'ffffffffffffffffffffffllll');
   return this.httpService.put(this.notesApiURL+environment.updateNote,user,{headers:new HttpHeaders({'token':this.token})});
 }
 

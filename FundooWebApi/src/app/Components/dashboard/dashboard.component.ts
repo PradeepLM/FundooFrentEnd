@@ -1,6 +1,8 @@
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { NotesService } from 'src/app/Service/notes.service';
+import { Notes } from 'src/app/Model/notes.model';
+import { GetnotesService } from 'src/app/Service/getnotes.service';
 
 
 @Component({
@@ -10,10 +12,11 @@ import { NotesService } from 'src/app/Service/notes.service';
 })
 export class DashboardComponent implements OnInit {
   @Output() toggleEvent = new EventEmitter<boolean>();
+  notes: Notes[];
   title: String;
   description: String;
 
-  constructor(private router:Router,private noteService:NotesService) { }
+  constructor(private router:Router,private getNote:GetnotesService) { }
 
   ngOnInit(): void {
   }
@@ -23,7 +26,7 @@ export class DashboardComponent implements OnInit {
   }
   searchNote() {
     console.log('wawawawa');
-    this.noteService.setSearchNoteData(this.title);
+    this.getNote.setSearchNoteData(this.title);
   }
 
 

@@ -12,7 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ResetpasswordComponent } from './Components/resetpassword/resetpassword.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -24,7 +24,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { NotesComponent } from './Components/notes/notes.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { PinnotesComponent } from './Components/pinnotes/pinnotes.component';
-import { ArchieveComponent } from './Components/archieve/archieve.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -46,7 +45,6 @@ import { UpdatenoteComponent } from './Components/updatenote/updatenote.componen
     NotesComponent,
     IconsComponent,
     PinnotesComponent,
-    ArchieveComponent,
     SearchnotePipe,
     UpdatenoteComponent,
     
@@ -76,7 +74,7 @@ import { UpdatenoteComponent } from './Components/updatenote/updatenote.componen
     
     
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

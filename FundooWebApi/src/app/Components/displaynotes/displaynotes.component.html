@@ -11,8 +11,8 @@
                         <img class="image" style="border: none; width: 93%;" src="../../../assets/images/pinned.png" height="50%" id="imgRem">
                      </button>
                 </div>
-                <mat-card-title >  {{note.title}}</mat-card-title><br>
-                    <mat-card-content > {{note.description}} </mat-card-content>
+                <mat-card-title (click)="openDialog(note)">  {{note.title}}</mat-card-title><br>
+                    <mat-card-content (click)="openDialog(note)"> {{note.description}} </mat-card-content>
             </div>
             <app-icons [note]='note'></app-icons>
         </mat-card>
@@ -31,8 +31,8 @@
                 <div class="pinNotes">
                     <app-pinnotes [note]="note" ></app-pinnotes>
                 </div>
-            <mat-card-title>{{note.title}}</mat-card-title> <br>
-            <mat-card-content > {{note.description}} </mat-card-content> 
+            <mat-card-title (click)="openDialog(note)">{{note.title}}</mat-card-title> <br>
+            <mat-card-content (click)="openDialog(note)"> {{note.description}} </mat-card-content> 
             </div>
             <app-icons [note]='note' ></app-icons>
         </mat-card>

@@ -14,4 +14,4 @@ export class SearchnotePipe implements PipeTransform {
       notes.title.toLowerCase().indexOf(searchTerm.toLowerCase())!=-1);
   }
 
-}
+}       

@@ -10,7 +10,6 @@ import { DisplaynotesComponent } from './Components/displaynotes/displaynotes.co
 import { NotesComponent } from './Components/notes/notes.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { PinnotesComponent } from './Components/pinnotes/pinnotes.component';
-import { ArchieveComponent } from './Components/archieve/archieve.component';
 import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
 
 
@@ -28,7 +27,6 @@ const routes: Routes = [
   {path:'displaynotes',component:DisplaynotesComponent},
   {path:'pinnotes',component:PinnotesComponent},
   {path:'icons',component:IconsComponent},
-  {path:'archieve',component:ArchieveComponent},
   {path:'updatenote',component:UpdatenoteComponent}
  
   ]},
@@ -39,3 +37,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+export const routingComponents=[LoginComponent,RegistrationComponent,ForgotpasswordComponent] 
