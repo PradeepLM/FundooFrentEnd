@@ -89,7 +89,7 @@ unpin(note:any){
   this.noteService.pinNote(this.note).subscribe(response => {
     
   
-      this.matsnacakBar.open("Note Pinned Successfully", 'Ok', { duration:3000 });
+      this.matsnacakBar.open("Note un Pinned Successfully", 'Ok', { duration:3000 });
     
 })
 }

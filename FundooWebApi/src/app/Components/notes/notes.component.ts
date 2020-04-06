@@ -3,6 +3,7 @@ import { Notes } from 'src/app/Model/notes.model';
 import { NotesService } from 'src/app/Service/notes.service';
 import { GetnotesService } from 'src/app/Service/getnotes.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LabelService } from 'src/app/Service/label.service';
 
 @Component({
   selector: 'app-notes',
@@ -21,7 +22,7 @@ export class NotesComponent implements OnInit {
   trashednotes:Notes[];
   trash:boolean=false;  
 
-  constructor(private noteService:NotesService,private getNotes:GetnotesService,private router:Router,private route:ActivatedRoute) { }
+  constructor(private noteService:NotesService,private getNotes:GetnotesService,private router:Router,private route:ActivatedRoute,private labelService:LabelService) { }
 
   ngOnInit(): void { 
     this.route.queryParams.subscribe(params => {
@@ -31,6 +32,10 @@ export class NotesComponent implements OnInit {
       } 
       else  if(this.param == "trash") {
         this.getTrashNote();
+      }
+      else if (this.param == "labels") {
+        console.log("elseif labels");
+        this.getLabelsNotes();
       }
       else{
       this.displayNotes();
@@ -89,5 +94,7 @@ export class NotesComponent implements OnInit {
         this.setTrashednotes();
     })
   }
+
+ 
 
 }

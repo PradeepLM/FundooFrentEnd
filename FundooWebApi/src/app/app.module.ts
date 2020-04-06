@@ -29,6 +29,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { SearchnotePipe } from './pipe/searchnote.pipe';
 import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
+import { EditlabelComponent } from './Components/editlabel/editlabel.component';
 
 
 
@@ -47,6 +48,7 @@ import { UpdatenoteComponent } from './Components/updatenote/updatenote.componen
     PinnotesComponent,
     SearchnotePipe,
     UpdatenoteComponent,
+    EditlabelComponent,
     
   
   ],

@@ -32,6 +32,9 @@
         <button mat-icon-button class="apps" >
           <mat-icon>apps</mat-icon>
         </button>
+        <button mat-icon-button class="apps" >
+          <mat-icon>person</mat-icon>
+        </button>
       </div>
      
       </mat-toolbar-row>
@@ -48,7 +51,8 @@
           </div>
           <span > Notes</span>
         </button></a>
-    
+        
+        
         <button mat-button class="remindbutton">
           <div class="icondiv">
             <mat-icon>notifications</mat-icon>
@@ -62,10 +66,13 @@
         <!-- <mat-label class="labelmat">LABELS</mat-label> -->
         <button *ngFor="let label of labels"  mat-button class="labelbutton">
          <div class="icondiv">
-          <img src="../../../assets/images/label.png"  style="margin-right: 10%;">
-         </div>
-           <span> {{label.name}}  </span>
+          <img src="../../../assets/images/label.png"  style="width: 10%; height: 10%; float: left;">
+          <span > {{label.name}}  </span> 
+        </div>
+          
         </button>
+
+        
 
         <button mat-button class="labelbutton">
           <div class="icondiv">

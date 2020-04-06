@@ -21,6 +21,7 @@ export const environment = {
   updateNote:'/update',
 
   labelurl:'http://localhost:8080/label',
-  getalllabels:'/getLabel'
+  getalllabels:'/getLabel',
+  getLabels:'note/lable',
 
 };
