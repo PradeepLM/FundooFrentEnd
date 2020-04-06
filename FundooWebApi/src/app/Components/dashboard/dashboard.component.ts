@@ -6,6 +6,7 @@ import { GetnotesService } from 'src/app/Service/getnotes.service';
 import { LabelService } from 'src/app/Service/label.service';
 import { Label } from 'src/app/Model/label.model';
 import { MatDialog } from '@angular/material/dialog';
+import { EditlabelComponent } from '../editlabel/editlabel.component';
 
 
 @Component({
@@ -40,6 +41,17 @@ export class DashboardComponent implements OnInit {
         this.labels = response.list;
         console.log(response.label,'saaS'); 
     })
+  }
+  
+  openDialog(labels:Label[]): void {
+    const dialogRef = this.dialog.open(EditlabelComponent, {
+      width: '380px',
+      height: 'auto',
+      data: { labels }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
   
 
