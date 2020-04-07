@@ -10,6 +10,7 @@ import { Observable, Subject } from 'rxjs';
 export class LabelService {
   private labelId = new Subject<any>();
   private _autoRefresh$ = new Subject();
+  private labelList=new Subject<any>();
  
   private labelApiURL=environment.labelurl;
   private token=(localStorage.token)
@@ -35,6 +36,16 @@ export class LabelService {
   deleteLabel(label){
     return this.httpService.delete(this.labelApiURL+environment.deleteLabel+label.name,{headers:new HttpHeaders({'token':this.token})});
   }
+  addLabel(noteId:any,labelId){
+    return this.httpService.post(`${this.labelApiURL}/${environment.addLabel}?labelId=${labelId}&noteId=${noteId}`,{},{headers:new HttpHeaders().set('token',sessionStorage.token)});
+  }
+
+  setLabelList(message:any){
+    this.labelList.next({label:message});
+}
+getLabelList(){
+  return this.labelList.asObservable();
+} 
 
  
 }

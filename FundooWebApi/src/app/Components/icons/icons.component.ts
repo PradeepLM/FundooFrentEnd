@@ -81,6 +81,8 @@ export class IconsComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+
+  
 }
 
 

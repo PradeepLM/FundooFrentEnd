@@ -3,4 +3,5 @@ export class Label {
     name:string; 
     UserId:number; 
      id:number;
+     noteId:number;
 }
