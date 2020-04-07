@@ -30,6 +30,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { SearchnotePipe } from './pipe/searchnote.pipe';
 import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
 import { EditlabelComponent } from './Components/editlabel/editlabel.component';
+import { LabelComponent } from './Components/label/label.component';
 
 
 
@@ -49,6 +50,7 @@ import { EditlabelComponent } from './Components/editlabel/editlabel.component';
     SearchnotePipe,
     UpdatenoteComponent,
     EditlabelComponent,
+    LabelComponent,
     
   
   ],

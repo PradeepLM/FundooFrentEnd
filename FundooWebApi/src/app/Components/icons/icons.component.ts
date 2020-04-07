@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NotesService } from 'src/app/Service/notes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Notes } from 'src/app/Model/notes.model';
+import { MatDialog } from '@angular/material/dialog';
+import { LabelService } from 'src/app/Service/label.service';
 
 @Component({
   selector: 'app-icons',
@@ -11,8 +13,8 @@ import { Notes } from 'src/app/Model/notes.model';
 export class IconsComponent implements OnInit {
   @Input() note: Notes;
   id: number;
-  //isArchieved: boolean = false;
-  constructor(private noteService:NotesService,private snackBar:MatSnackBar) { }
+  isArchieved: boolean = false;
+  constructor(private noteService:NotesService,private snackBar:MatSnackBar,private dialog: MatDialog, private labelService: LabelService) { }
 
   ngOnInit(): void {
   }
@@ -66,6 +68,18 @@ export class IconsComponent implements OnInit {
       { color: "slategray", name: "grey" },
     ]
   ]
+
+  // openDialog(note): void {
+  //   console.log("note Id:" + note.id);
+  //   const dialogRef = this.dialog.open(LabelComponent, {
+  //     width: '250px',
+  //     height: 'auto',
+  //     data: { note }
+  //   });
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //   });
+  // }
 }
 
 
