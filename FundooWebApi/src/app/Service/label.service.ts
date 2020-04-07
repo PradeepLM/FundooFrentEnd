@@ -24,8 +24,13 @@ export class LabelService {
     return this.httpService.get(this.labelApiURL+environment.getalllabels,{headers:new HttpHeaders({'token':this.token})});
   }
   
+  getNotesByLabel(labelId){
+    return this.httpService.get(`${this.labelApiURL}/${environment.getNotesByLabelId}?labelId=${labelId}`,{headers:new HttpHeaders().set('token',sessionStorage.token)});
+  }
+
   createLabel(label){
     return this.httpService.post(this.labelApiURL+environment.createLabel,label,{headers:new HttpHeaders({'token':this.token})});
   }
+  
 
 }

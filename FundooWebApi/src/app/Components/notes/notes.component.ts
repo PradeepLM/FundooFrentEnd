@@ -33,10 +33,6 @@ export class NotesComponent implements OnInit {
       else  if(this.param == "trash") {
         this.getTrashNote();
       }
-      else if (this.param == "labels") {
-        console.log("elseif labels");
-        this.getLabelsNotes();
-      }
       else{
       this.displayNotes();
       }

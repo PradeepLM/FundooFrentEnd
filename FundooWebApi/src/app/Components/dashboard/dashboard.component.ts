@@ -42,7 +42,13 @@ export class DashboardComponent implements OnInit {
         console.log(response.label,'saaS'); 
     })
   }
-  
+  onCLickSetLabelId(labelId) {
+    console.log("dfdfdfd",labelId);
+    this.labelService.getNotesByLabel(labelId).subscribe((data)=>{
+          console.log(data);
+          
+    });
+  }
   openDialog(labels:Label[]): void {
     const dialogRef = this.dialog.open(EditlabelComponent, {
       width: '380px',

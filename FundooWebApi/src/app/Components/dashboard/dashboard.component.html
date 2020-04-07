@@ -63,20 +63,29 @@
       <mat-divider></mat-divider>
       
       <diV class="labeldiv">
-        <div *ngFor="let label of labels">
         <!-- <mat-label class="labelmat">LABELS</mat-label> -->
-        <button *ngFor="let label of labels"  mat-button class="labelbutton">
-          <a [routerLink]="['notes']" [queryParams]="{ page: 'labels' }"></a>
-         <div class="icondiv" style="text-decoration:none;">
-         <span> <img src="../../../assets/images/label.png"  style="height: 27px;padding-left: 30px; width: 30px;"  (click)="onCLickSetLabelId(label.labelId)"></span>
-         <span style=" padding-left: 30px; " (click)="onCLickSetLabelId(label.labelId)">{{label.name}}</span>
-        </div>
-      </a>
-        <!-- </button> -->
-      </diV>
+        
+        <button *ngFor="let label of labels" [routerLink]="['notes']" [queryParams]="{ page: 'labels' }" mat-button class="labelbutton">
+         <div class="icondiv">
+          <img src="../../../assets/images/label.png"  style="width: 10%; height: 10%; float: left;">
+          <span > {{label.name}}  </span>
+         </div>
+          
+        </button>
+
+        <!-- <div *ngFor="let label of labels">
+          <a [routerLink]="['notes']" [queryParams]="{ page: 'labels' }">
+            <div class="icondiv" >
+              <span ></span><img src="../../../assets/images/label-24px.svg" style="width: 10%; height: 10%; float: left;" ></span>
+              <span  >{{label.name}}</span>
+            </div>
+          </a>
+       
+      </div> -->
+      
         
 
-        <button mat-button class="labelbutton" (click)="openDialog(labels)">
+        <button mat-button class="labelbutton"(click)="openDialog(labels)">
           <div class="icondiv">
             <mat-icon>edit</mat-icon>
           </div>

@@ -24,6 +24,15 @@ export class EditlabelComponent implements OnInit {
   ngOnInit(): void {
   }
 
- 
+  onClickCreateLabel(InputLabel){
+    console.log(InputLabel,"label input");
+    let label={
+      "labelName":InputLabel
+    }
+      this.labelService.createLabel(label).subscribe((response)=>{
+        this.matSnackBar.open("Label Created","Ok",{duration:3000});
+      });
+  }
+
 
 }
