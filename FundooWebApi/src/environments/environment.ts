@@ -25,6 +25,7 @@ export const environment = {
   getLabels:'/note/lable',
   createLabel:'/create',
   getNotesByLabelId:'/note',
-  deleteLabel:'/delete'
+  deleteLabel:'/delete',
+  addLabel:'/addLabel'
 
 };

@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Notes } from 'src/app/Model/notes.model';
 import { MatDialog } from '@angular/material/dialog';
 import { LabelService } from 'src/app/Service/label.service';
+import { LabelComponent } from '../label/label.component';
 
 @Component({
   selector: 'app-icons',
@@ -69,17 +70,17 @@ export class IconsComponent implements OnInit {
     ]
   ]
 
-  // openDialog(note): void {
-  //   console.log("note Id:" + note.id);
-  //   const dialogRef = this.dialog.open(LabelComponent, {
-  //     width: '250px',
-  //     height: 'auto',
-  //     data: { note }
-  //   });
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-  //   });
-  // }
+  openDialog(note): void {
+    console.log("note Id:" + note.id);
+    const dialogRef = this.dialog.open(LabelComponent, {
+      width: '250px',
+      height: 'auto',
+      data: { note }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }
 
 
