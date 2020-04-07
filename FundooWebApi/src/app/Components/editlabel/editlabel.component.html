@@ -12,12 +12,12 @@
             <div style="display: flex; align-items: flex-start;"  (mouseover)="changeText=true" (mouseout)="changeText=false">
                 <img id="img" src="../../../assets/images/label-24px.svg" style="height: 30px;margin-left: 40px; width: 40px;">
             </div>
-            <div style="display: flex; justify-items: flex-start;" >
+            <div style="display: flex; justify-items: flex-start;" (mouseover)="changeText=true" (mouseout)="changeText=false">
                 <img id="img" class="img-style" src="../../../assets/images/delete.svg" style="height: 20px;margin-left: 40px; width: 20px;" matTooltip="Delete label">
             </div>
            
             <label mat-menu-item
-                style="display:inline; font-size: large; font-weight: bolder;"></label>
+                style="display:inline; font-size: large; font-weight: bolder;">{{label.name}}</label>
             <div class="img-edit">
                 <img  class="img-edit"  src="../../../assets/images/edit-24px.svg" style="height: 20px;margin-left: 40px; width: 20px;" 
                     matTooltip="edit label">
