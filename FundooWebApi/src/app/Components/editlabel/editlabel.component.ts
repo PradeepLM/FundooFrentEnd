@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./editlabel.component.scss']
 })
 export class EditlabelComponent implements OnInit {
-  labels:Label[];
+  labels:Label;
   changeText: boolean;
 
   constructor(public dialogRef: MatDialogRef<EditlabelComponent>,@Inject(MAT_DIALOG_DATA) public data:any,private labelService:LabelService,private matSnackBar:MatSnackBar) { 
@@ -30,8 +30,18 @@ export class EditlabelComponent implements OnInit {
       "labelName":InputLabel
     }
       this.labelService.createLabel(label).subscribe((response)=>{
+        console.log(response);
         this.matSnackBar.open("Label Created","Ok",{duration:3000});
       });
+  }
+
+  onClickDeleteLabel(label){
+    console.log(label);
+    
+    this.labelService.deleteLabel(label).subscribe((response)=>{
+      console.log(response);
+      this.matSnackBar.open("Label Deleted","Ok",{duration:3000});
+    });
   }
 
 

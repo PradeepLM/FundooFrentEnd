@@ -1,19 +1,20 @@
 <div>
     <div class="search-label">
         <div>
-            <input type="text" style="width: 280px; height: 30px;" placeholder="Create Label" >
+            <input type="text" style="width: 280px; height: 30px;" placeholder="Create Label" #labelInput
+            [(ngModel)]="labels.name">
         </div>
         <div>
-            <a><img id="img" style="height: 40px; width: 40px; padding-left: 10px;" src="../../../assets/images/icons8-add-64.png" matTooltip="Create Label"></a>
+            <a><img id="img" style="height: 40px; width: 40px; padding-left: 10px;" src="../../../assets/images/icons8-add-64.png" (click)="onClickCreateLabel(labelInput.value)"  matTooltip="Create Label"></a>
         </div>
     </div>
     <div class="label-list">
         <div *ngFor="let label of labels" style="display: flex; align-items: center; flex-direction: row;">
             <div style="display: flex; align-items: flex-start;"  (mouseover)="changeText=true" (mouseout)="changeText=false">
-                <img id="img" src="../../../assets/images/label-24px.svg" style="height: 30px;margin-left: 40px; width: 40px;">
+                <!-- <img id="img" src="../../../assets/images/label-24px.svg" style="height: 30px;margin-left: 40px; width: 40px;"> -->
             </div>
             <div style="display: flex; justify-items: flex-start;" (mouseover)="changeText=true" (mouseout)="changeText=false">
-                <img id="img" class="img-style" src="../../../assets/images/delete.svg" style="height: 20px;margin-left: 40px; width: 20px;" matTooltip="Delete label">
+                <img id="img" class="img-style" src="../../../assets/images/delete.svg" style="height: 20px;margin-left: 40px; width: 20px;"  (click)="onClickDeleteLabel(label.labelId)" matTooltip="Delete label">
             </div>
            
             <label mat-menu-item

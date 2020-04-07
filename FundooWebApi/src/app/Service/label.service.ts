@@ -31,6 +31,7 @@ export class LabelService {
   createLabel(label){
     return this.httpService.post(this.labelApiURL+environment.createLabel,label,{headers:new HttpHeaders({'token':this.token})});
   }
-  
-
+  deleteLabel(label){
+    return this.httpService.delete(this.labelApiURL+environment.deleteLabel+label.LabelId,{headers:new HttpHeaders({'token':this.token})});
+  }
 }

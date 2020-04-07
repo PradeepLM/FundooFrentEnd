@@ -65,7 +65,7 @@
       <diV class="labeldiv">
         <!-- <mat-label class="labelmat">LABELS</mat-label> -->
         
-        <button *ngFor="let label of labels" [routerLink]="['notes']" [queryParams]="{ page: 'labels' }" mat-button class="labelbutton">
+        <button *ngFor="let label of labels" [routerLink]="['notes']"  mat-button class="labelbutton">
          <div class="icondiv">
           <img src="../../../assets/images/label.png"  style="width: 10%; height: 10%; float: left;">
           <span > {{label.name}}  </span>

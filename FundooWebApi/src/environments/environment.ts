@@ -23,7 +23,8 @@ export const environment = {
   labelurl:'http://localhost:8080/label',
   getalllabels:'/getLabel',
   getLabels:'note/lable',
-  createLabel:'create',
-  getNotesByLabelId:'note'
+  createLabel:'/create',
+  getNotesByLabelId:'note',
+  deleteLabel:'/delete'
 
 };
