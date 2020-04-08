@@ -1,0 +1,13 @@
+<mat-card class="si">
+    <img style="padding-left: 85px;" class="size" src="../../../assets/images/profileIcon.png">
+     <div fxLayout = "row" style="padding-left: 75px;">
+
+    <div style="padding-left: 10px;">
+        {{data.data.name}}
+    </div>
+  </div>
+    <div>
+        {{data.data.email}}
+    </div>
+    <button style="outline: none; border: none; padding-left: 80px; padding-top: 30px;" (click) = "SignOut()" >Sign out</button>
+  </mat-card>
