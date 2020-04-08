@@ -31,6 +31,7 @@ import { SearchnotePipe } from './pipe/searchnote.pipe';
 import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
 import { EditlabelComponent } from './Components/editlabel/editlabel.component';
 import { LabelComponent } from './Components/label/label.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -72,7 +73,8 @@ import { LabelComponent } from './Components/label/label.component';
     MatDialogModule,
     FlexLayoutModule,
     MatMenuModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCheckboxModule
     
     
     

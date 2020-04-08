@@ -11,11 +11,12 @@ import { Notedata } from 'src/app/Model/notedata.model';
   styleUrls: ['./label.component.scss']
 })
 export class LabelComponent implements OnInit {
-  labels: Label;
+  labels: Label[];
   notes: Notedata[];
   noteId: number;
   labelId;
   name:string="";
+  label:Label=new Label()
 
   constructor(public dialogRef: MatDialogRef<LabelComponent>,@Inject(MAT_DIALOG_DATA) public data: any,private labelService: LabelService, private matSnackBar: MatSnackBar) { 
     this.noteId=data.note.id;
@@ -45,15 +46,21 @@ export class LabelComponent implements OnInit {
   }
 
 
-  onCheckedAddLabel(labelId, noteId) {
-    console.log("mat on checked label called");
-    this.labelService.addLabel(this.noteId, labelId).subscribe((data) => {
-      console.log(this.labelId,data);
-      this.matSnackBar.open(data.response, "Ok", { duration: 3000 });
-    },
-      (error) => {
-        this.matSnackBar.open("error", "Ok", { duration: 3000 });
-      });
+  onCheckedAddLabel(noteId) {
+    // console.log("mat on checked label called");
+    // this.labelService.addLabel(this.noteId, labelId).subscribe((data) => {
+    //   console.log(this.labelId,data);
+    //   this.matSnackBar.open(data.response, "Ok", { duration: 3000 });
+    // },
+    //   (error) => {
+    //     this.matSnackBar.open("error", "Ok", { duration: 3000 });
+    //   });
+    this.labelService.createLabel(this.label).subscribe((response)=>{
+      this.matSnackBar.open("Label Created","Ok",{duration:3000});
+    });
+    this.labelService.addLabel(this.labelId,noteId).subscribe((response)=>{
+      this.matSnackBar.open("Label Created","Ok",{duration:3000});
+    });
   }
 
   onClickCreateLabel(InputLabel){

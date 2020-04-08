@@ -38,11 +38,8 @@ export class EditlabelComponent implements OnInit {
   }
 
   onClickDeleteLabel(label){
-    console.log(label);
-   
+    console.log(label); 
       this.labelService.deleteLabel(label).subscribe((response)=>{
-
-  
         this.matSnackBar.open("Label Deleted","Ok",{duration:3000});
   
       });

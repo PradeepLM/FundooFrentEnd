@@ -38,10 +38,10 @@
     matTooltip="More"></a>
 
 <mat-menu #menu="matMenu">
-<button mat-menu-item >Delete Note</button>
+<button mat-menu-item (click)='onClickDelete()'>Delete Note</button>
 <!-- <button mat-menu-item>Add Label</button> -->
 <!-- <button mat-menu-item [matMenuTriggerFor]="vertebrates">Add Label</button> -->
 <button mat-menu-item (click)='openDialog(note)'>Add Label</button>
-<button mat-menu-item>Ad)d Drawing</button>
+<button mat-menu-item>Add Drawing</button>
 </mat-menu>
 </div>

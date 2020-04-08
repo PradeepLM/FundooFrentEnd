@@ -68,5 +68,7 @@ updateNote(user: any): Observable<any> {
   console.log(this.token,'ffffffffffffffffffffffllll');
   return this.httpService.put(this.notesApiURL+environment.updateNote,user,{headers:new HttpHeaders({'token':this.token})});
 }
-
+deleteNote(note:any): Observable<any> { 
+  return this.httpService.delete(this.notesApiURL+environment.deleteNote+note.id,{headers:new HttpHeaders({'token':this.token})});
+}
 }

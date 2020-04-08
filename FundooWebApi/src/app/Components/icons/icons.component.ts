@@ -82,7 +82,15 @@ export class IconsComponent implements OnInit {
     });
   }
 
-  
+  onClickDelete() {
+    this.noteService.deleteNote(this.note).subscribe((response) => {
+      this.snackBar.open("Note trashed", 'ok', { duration: 5000 });
+    },
+      error => {
+        this.snackBar.open("error in Note Deletion", 'ok', { duration: 5000 });
+      }
+    );
+  }
 }
 
 
