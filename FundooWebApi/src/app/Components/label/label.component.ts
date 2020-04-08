@@ -26,6 +26,15 @@ export class LabelComponent implements OnInit {
     this.labelService.autoRefresh$.subscribe(()=>{
       this.getAllUserLabel();
     })
+    this.getNoteId();
+  }
+
+  getNoteId() {
+    this.labelService.getNoteIdForLabel().subscribe(
+      message => {
+        this.noteId = message.labels;
+        console.log("ytytuiyuiyuiyuiyui", this.noteId);
+      });
   }
   getAllUserLabel() {
     this.labelService.getAlllabel().subscribe((response) => {
@@ -39,10 +48,22 @@ export class LabelComponent implements OnInit {
   onCheckedAddLabel(labelId, noteId) {
     console.log("mat on checked label called");
     this.labelService.addLabel(this.noteId, labelId).subscribe((data) => {
+      console.log(this.labelId,data);
       this.matSnackBar.open(data.response, "Ok", { duration: 3000 });
     },
       (error) => {
         this.matSnackBar.open("error", "Ok", { duration: 3000 });
+      });
+  }
+
+  onClickCreateLabel(InputLabel){
+    // document.getElementById("textfield1").value = "";
+    console.log(InputLabel,"label input");
+    let label={
+      "labelName":InputLabel
+    }
+      this.labelService.createLabel(label).subscribe((response)=>{
+        this.matSnackBar.open("Label Created","Ok",{duration:3000});
       });
   }
   
