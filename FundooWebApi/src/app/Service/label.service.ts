@@ -36,14 +36,18 @@ export class LabelService {
   }
   
   deleteLabel(label):Observable<any>{
-    console.log(label);
-    return this.httpService.delete(this.labelApiURL+'/delete/'+label.labelId,{headers:new HttpHeaders({'token':this.token})});  
+    console.log(label,'deletelable');
+    return this.httpService.delete(this.labelApiURL+'/delete'+label.labelId,{headers:new HttpHeaders({'token':this.token})});  
   }
  
   addLabel(labelId :any,noteId:any): Observable<any> { 
+    console.log(labelId,noteId);
   return this.httpService.post(this.labelApiURL+environment.addLabel+labelId+'?noteId='+noteId,{},{headers:new HttpHeaders({'token':this.token})});
   }
 
+  getlabelnotes(labelId :any): Observable<any> {      
+    return this.httpService.post(this.labelApiURL+environment.getlabelnotes+'?labelId='+labelId,{},{headers:new HttpHeaders({'token':this.token})});   
+  }
   setLabelList(message:any){
     this.labelList.next({label:message});
 }

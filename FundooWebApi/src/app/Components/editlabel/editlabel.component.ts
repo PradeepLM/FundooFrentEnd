@@ -26,18 +26,15 @@ export class EditlabelComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClickCreateLabel(label){
-    
+  onClickCreateLabel(label:any){
     console.log(label);
-    
     this.labelService.createLabel(label).subscribe((response)=>{
-
       this.matSnackBar.open("Label Created","Ok",{duration:3000});
 
     });
   }
 
-  onClickDeleteLabel(label){
+  onClickDeleteLabel(label:any){
     console.log(label); 
       this.labelService.deleteLabel(label).subscribe((response)=>{
         this.matSnackBar.open("Label Deleted","Ok",{duration:3000});

@@ -20,6 +20,7 @@ export const environment = {
   addcolor:'/addcolor/',
   updateNote:'/update',
   deleteNote:'/delete/',
+  getlabelnotes:'/getlabelNotes/',
 
   labelurl:'http://localhost:8080/label',
   getalllabels:'/getLabel',

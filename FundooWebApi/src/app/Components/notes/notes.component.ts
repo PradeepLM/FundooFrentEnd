@@ -20,7 +20,8 @@ export class NotesComponent implements OnInit {
   unpinnotes:Notes[];
   archievenotes:Notes[];
   trashednotes:Notes[];
-  trash:boolean=false;  
+  trash:boolean=false;
+  labelnotes:Notes[];
 
   constructor(private noteService:NotesService,private getNotes:GetnotesService,private router:Router,private route:ActivatedRoute,private labelService:LabelService) { }
 
@@ -32,6 +33,9 @@ export class NotesComponent implements OnInit {
       } 
       else  if(this.param == "trash") {
         this.getTrashNote();
+      }
+      else if (this.param == "labels") {        
+        this.getLabelsNotes();
       }
       else{
       this.displayNotes();
@@ -91,6 +95,12 @@ export class NotesComponent implements OnInit {
     })
   }
 
- 
+  public getLabelsNotes(){
+    this.labelser.getlabelnotes(this.labelId).subscribe((data)=>{
+      this.labelnotes=data.note;
+      this.setlabelNotes();
+    })
+  }
 
+  
 }
