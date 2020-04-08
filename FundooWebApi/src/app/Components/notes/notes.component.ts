@@ -58,7 +58,9 @@ export class NotesComponent implements OnInit {
   setTrashednotes(){
     this.getNotes.setaTrashedNotesList(this.trashednotes);
   }
-
+  setlabelNotes(){
+    this.notess.setlabelNotes(this.labelnotes);
+  }
   
   public displayNotes(){
     this.trash=true;
@@ -77,8 +79,6 @@ export class NotesComponent implements OnInit {
     this.noteService.getArchieveNote().subscribe(
       (response:any) => {
         this.archievenotes = response.list;
-        console.log(response.list);
-        console.log(this.archievenotes);
         this.setarchievenotes();
     })  
   }
@@ -96,11 +96,11 @@ export class NotesComponent implements OnInit {
   }
 
   public getLabelsNotes(){
-    this.labelser.getlabelnotes(this.labelId).subscribe((data)=>{
+    this.labelService.getlabelnotes(this.labelId).subscribe((data)=>{
       this.labelnotes=data.note;
       this.setlabelNotes();
     })
   }
 
-  
+
 }

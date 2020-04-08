@@ -32,6 +32,7 @@ import { UpdatenoteComponent } from './Components/updatenote/updatenote.componen
 import { EditlabelComponent } from './Components/editlabel/editlabel.component';
 import { LabelComponent } from './Components/label/label.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SignoutComponent } from './Components/signout/signout.component';
 
 
 
@@ -52,6 +53,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     UpdatenoteComponent,
     EditlabelComponent,
     LabelComponent,
+    SignoutComponent,
     
   
   ],

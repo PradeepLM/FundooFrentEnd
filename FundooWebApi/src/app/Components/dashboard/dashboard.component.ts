@@ -7,6 +7,9 @@ import { LabelService } from 'src/app/Service/label.service';
 import { Label } from 'src/app/Model/label.model';
 import { MatDialog } from '@angular/material/dialog';
 import { EditlabelComponent } from '../editlabel/editlabel.component';
+import { UserService } from 'src/app/Service/user.service';
+import { User } from 'src/app/Model/user.model';
+import { SignoutComponent } from '../signout/signout.component';
 
 
 @Component({
@@ -16,20 +19,44 @@ import { EditlabelComponent } from '../editlabel/editlabel.component';
 })
 export class DashboardComponent implements OnInit {
   @Output() toggleEvent = new EventEmitter<boolean>();
+  listview : boolean = false;
+  login = true;
+  users : User = new User();
+  getUser : User[];
+
   notes: Notes[];
+  note : Notes = new Notes();
   title: String;
   description: String;
   labels: Label[];
-
-  constructor(private router:Router,private getNote:GetnotesService,private labelService:LabelService,private dialog: MatDialog) { }
+   layout : String;
+  constructor(private userService:UserService, private router:Router,private getNote:GetnotesService,private labelService:LabelService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getlabels()      
   }
-  signout() {
-    localStorage.clear();
-    this.router.navigateByUrl('/login');
+
+  refresh() {
+    window.location.reload();
   }
+  
+
+
+
+  signout() {
+    this.userService.getUser().subscribe( response => {
+      this.getUser = response.token;
+    console.log("user :"+this.getUser);
+  
+  const reffer = this.dialog.open(SignoutComponent, {
+    data : { data : this.getUser},
+    panelClass: 'custom-dialog-container'
+  });  
+  
+  });
+  }
+
+ 
   searchNote() {
     console.log('wawawawa');
     this.getNote.setSearchNoteData(this.title);

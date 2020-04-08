@@ -7,6 +7,7 @@ export const environment = {
   loginURL:'/login',
   forgotpasswordURl:'/forgotpassword',
   resetpasswordURl:'/resetpassword',
+  getAllusers:'getAllusers',
 
   notesApiURL:'http://localhost:8080/note',
   createnote:'/create',
