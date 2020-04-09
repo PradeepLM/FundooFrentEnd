@@ -36,6 +36,7 @@ import { SignoutComponent } from './Components/signout/signout.component';
 import { ReminderComponent } from './Components/reminder/reminder.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
+import { CollaboratorComponent } from './Components/collaborator/collaborator.component';
 
 
 
@@ -59,6 +60,7 @@ import {MatSelectModule} from '@angular/material/select';
     LabelComponent,
     SignoutComponent,
     ReminderComponent,
+    CollaboratorComponent,
     
   
   ],

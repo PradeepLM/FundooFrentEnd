@@ -46,7 +46,6 @@ export class DisplaynotesComponent implements OnInit {
   this.trash=false;
   this.archieve=false;
   this.notes = this.getNotes.getNotesList();
-
   this.pinnotes = this.getNotes.getPinNotesList();
   
   

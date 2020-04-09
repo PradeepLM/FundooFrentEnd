@@ -21,7 +21,6 @@ export const environment = {
   addcolor:'/addcolor/',
   updateNote:'/update',
   deleteNote:'/delete/',
-  getlabelnotes:'/getlabelNotes/',
   reminderNoteUrl:'reminder/',
 
   labelurl:'http://localhost:8080/label',
@@ -30,6 +29,7 @@ export const environment = {
   createLabel:'/create',
   getNotesByLabelId:'/note',
   deleteLabel:'/delete/',
-  addLabel:'/addLabel'
-
+  addLabel:'/addLabel',
+  getlabelnotes:'/getlabelNotes',
+  createadmap:'/createLabelMap'
 };

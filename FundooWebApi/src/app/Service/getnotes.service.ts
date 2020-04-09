@@ -41,10 +41,9 @@ export class GetnotesService {
   }
 
   setSearchNoteData(message:any){
-    console.log('===============');
-    
     return this.searchNoteData.next({notes:message});
   }
+
   getSearchNoteData():Observable<any>{
     return this.searchNoteData.asObservable();
   }
@@ -54,6 +53,7 @@ export class GetnotesService {
 
 
   setlabelNotes(message: Notes[]) {
+    console.log(message,'getlabelnotes');
     this.labelnotes=message;
   }
 

@@ -71,16 +71,6 @@ export class DashboardComponent implements OnInit {
   }
 
  
-  
-  
-  
-
-
-
-
-
-
-
  
   searchNote() {
     console.log('wawawawa');
@@ -93,13 +83,13 @@ export class DashboardComponent implements OnInit {
         this.labels = response.list;
     })
   }
-  onCLickSetLabelId(labelId) {
-    console.log("dfdfdfd",labelId);
-    this.labelService.getNotesByLabel(labelId).subscribe((data)=>{
-          console.log(data);
+  // onCLickSetLabelId(labelId) {
+  //   console.log("dfdfdfd",labelId);
+  //   this.labelService.getNotesByLabel(labelId).subscribe((data)=>{
+  //         console.log(data);
           
-    });
-  }
+  //   });
+  // }
   openDialog(labels:Label[]): void {
     const dialogRef = this.dialog.open(EditlabelComponent, {
       width: '380px',
@@ -112,7 +102,10 @@ export class DashboardComponent implements OnInit {
   }
   
   displaynotelabels(labelId){
+    console.log(labelId,'labelnotes id');
+    
     this.labelService.getlabelnotes(labelId).subscribe((data)=>{
+      console.log(data,'resp');
       this.labelnotes=data.note;
       this.setlabelNotes();
     });
