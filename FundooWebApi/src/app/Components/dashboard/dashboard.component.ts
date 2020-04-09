@@ -30,10 +30,15 @@ export class DashboardComponent implements OnInit {
   description: String;
   labels: Label[];
    layout : String;
-  constructor(private userService:UserService, private router:Router,private getNote:GetnotesService,private labelService:LabelService,private dialog: MatDialog) { }
+  constructor(private userService:UserService,private noteService:NotesService, private router:Router,private getNote:GetnotesService,private labelService:LabelService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.getlabels()      
+    this.noteService.autoRefresh$.subscribe( response => {
+      this.signout();
+      this.getlabels();
+          });
+          this.signout;
+          this.getlabels();      
   }
 
   refresh() {
@@ -55,6 +60,33 @@ export class DashboardComponent implements OnInit {
   
   });
   }
+
+
+  onclicked() {
+    console.log("this.layout = "+this.listview);
+    if(this.listview == true) {
+      this.listview = false;
+    this.layout = 'row';
+    }
+    else if( this.listview == false) {
+      this.listview = true;
+      this.layout = 'column';
+    }
+  
+    this.router.navigate(['/dashboard/pinnotes'], { queryParams : {page : 'pinunpin', data : this.layout } });
+    this.router.navigate(['/dashboard/allreminders'], { queryParams : { data : this.layout}});
+    this.router.navigate(['/dashboard/displaynotes'], { queryParams : {page : 'archive', data : this.layout} });
+    this.router.navigate(['/dashboard/displaynotes'], { queryParams : {page : 'trash', data : this.layout} });
+  
+  }
+
+
+
+
+
+
+
+
 
  
   searchNote() {

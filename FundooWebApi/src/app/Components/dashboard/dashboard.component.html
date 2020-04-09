@@ -20,12 +20,18 @@
       </div>
       
       <div class="rightside">
-        <button mat-icon-button class="refresh">
+        <button mat-icon-button class="refresh" (click)="refresh()">
           <mat-icon>refresh</mat-icon>
         </button>
-        <button mat-icon-button class="list">
-          <mat-icon>grid_view</mat-icon>
+        
+        <button mat-icon-button class="list" *ngIf = "!listview" (click) = "onclicked()">
+          <img src="../../../assets/images/listviewicon.svg" matTooltip="List View">
+          <!-- <mat-icon>grid_view</mat-icon> -->
         </button>
+        <button mat-icon-button class="list"*ngIf = "listview" (click) = "onclicked()">
+          <img src="../../../assets/images/grislisticon.svg" matTooltip="Grid View">
+        </button>
+
         <button mat-icon-button class="sttings">
           <mat-icon>settings</mat-icon>
         </button>

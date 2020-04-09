@@ -16,6 +16,10 @@ const httpOptions =
 })
 
 export class NotesService {
+  private _autoRefresh$ = new Subject();
+  get autoRefresh$() {
+    return this._autoRefresh$;
+  }
     
 
   private notesApiURL=environment.notesApiURL;

@@ -33,8 +33,10 @@ export class UserService {
     return this.httpService.put(this.userApiURL+environment.resetpasswordURl,resetpassword,{headers:new HttpHeaders({'token':localStorage.token})});
   }
   getUser() : Observable<any> {
+    console.log('getuser');
     return this.http.get<any>(this.userApiURL+environment.getAllusers, {headers : new HttpHeaders().set('token', localStorage.token)});
   }
+  
   
 
 }
