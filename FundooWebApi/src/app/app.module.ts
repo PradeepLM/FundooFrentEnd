@@ -34,6 +34,9 @@ import { LabelComponent } from './Components/label/label.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { SignoutComponent } from './Components/signout/signout.component';
 import { ReminderComponent } from './Components/reminder/reminder.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 
@@ -78,7 +81,9 @@ import { ReminderComponent } from './Components/reminder/reminder.component';
     FlexLayoutModule,
     MatMenuModule,
     MatTooltipModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatSelectModule
     
     
     

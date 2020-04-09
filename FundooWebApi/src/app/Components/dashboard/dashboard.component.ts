@@ -10,6 +10,7 @@ import { EditlabelComponent } from '../editlabel/editlabel.component';
 import { UserService } from 'src/app/Service/user.service';
 import { User } from 'src/app/Model/user.model';
 import { SignoutComponent } from '../signout/signout.component';
+import { ReminderComponent } from '../reminder/reminder.component';
 
 
 @Component({
@@ -80,7 +81,10 @@ export class DashboardComponent implements OnInit {
   
   }
 
-
+ 
+  
+  
+  
 
 
 

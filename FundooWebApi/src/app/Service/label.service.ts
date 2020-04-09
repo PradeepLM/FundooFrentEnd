@@ -35,9 +35,9 @@ export class LabelService {
     return this.httpService.post(this.labelApiURL+'/create',label,{headers:new HttpHeaders({'token':this.token})});
   }
   
-  deleteLabel(label):Observable<any>{
-    console.log(label,'deletelable');
-    return this.httpService.delete(this.labelApiURL+'/delete'+label.labelId,{headers:new HttpHeaders({'token':this.token})});  
+  deleteLabel(label :any): Observable<any> {
+    return this.httpService.delete(this.labelApiURL+'/delete/'+label.labelId,{headers:new HttpHeaders({'token':this.token})});
+
   }
  
   addLabel(labelId :any,noteId:any): Observable<any> { 

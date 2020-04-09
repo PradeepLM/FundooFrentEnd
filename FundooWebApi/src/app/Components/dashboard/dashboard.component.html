@@ -20,7 +20,7 @@
       </div>
       
       <div class="rightside">
-        <button mat-icon-button class="refresh" (click)="refresh()">
+        <button mat-icon-button class="refresh" >
           <mat-icon>refresh</mat-icon>
         </button>
         
@@ -38,9 +38,41 @@
         <button mat-icon-button class="apps" >
           <mat-icon>apps</mat-icon>
         </button>
-        <button mat-icon-button class="apps" (click)="signout()">
+        <!-- <button mat-icon-button class="apps" (click)="signout()">
+          
           <img src="../../../assets/images/profileIcon.png">
-        </button>
+        </button> -->
+        <button mat-icon-button  [matMenuTriggerFor]="menu" class="refreshs">
+                            
+          <mat-icon><img style="width: 35px;height: 35px; border-radius: 21em;"  src="../../../assets/images/profileIcon.png"></mat-icon>
+         
+         <mat-menu #menu="matMenu" >
+             <div style="width: 280px; height: 220px;">
+         <div class="div-profilepic" >
+            <div class="up">
+               <label for="file-input">
+
+         <mat-icon><img style="width: 70px;height: 70px; border-radius: 21em; justify-content: center; " type="file"src="../../../assets/images/profileIcon.png"></mat-icon>
+         <input id="file-input" type="file" placeholder="selectFile" />
+     </label>
+ </div>
+         </div>
+         
+             <div class="profile-content">
+                 <div style="height: 10%; width: 100;">
+                 <mat-label class="namelabel" style="color: rgb(65, 64, 64);  font-family: 'Sen', sans-serif;">pradeep</mat-label>
+                 <h4 style="color: rgb(71, 82, 94); font-family: 'Sen', sans-serif;">pradeep@gmail.com</h4>
+                 </div>
+               </div>
+               <div class="div-profile">
+                 <div class="signbtn">
+                   <button [routerLink]="['']" (click)="signout()"  style="font-family: 'Sen', sans-serif;" mat-button class="signout-button">Sign-out</button>
+                 </div>
+               </div>
+             </div>
+         </mat-menu>
+     </button>
+
       </div>
      
       </mat-toolbar-row>

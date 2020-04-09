@@ -22,13 +22,14 @@ export const environment = {
   updateNote:'/update',
   deleteNote:'/delete/',
   getlabelnotes:'/getlabelNotes/',
+  reminderNoteUrl:'reminder/',
 
   labelurl:'http://localhost:8080/label',
   getalllabels:'/getLabel',
   getLabels:'/note/lable',
   createLabel:'/create',
   getNotesByLabelId:'/note',
-  deleteLabel:'/delete',
+  deleteLabel:'/delete/',
   addLabel:'/addLabel'
 
 };

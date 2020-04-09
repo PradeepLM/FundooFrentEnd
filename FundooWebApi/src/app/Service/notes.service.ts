@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
 import{environment} from'src/environments/environment'
 import { Subject, Observable } from 'rxjs';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Notes } from '../Model/notes.model';
 
 
@@ -29,7 +29,7 @@ export class NotesService {
   private httpOptions={headers:new HttpHeaders({'content-type':'application/json'})};
   
   
-  constructor( private httpService:HttpService) { }
+  constructor( private httpService:HttpService,private http: HttpClient) { }
 
   createNotes(note:any):Observable<any>
   { 
@@ -75,4 +75,8 @@ updateNote(user: any): Observable<any> {
 deleteNote(note:any): Observable<any> { 
   return this.httpService.delete(this.notesApiURL+environment.deleteNote+note.id,{headers:new HttpHeaders({'token':this.token})});
 }
+
+reminder(noteId : number, notes, data) {
+  return this.http.post<any>(this.notesApiURL+environment.reminderNoteUrl+noteId+'/'+data, notes, {headers : new HttpHeaders().set('token',localStorage.token)});
+  }
 }

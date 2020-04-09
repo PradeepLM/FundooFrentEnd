@@ -13,6 +13,7 @@ import { PinnotesComponent } from './Components/pinnotes/pinnotes.component';
 import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
 import { EditlabelComponent } from './Components/editlabel/editlabel.component';
 import { LabelComponent } from './Components/label/label.component';
+import { ReminderComponent } from './Components/reminder/reminder.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path:'icons',component:IconsComponent},
   {path:'updatenote',component:UpdatenoteComponent},
   {path:'editlabel',component:EditlabelComponent},
-  {path:'label',component:LabelComponent}
+  {path:'label',component:LabelComponent},
+  {path:'reminder',component:ReminderComponent}
  
   ]},
 ];

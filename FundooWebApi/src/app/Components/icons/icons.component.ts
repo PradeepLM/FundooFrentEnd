@@ -5,6 +5,7 @@ import { Notes } from 'src/app/Model/notes.model';
 import { MatDialog } from '@angular/material/dialog';
 import { LabelService } from 'src/app/Service/label.service';
 import { LabelComponent } from '../label/label.component';
+import { ReminderComponent } from '../reminder/reminder.component';
 
 @Component({
   selector: 'app-icons',
@@ -12,7 +13,8 @@ import { LabelComponent } from '../label/label.component';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-  @Input() note: Notes;
+  @Input() note: Notes=new Notes();
+  public selectedTime: string
   id: number;
   isArchieved: boolean = false;
   constructor(private noteService:NotesService,private snackBar:MatSnackBar,private dialog: MatDialog, private labelService: LabelService) { }
@@ -91,6 +93,61 @@ export class IconsComponent implements OnInit {
       }
     );
   }
+
+
+
+
+
+  today( noteId) {
+    window.location.reload();
+        this.noteService.reminder(noteId, this.note, "Today, 8:00PM").subscribe( () => {
+return this.snackBar.open("Successfully Reminder Added..", "", {duration:3000});
+        },
+        () => {
+return this.snackBar.open("Failed to Add Reminder..", "", {duration:3000});
+        });
+}
+
+tomorrow( noteId) {
+  window.location.reload();
+      this.noteService.reminder(noteId, this.note, "Tomorrow, 8:00AM").subscribe( () => {
+return this.snackBar.open("Successfully Reminder Added..", "", {duration:3000});
+      },
+      () => {
+return this.snackBar.open("Failed to Add Reminder..", "", {duration:3000});
+      });
+  }
+
+  nextweek( noteId) {
+    var d = new Date();
+    var month = d. getMonth();
+    mon : String;
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+   
+    window.location.reload();
+    console.log("naveen"+month);
+    this.noteService.reminder(noteId, this.note,   monthNames[d.getMonth()] +" 13, 8:00AM").subscribe( () => {
+    return this.snackBar.open("Successfully Reminder Added..", "", {duration:3000});
+      },
+      () => {
+return this.snackBar.open("Failed to Add Reminder..", "", {duration:3000});
+      });
+  }
+  pickdate( notes) {
+    console.log("data :::" + notes);
+  this.dialog.open(ReminderComponent, {
+    data : { notes : notes },
+    panelClass: 'custom-dialog-container'
+  });
+  
+  }
+   
+  back() {
+    window.location.reload();
+  }
+  
 }
 
 

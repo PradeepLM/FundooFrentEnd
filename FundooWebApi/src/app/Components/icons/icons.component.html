@@ -1,8 +1,18 @@
 <div class="mainicon" fxLayout="row" fxLayoutAlign="space-between center">
     
-<button mat-icon-button  >
+<button mat-icon-button [matMenuTriggerFor]="reminder" >
     <span class="material-icons">notification_important</span>  
 </button>
+ <mat-menu #reminder="matMenu">
+        <div class="style">
+        <button mat-menu-item>Reminder:</button>
+        <button mat-menu-item (click) = "today(note.id)">Later today 8:00PM</button>
+        <button mat-menu-item (click) = "tomorrow(note.id)">Tomorrow 8:00AM</button>
+        <button mat-menu-item (click) = "nextweek(note.id)">Next week Mon, 8:00AM</button>
+        <button mat-menu-item  (click) = "pickdate(note.id)"><mat-icon matTooltip="Go back">access_time</mat-icon> Pick date & time</button>
+        <button mat-menu-item><mat-icon>place</mat-icon>Pick place</button>
+        </div>
+</mat-menu>
 
 <button mat-icon-button>
     <span class="material-icons"> person_add</span> 
