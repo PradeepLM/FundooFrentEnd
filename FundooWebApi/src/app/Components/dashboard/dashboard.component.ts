@@ -31,6 +31,7 @@ export class DashboardComponent implements OnInit {
   description: String;
   labels: Label[];
    layout : String;
+   labelnotes:Notes[];
   constructor(private userService:UserService,private noteService:NotesService, private router:Router,private getNote:GetnotesService,private labelService:LabelService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -46,22 +47,10 @@ export class DashboardComponent implements OnInit {
     window.location.reload();
   }
   
-
-
-
-  signout() {
-    this.userService.getUser().subscribe( response => {
-      this.getUser = response.token;
-    console.log("user :"+this.getUser);
-  
-  const reffer = this.dialog.open(SignoutComponent, {
-    data : { data : this.getUser},
-    panelClass: 'custom-dialog-container'
-  });  
-  
-  });
+  signout(){
+    localStorage.clear;
+    this.router.navigate(['/login'])
   }
-
 
   onclicked() {
     console.log("this.layout = "+this.listview);
@@ -102,7 +91,6 @@ export class DashboardComponent implements OnInit {
   getlabels(){
     this.labelService.getAlllabel().subscribe((response:any) => {
         this.labels = response.list;
-        console.log(response.label,'saaS'); 
     })
   }
   onCLickSetLabelId(labelId) {
@@ -123,6 +111,17 @@ export class DashboardComponent implements OnInit {
     });
   }
   
+  displaynotelabels(labelId){
+    this.labelService.getlabelnotes(labelId).subscribe((data)=>{
+      this.labelnotes=data.note;
+      this.setlabelNotes();
+    });
+  }
 
+  setlabelNotes(){
+
+    this.getNote.setlabelNotes(this.labelnotes);
+
+  }
 
 }

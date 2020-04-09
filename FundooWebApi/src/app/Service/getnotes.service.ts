@@ -10,6 +10,7 @@ export class GetnotesService {
   pinNoteList:Notes[]
   archievenotes:Notes[]
   trashednotes:Notes[]
+  labelnotes:Notes[]
   private searchNoteData=new Subject<any>();
   constructor() { }
 
@@ -46,6 +47,18 @@ export class GetnotesService {
   }
   getSearchNoteData():Observable<any>{
     return this.searchNoteData.asObservable();
+  }
+
+
+
+
+
+  setlabelNotes(message: Notes[]) {
+    this.labelnotes=message;
+  }
+
+  getlabelNotes() {
+   return this.labelnotes;
   }
 
 }
