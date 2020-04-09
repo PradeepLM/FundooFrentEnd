@@ -33,6 +33,7 @@ import { EditlabelComponent } from './Components/editlabel/editlabel.component';
 import { LabelComponent } from './Components/label/label.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { SignoutComponent } from './Components/signout/signout.component';
+import { ReminderComponent } from './Components/reminder/reminder.component';
 
 
 
@@ -54,6 +55,7 @@ import { SignoutComponent } from './Components/signout/signout.component';
     EditlabelComponent,
     LabelComponent,
     SignoutComponent,
+    ReminderComponent,
     
   
   ],
