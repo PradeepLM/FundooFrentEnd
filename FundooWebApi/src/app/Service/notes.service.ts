@@ -77,6 +77,9 @@ deleteNote(note:any): Observable<any> {
 }
 
 reminder(noteId : number, notes, data) {
-  return this.http.post<any>(this.notesApiURL+environment.reminderNoteUrl+noteId+'/'+data, notes, {headers : new HttpHeaders().set('token',localStorage.token)});
+  console.log(notes,data,noteId);
+  return this.http.post<any>(environment.notesApiURL+environment.reminderNoteUrl+noteId+'/'+data, notes, {headers:new HttpHeaders({'token':this.token})});
   }
+
+  
 }

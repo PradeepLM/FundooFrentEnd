@@ -7,6 +7,7 @@ import { Notes } from 'src/app/Model/notes.model';
 import { GetnotesService } from 'src/app/Service/getnotes.service';
 import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ViewService } from 'src/app/Service/view.service';
 
 @Component({
   selector: 'app-displaynotes',
@@ -25,8 +26,17 @@ export class DisplaynotesComponent implements OnInit {
   archieve:boolean=false;
   searchnote:any;
   searchNotes:boolean;
-
-  constructor(private formBuilder: FormBuilder,private noteService:NotesService,  private getNotes:GetnotesService, private matSnackBar: MatSnackBar, private router: Router,private route:ActivatedRoute,private dialog: MatDialog) { }
+  direction:string="row";
+  view: any;
+  constructor(private formBuilder: FormBuilder,private noteService:NotesService,private viewservice:ViewService,  private getNotes:GetnotesService, private matSnackBar: MatSnackBar, private router: Router,private route:ActivatedRoute,private dialog: MatDialog) { 
+    this.viewservice.getView().subscribe(
+      (res) => {
+                  this.view = res;
+                  this.direction = this.view.data;
+                  console.log("direction..................."+this.view.data)
+                  console.log(this.direction);                
+        });  
+  }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {

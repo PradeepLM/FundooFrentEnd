@@ -24,13 +24,24 @@
           <mat-icon>refresh</mat-icon>
         </button>
         
-        <button mat-icon-button class="list" *ngIf = "!listview" (click) = "onclicked()">
+        <!-- <button mat-icon-button class="list" *ngIf = "!listview" (click) = "onclicked()">
           <img src="../../../assets/images/listviewicon.svg" matTooltip="List View">
-          <!-- <mat-icon>grid_view</mat-icon> -->
+          
         </button>
         <button mat-icon-button class="list"*ngIf = "listview" (click) = "onclicked()">
           <img src="../../../assets/images/grislisticon.svg" matTooltip="Grid View">
+        </button> -->
+        <button mat-icon-button  *ngIf="list" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
+          <mat-icon class="icon">grid_view</mat-icon>
         </button>
+
+  
+
+        <button mat-icon-button  *ngIf="grid" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
+          <mat-icon class="icon">view_module</mat-icon>
+        </button>
+
+
 
         <button mat-icon-button class="sttings">
           <mat-icon>settings</mat-icon>
@@ -111,16 +122,7 @@
           
         </button>
 
-        <!-- <div *ngFor="let label of labels">
-          <a [routerLink]="['notes']" [queryParams]="{ page: 'labels' }">
-            <div class="icondiv" >
-              <span ></span><img src="../../../assets/images/label-24px.svg" style="width: 10%; height: 10%; float: left;" ></span>
-              <span  >{{label.name}}</span>
-            </div>
-          </a>
-       
-      </div> -->
-      
+           
         
 
         <button mat-button class="labelbutton"(click)="openDialog(labels)">

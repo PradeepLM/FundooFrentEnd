@@ -35,13 +35,13 @@ export class LabelService {
   deleteLabel(label :any): Observable<any> {
     console.log(label,'ssss');
     
-    return this.httpService.delete(this.labelApiURL+'/delete/'+label.labelId,{headers:new HttpHeaders({'token':this.token})});
+    return this.httpService.delete(this.labelApiURL+'/delete',{headers:new HttpHeaders({'token':this.token})});
 
   }
  
   addLabel(labelId :any,noteId:any): Observable<any> { 
     console.log(labelId,noteId);
-  return this.httpService.post(this.labelApiURL+environment.addLabel+labelId+'?noteId='+noteId,{},{headers:new HttpHeaders({'token':this.token})});
+  return this.httpService.post(this.labelApiURL+environment.addLabel+'?labelId='+labelId+'?noteId='+noteId,{},{headers:new HttpHeaders({'token':this.token})});
   }
 
   getlabelnotes(labelId :any): Observable<any> { 

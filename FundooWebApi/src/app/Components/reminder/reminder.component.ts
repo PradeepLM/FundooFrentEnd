@@ -60,11 +60,13 @@ export class ReminderComponent implements OnInit {
   addreminder( noteId) {
     //this.dat = picker;
   window.location.reload();
-          this.noteService.reminder(noteId, this.notes, this.dat+", "+this.timing).subscribe( () => {
-    return this.matsnackbar.open("Successfully Reminder Added..", "", {duration:3000});
+  console.log(noteId,this.notes,this.timing);
+          this.noteService.reminder(noteId, this.notes,", "+this.timing).subscribe( () => {
+            
+          return this.matsnackbar.open("Successfully Reminder Added..", "", {duration:3000});
           },
           () => {
-    return this.matsnackbar.open("Failed to Add Reminder..", "", {duration:3000});
+            return this.matsnackbar.open("Failed to Add Reminder..", "", {duration:3000});
           });
       }
       time(da) {

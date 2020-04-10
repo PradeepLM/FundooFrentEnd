@@ -100,8 +100,10 @@ export class IconsComponent implements OnInit {
 
 
   today( noteId) {
-    window.location.reload();
+    //window.location.reload();
+    console.log(noteId, this.note,);
         this.noteService.reminder(noteId, this.note, "Today, 8:00PM").subscribe( () => {
+          
 return this.snackBar.open("Successfully Reminder Added..", "", {duration:3000});
         },
         () => {
@@ -110,7 +112,7 @@ return this.snackBar.open("Failed to Add Reminder..", "", {duration:3000});
 }
 
 tomorrow( noteId) {
-  window.location.reload();
+ // window.location.reload();
       this.noteService.reminder(noteId, this.note, "Tomorrow, 8:00AM").subscribe( () => {
 return this.snackBar.open("Successfully Reminder Added..", "", {duration:3000});
       },
@@ -127,8 +129,8 @@ return this.snackBar.open("Failed to Add Reminder..", "", {duration:3000});
     "July", "August", "September", "October", "November", "December"
   ];
    
-    window.location.reload();
-    console.log("naveen"+month);
+    //window.location.reload();
+    console.log("montg"+month);
     this.noteService.reminder(noteId, this.note,   monthNames[d.getMonth()] +" 13, 8:00AM").subscribe( () => {
     return this.snackBar.open("Successfully Reminder Added..", "", {duration:3000});
       },

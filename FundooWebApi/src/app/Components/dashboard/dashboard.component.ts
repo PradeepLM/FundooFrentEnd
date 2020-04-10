@@ -11,6 +11,7 @@ import { UserService } from 'src/app/Service/user.service';
 import { User } from 'src/app/Model/user.model';
 import { SignoutComponent } from '../signout/signout.component';
 import { ReminderComponent } from '../reminder/reminder.component';
+import { ViewService } from 'src/app/Service/view.service';
 
 
 @Component({
@@ -32,7 +33,7 @@ export class DashboardComponent implements OnInit {
   labels: Label[];
    layout : String;
    labelnotes:Notes[];
-  constructor(private userService:UserService,private noteService:NotesService, private router:Router,private getNote:GetnotesService,private labelService:LabelService,private dialog: MatDialog) { }
+  constructor(private userService:UserService,private viewservice:ViewService, private noteService:NotesService, private router:Router,private getNote:GetnotesService,private labelService:LabelService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.noteService.autoRefresh$.subscribe( response => {
@@ -52,23 +53,40 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/login'])
   }
 
-  onclicked() {
-    console.log("this.layout = "+this.listview);
-    if(this.listview == true) {
-      this.listview = false;
-    this.layout = 'row';
+  list: boolean = true;
+  grid: boolean = false;
+
+
+
+  changeView() {
+    if (this.list) {
+      this.grid = true;
+      this.list = false;
     }
-    else if( this.listview == false) {
-      this.listview = true;
-      this.layout = 'column';
+    else {
+      this.list = true;
+      this.grid = false;
     }
-  
-    this.router.navigate(['/dashboard/pinnotes'], { queryParams : {page : 'pinunpin', data : this.layout } });
-    this.router.navigate(['/dashboard/allreminders'], { queryParams : { data : this.layout}});
-    this.router.navigate(['/dashboard/displaynotes'], { queryParams : {page : 'archive', data : this.layout} });
-    this.router.navigate(['/dashboard/displaynotes'], { queryParams : {page : 'trash', data : this.layout} });
-  
+    this.viewservice.getView();
   }
+
+  // onclicked() {
+  //   console.log("this.layout = "+this.listview);
+  //   if(this.listview == true) {
+  //     this.listview = false;
+  //   this.layout = 'row';
+  //   }
+  //   else if( this.listview == false) {
+  //     this.listview = true;
+  //     this.layout = 'column';
+  //   }
+  
+  //   this.router.navigate(['/dashboard/pinnotes'], { queryParams : {page : 'pinunpin', data : this.layout } });
+  //   this.router.navigate(['/dashboard/reminder'], { queryParams : { data : this.layout}});
+  //   this.router.navigate(['/dashboard/displaynotes'], { queryParams : {page : 'archive', data : this.layout} });
+  //   this.router.navigate(['/dashboard/displaynotes'], { queryParams : {page : 'trash', data : this.layout} });
+  
+  // }
 
  
  
@@ -83,13 +101,7 @@ export class DashboardComponent implements OnInit {
         this.labels = response.list;
     })
   }
-  // onCLickSetLabelId(labelId) {
-  //   console.log("dfdfdfd",labelId);
-  //   this.labelService.getNotesByLabel(labelId).subscribe((data)=>{
-  //         console.log(data);
-          
-  //   });
-  // }
+  
   openDialog(labels:Label[]): void {
     const dialogRef = this.dialog.open(EditlabelComponent, {
       width: '380px',

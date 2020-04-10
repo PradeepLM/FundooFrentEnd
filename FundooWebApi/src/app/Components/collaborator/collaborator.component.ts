@@ -3,6 +3,7 @@ import { User } from 'src/app/Model/user.model';
 import { FormControl } from '@angular/forms';
 import { UserService } from 'src/app/Service/user.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-collaborator',
@@ -18,7 +19,7 @@ export class CollaboratorComponent implements OnInit {
   message:string;
   ToData: any[];
 
-  constructor(private userService: UserService, @Inject(MAT_DIALOG_DATA) public data: any) { 
+  constructor(private userService: UserService, @Inject(MAT_DIALOG_DATA) public data: any, private snackBar:MatSnackBar) { 
     this.onenote = this.data
   }
 
@@ -30,11 +31,10 @@ export class CollaboratorComponent implements OnInit {
     let addColl = {
       "email ": this.email1.value
     }
-
     console.log("Add coll-->", addColl);
-        this.userService.addCollaborator(this.onenote.noteId,this.email1.value).subscribe((res: any) => {
-
-
+        this.userService.addCollaborator(this.onenote.noteId,this.email1.value).subscribe((response: any) => {
+          console.log('collabrator',response);
+          this.snackBar.open(response,"OK",{duration:3000});
 
 
     })

@@ -1,6 +1,6 @@
 <mat-card class="main">
     <div fxLayout = "row">
-        <button  matTooltip="Go back" style="border: none;outline: none;"> <img src= "../../../assets/images/backicon.svg" >  </button>
+        <button  matTooltip="Go back" style="border: none;outline: none;"> <img src= "../../../assets/images/backicon.svg"  (click) = "back()">  </button>
         <button mat-menu-item style="background-color: white;"> Pick date & time </button>
     </div> 
     <mat-form-field>
@@ -11,11 +11,11 @@
       <mat-form-field appearance="fill">
         <mat-label>8:00 AM</mat-label>
       <mat-select>
-        <mat-option  style="background-color: white;" value="8:00 AM"  #a>Morning 8:00 AM</mat-option>
-        <mat-option value="1:00 PM"  #b>Afternoon 1:00 PM</mat-option>
-        <mat-option value="6:00 PM"  #c>Evening 6:00 PM</mat-option>
-        <mat-option value="8:00 PM"  #d>Night 8:00 PM</mat-option>
-        <mat-option value="8:00 AM"  #e>Custom</mat-option>
+        <mat-option  style="background-color: white;" value="8:00 AM" (click) = "time(a.value)" #a>Morning 8:00 AM</mat-option>
+        <mat-option value="1:00 PM" (click) = "time(b.value)" #b>Afternoon 1:00 PM</mat-option>
+        <mat-option value="6:00 PM" (click) = "time(c.value)" #c>Evening 6:00 PM</mat-option>
+        <mat-option value="8:00 PM"  (click) = "time(d.value)"#d>Night 8:00 PM</mat-option>
+        <mat-option value="8:00 AM" (click) = "time(e.value)" #e>Custom</mat-option>
       </mat-select>
     </mat-form-field><br>
     <mat-form-field appearance="fill">
@@ -29,5 +29,5 @@
         </mat-select>
       </mat-form-field>
       >
-<button class="button" mat-button (click) = "addreminder(data.note)">Save</button>
+<button class="button" mat-button (click) = "addreminder( data.note)">Save</button>
 </mat-card>

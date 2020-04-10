@@ -21,7 +21,7 @@ export const environment = {
   addcolor:'/addcolor/',
   updateNote:'/update',
   deleteNote:'/delete/',
-  reminderNoteUrl:'reminder/',
+  reminderNoteUrl:"reminder/",
 
   labelurl:'http://localhost:8080/label',
   getalllabels:'/getLabel',
@@ -33,6 +33,5 @@ export const environment = {
   getlabelnotes:'/getlabelNotes',
   createadmap:'/createLabelMap',
 
-  addcolalb:'http://localhost:8080/collabrator',
-  addCollabrator:'/addCollabrator'
+  addCollabrator:'http://localhost:8080/collabrator/addCollabrator'
 };
