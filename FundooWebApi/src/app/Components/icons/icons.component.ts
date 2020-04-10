@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { LabelService } from 'src/app/Service/label.service';
 import { LabelComponent } from '../label/label.component';
 import { ReminderComponent } from '../reminder/reminder.component';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
 
 @Component({
   selector: 'app-icons',
@@ -147,6 +148,18 @@ return this.snackBar.open("Failed to Add Reminder..", "", {duration:3000});
   back() {
     window.location.reload();
   }
+
+  collabrator(): void {
+    console.log("Note id in colab111111--->", this.note.id);
+    const dialogRef = this.dialog.open(CollaboratorComponent, {
+      width: 'auto',
+      height: '290px',
+      data: { noteId: this.note.id }
+    });
+
+
+
+}
   
 }
 

@@ -31,5 +31,8 @@ export const environment = {
   deleteLabel:'/delete/',
   addLabel:'/addLabel',
   getlabelnotes:'/getlabelNotes',
-  createadmap:'/createLabelMap'
+  createadmap:'/createLabelMap',
+
+  addcolalb:'http://localhost:8080/collabrator',
+  addCollabrator:'/addCollabrator'
 };

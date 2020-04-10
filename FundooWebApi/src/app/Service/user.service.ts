@@ -36,7 +36,9 @@ export class UserService {
     console.log('getuser');
     return this.http.get<any>(this.userApiURL+environment.getAllusers, {headers : new HttpHeaders().set('token', localStorage.token)});
   }
-  
+  addCollaborator(user: number,email:any): Observable<any> { 
+    return this.httpService.post(environment.addCollabrator+'?email='+email+'?noteId='+user,{},{headers:new HttpHeaders({"token":localStorage.token})});
+}
   
 
 }
