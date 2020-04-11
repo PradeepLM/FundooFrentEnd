@@ -13,6 +13,9 @@
                 </div>
                 <mat-card-title (click)="openDialog(note)">  {{note.title}}</mat-card-title><br>
                     <mat-card-content (click)="openDialog(note)"> {{note.description}} </mat-card-content>
+                    <!-- {{label.name}} -->
+                    {{note.reminder}}
+
             </div>
             <app-icons [note]='note'></app-icons>
         </mat-card>
@@ -33,6 +36,8 @@
                 </div>
             <mat-card-title (click)="openDialog(note)">{{note.title}}</mat-card-title> <br>
             <mat-card-content (click)="openDialog(note)"> {{note.description}} </mat-card-content> 
+            <!-- {{label.name}}  -->
+            {{note.reminder}}
             </div>
             <app-icons [note]='note' ></app-icons>
         </mat-card>

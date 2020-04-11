@@ -33,5 +33,5 @@ export const environment = {
   getlabelnotes:'/getlabelNotes',
   createadmap:'/createLabelMap',
 
-  addCollabrator:'http://localhost:8080/collabrator/addCollabrator'
+  addCollabrator:'http://localhost:8080/addCollabrator'
 };

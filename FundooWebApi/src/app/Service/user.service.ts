@@ -38,7 +38,7 @@ export class UserService {
   }
   addCollaborator(user: number,email:any): Observable<any> { 
     console.log(user,email,'email,user');
-    return this.httpService.post(environment.addCollabrator+'?email='+email+'?noteId='+user,{},{headers:new HttpHeaders({"token":localStorage.token})});
+    return this.httpService.post(environment.addCollabrator+'?email='+email+'&noteId='+user,{},{headers:new HttpHeaders({"token":localStorage.token})});
 }
   
 

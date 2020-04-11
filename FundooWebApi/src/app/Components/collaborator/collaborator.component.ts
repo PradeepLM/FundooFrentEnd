@@ -34,7 +34,7 @@ export class CollaboratorComponent implements OnInit {
     console.log("Add coll-->", addColl);
         this.userService.addCollaborator(this.onenote.noteId,this.email1.value).subscribe((response: any) => {
           console.log('collabrator',response);
-          this.snackBar.open(response,"OK",{duration:3000});
+          this.snackBar.open("adding sucessfuly","OK",{duration:3000});
 
 
     })
