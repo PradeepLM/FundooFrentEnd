@@ -58,6 +58,7 @@ export class LabelService {
   getLabelList(){
   return this.labelList.asObservable();
   } 
-
- 
+  removemaping(labelId :any,noteId:any): Observable<any> { 
+    return this.httpService.post(this.labelApiURL+environment.removemaplabel+'?labelId='+labelId+'&noteId='+noteId,{},{headers:new HttpHeaders({'token':this.token})});
+}
 }

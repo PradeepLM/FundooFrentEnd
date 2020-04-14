@@ -28,8 +28,13 @@
 .others{
   font-family: fantasy;
   color: darkgray;
-  flex-wrap: wrap;
-  flex-direction: row;  
+  flex-flow: row wrap;
+  
   display: flex; 
   margin-left: 15%;
+}
+.main{
+  margin: 0 5rem;
+   display: flex;
+   flex-direction: column;
 }

@@ -10,6 +10,7 @@ export class GetnotesService {
   pinNoteList:Notes[]
   archievenotes:Notes[]
   trashednotes:Notes[]
+  remindernotes:Notes[]
   labelnotes:Notes[]
   private searchNoteData=new Subject<any>();
   constructor() { }
@@ -40,6 +41,14 @@ export class GetnotesService {
    return this.trashednotes
   }
 
+  setReminderNoteList(message: Notes[]) {
+    this.remindernotes=message
+  }
+  getreminderNotesList() {
+    console.log('reminder');
+    
+   return this.remindernotes
+  }
   setSearchNoteData(message:any){
     return this.searchNoteData.next({notes:message});
   }
@@ -53,13 +62,12 @@ export class GetnotesService {
 
 
   setlabelNotes(message: Notes[]) {
-    console.log(message,'getlabelnotes');
-    this.labelnotes=message;
+    this.labelnotes=message
+
   }
 
   getlabelNotes() {
-   return this.labelnotes;
+   return this.labelnotes
   }
-
 }
 

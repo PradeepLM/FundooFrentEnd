@@ -8,6 +8,7 @@ import { LabelComponent } from '../label/label.component';
 import { ReminderComponent } from '../reminder/reminder.component';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
 
+
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
@@ -15,8 +16,9 @@ import { CollaboratorComponent } from '../collaborator/collaborator.component';
 })
 export class IconsComponent implements OnInit {
   @Input() note: Notes=new Notes();
-  public selectedTime: string
-  id: number;
+  // public selectedTime: string
+   id: number;
+   reminder:any;
   isArchieved: boolean = false;
   constructor(private noteService:NotesService,private snackBar:MatSnackBar,private dialog: MatDialog, private labelService: LabelService) { }
 
@@ -99,9 +101,9 @@ export class IconsComponent implements OnInit {
 
 
 
-  today( noteId) {
+         today( noteId) {
     //window.location.reload();
-    console.log(noteId, this.note,);
+       console.log(noteId, this.note,);
         this.noteService.reminder(noteId, this.note, "Today, 8:00PM").subscribe( () => {
           
 return this.snackBar.open("Successfully Reminder Added..", "", {duration:3000});
@@ -114,7 +116,8 @@ return this.snackBar.open("Failed to Add Reminder..", "", {duration:3000});
 tomorrow( noteId) {
  // window.location.reload();
       this.noteService.reminder(noteId, this.note, "Tomorrow, 8:00AM").subscribe( () => {
-return this.snackBar.open("Successfully Reminder Added..", "", {duration:3000});
+
+   return this.snackBar.open("Successfully Reminder Added..", "", {duration:3000});
       },
       () => {
 return this.snackBar.open("Failed to Add Reminder..", "", {duration:3000});
@@ -158,11 +161,10 @@ return this.snackBar.open("Failed to Add Reminder..", "", {duration:3000});
       height: '290px',
       data: { noteId: this.note.id }
     });
-
-
-
 }
-  
+
+
+
 }
 
 

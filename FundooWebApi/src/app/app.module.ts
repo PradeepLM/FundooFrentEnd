@@ -37,6 +37,9 @@ import { ReminderComponent } from './Components/reminder/reminder.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
 import { CollaboratorComponent } from './Components/collaborator/collaborator.component';
+import {MatChipsModule} from '@angular/material/chips';
+import {OwlDateTimeModule,OwlNativeDateTimeModule} from 'ng-pick-datetime';
+
 
 
 
@@ -85,9 +88,10 @@ import { CollaboratorComponent } from './Components/collaborator/collaborator.co
     MatTooltipModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatSelectModule
-    
-    
+    MatSelectModule,
+    MatChipsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
     
     
   ],

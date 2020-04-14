@@ -34,9 +34,6 @@ export class NotesComponent implements OnInit {
       else  if(this.param == "trash") {
         this.getTrashNote();
       }
-      else if (this.param == "labels") {        
-        this.getLabelsNotes();
-      }
       else{
       this.displayNotes();
       }
@@ -95,12 +92,12 @@ export class NotesComponent implements OnInit {
     })
   }
 
-  public getLabelsNotes(){
-    this.labelService.getlabelnotes(this.labelId).subscribe((data)=>{
-      this.labelnotes=data.note;
-      this.setlabelNotes();
-    })
-  }
+  // public getLabelsNotes(){
+  //   this.labelService.getlabelnotes(this.labelId).subscribe((data)=>{
+  //     this.labelnotes=data.note;
+  //     this.setlabelNotes();
+  //   })
+  // }
 
 
 }

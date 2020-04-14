@@ -1,10 +1,5 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import {MomentDateAdapter} from '@angular/material-moment-adapter'
-
-
-
-
-
 import { DateAdapter, MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NotesService } from 'src/app/Service/notes.service';
@@ -58,13 +53,12 @@ export class ReminderComponent implements OnInit {
   }
 
   addreminder( picker,noteId) {
-    this.dat = picker;
- // window.location.reload();
- console.log(noteId,'noteid');
- 
-  console.log(noteId,this.notes,this.timing,this.dat,'cccccccc');
+       console.log(moment().format());
+       this.dat = picker;
+       console.log(noteId,'noteid');
+       
+      console.log(noteId,this.notes,this.timing,this.dat,'cccccccc');
           this.noteService.reminder(noteId, this.notes,this.dat+", "+this.timing).subscribe( () => {
-            
           return this.matsnackbar.open("Successfully Reminder Added..", "", {duration:3000});
           },
           () => {
@@ -78,4 +72,7 @@ export class ReminderComponent implements OnInit {
   back() {
     window.location.reload();
   }
+  //  m=moment();
+  //  console.log('tostring=>${m.toString()}');
+   
 }

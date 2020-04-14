@@ -24,7 +24,9 @@ export class CollaboratorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.email = localStorage.getItem('emailUser');
+    this.email = localStorage.getItem('email')
+    console.log(this.email,'user email');
+    
   }
   writeEmail() {
     console.log(this.email1.value);

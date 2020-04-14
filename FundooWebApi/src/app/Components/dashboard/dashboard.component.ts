@@ -1,5 +1,5 @@
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NotesService } from 'src/app/Service/notes.service';
 import { Notes } from 'src/app/Model/notes.model';
 import { GetnotesService } from 'src/app/Service/getnotes.service';
@@ -33,7 +33,8 @@ export class DashboardComponent implements OnInit {
   labels: Label[];
    layout : String;
    labelnotes:Notes[];
-  constructor(private userService:UserService,private viewservice:ViewService, private noteService:NotesService, private router:Router,private getNote:GetnotesService,private labelService:LabelService,private dialog: MatDialog) { }
+   view:String;
+  constructor(private route:ActivatedRoute, private userService:UserService,private viewservice:ViewService, private noteService:NotesService, private router:Router,private getNote:GetnotesService,private labelService:LabelService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.noteService.autoRefresh$.subscribe( response => {
@@ -41,7 +42,8 @@ export class DashboardComponent implements OnInit {
       this.getlabels();
           });
           this.signout;
-          this.getlabels();      
+          this.getlabels();    
+            
   }
 
   refresh() {
@@ -53,42 +55,26 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/login'])
   }
 
-  list: boolean = true;
-  grid: boolean = false;
-
-
-
-  changeView() {
-    if (this.list) {
-      this.grid = true;
-      this.list = false;
-    }
-    else {
-      this.list = true;
-      this.grid = false;
-    }
-    this.viewservice.getView();
-  }
-
-  // onclicked() {
-  //   console.log("this.layout = "+this.listview);
-  //   if(this.listview == true) {
-  //     this.listview = false;
-  //   this.layout = 'row';
-  //   }
-  //   else if( this.listview == false) {
-  //     this.listview = true;
-  //     this.layout = 'column';
-  //   }
-  
-  //   this.router.navigate(['/dashboard/pinnotes'], { queryParams : {page : 'pinunpin', data : this.layout } });
-  //   this.router.navigate(['/dashboard/reminder'], { queryParams : { data : this.layout}});
-  //   this.router.navigate(['/dashboard/displaynotes'], { queryParams : {page : 'archive', data : this.layout} });
-  //   this.router.navigate(['/dashboard/displaynotes'], { queryParams : {page : 'trash', data : this.layout} });
-  
-  // }
-
  
+
+  gridList(){
+    if(this.listview){
+      console.log('inside view row');
+      
+      this.view="row";
+      this.noteService.setView(this.view);
+      this.listview=!this.listview;
+      console.log('ListView ', this.listview);
+    }
+    else{
+      console.log('ListView b ', this.listview);
+      console.log('inside view col');
+      this.view="column";
+      this.noteService.setView(this.view);
+      this.listview=!this.listview;
+      console.log('ListView a', this.listview);
+    }
+  }
  
   searchNote() {
     console.log('wawawawa');
@@ -124,9 +110,10 @@ export class DashboardComponent implements OnInit {
   }
 
   setlabelNotes(){
-
     this.getNote.setlabelNotes(this.labelnotes);
-
   }
-
+  
+  onClickReminder(){
+    this.router.navigate(['reminder'],{relativeTo:this.route});
+  }
 }

@@ -1,8 +1,8 @@
 
 
-<div style="flex-wrap: wrap;">
-    <div class="others"  *ngIf="!trash && !archieve &&!searchNotes">Pinnotes
-    <div class="getAllNotes"  fxLayout="{{view}}" fxFlexOffset="15" *ngFor="let note of pinnotes">
+<div class="main" *ngIf="!trash && !archieve &&!searchNotes &&!lab">
+    <div class="others" fxLayout="{{view}}" >Pinnotes
+    <div class="getAllNotes"   fxFlexOffset="15" *ngFor="let note of pinnotes">
         <!-- <mat-label style="font-family: fantasy;color: darkgray; position: absolute;">Pinnotes</mat-label> -->
         <mat-card class="getNotesMat"  [ngStyle]="{'background':note.colour}" >
             <div class="matdiv">
@@ -13,19 +13,31 @@
                 </div>
                 <mat-card-title (click)="openDialog(note)">  {{note.title}}</mat-card-title><br>
                     <mat-card-content (click)="openDialog(note)"> {{note.description}} </mat-card-content>
-                    <!-- {{label.name}} -->
-                    {{note.reminder}}
-
             </div>
+    
+            <div *ngFor="let label of note.list">
+            <mat-chip>
+            {{label.name}}
+            <mat-icon matChipRemove (click)="removemapping(note.id,label.labelId)">cancel</mat-icon>
+            </mat-chip>
+            </div>
+
+            <div *ngIf="note.reminder!=null">
+                <mat-chip>
+                 {{note.reminder }}
+                 <mat-icon matChipRemove (click)="onDeleteRem(note)">cancel</mat-icon>
+               </mat-chip> 
+             </div>
+
             <app-icons [note]='note'></app-icons>
         </mat-card>
     </div>
 </div>
 </div>  
 
-<div style="flex-wrap: wrap;">
-    <div class="others" *ngIf="!trash || !archieve">others
-    <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15"  *ngFor="let note of notes | searchnote:searchnote" >   
+<div class="main"*ngIf="!trash || !archieve || !reminder">
+    <div class="others"fxLayout="{{view}}"  >others
+    <div class="getAllNotes" fxFlexOffset="15"  *ngFor="let note of notes | searchnote:searchnote" >   
         <mat-card class="getNotesMat"  [ngStyle]="{'background':note.colour}">
             <div class="matdiv">
                 <!-- <div class="pindiv" *ngIf="!trashedNotes" (click)="pin=!pin">
@@ -36,10 +48,21 @@
                 </div>
             <mat-card-title (click)="openDialog(note)">{{note.title}}</mat-card-title> <br>
             <mat-card-content (click)="openDialog(note)"> {{note.description}} </mat-card-content> 
-            <!-- {{label.name}}  -->
-            {{note.reminder}}
             </div>
-            <app-icons [note]='note' ></app-icons>
+            <div *ngFor="let label of note.list">
+                <mat-chip>
+                     {{label.name}}
+                    <mat-icon matChipRemove (click)="removemapping(note.id,label.labelId)">cancel</mat-icon>
+                </mat-chip>
+            </div>
+            <div *ngIf="note.reminder!=null">
+                <mat-chip>
+                 {{note.reminder }}
+                 <mat-icon matChipRemove (click)="onDeleteRem(note)">cancel</mat-icon>
+               </mat-chip> 
+             </div>
+           
+<app-icons [note]='note' ></app-icons>
         </mat-card>
     </div>
 </div>

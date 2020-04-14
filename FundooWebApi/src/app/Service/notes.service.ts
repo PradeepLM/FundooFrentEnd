@@ -27,7 +27,7 @@ export class NotesService {
   private token=(localStorage.token);
   private searchNoteData=new Subject<any>();
   private httpOptions={headers:new HttpHeaders({'content-type':'application/json'})};
-  
+  view=new Subject<any>();
   
   constructor( private httpService:HttpService,private http: HttpClient) { }
 
@@ -77,9 +77,32 @@ deleteNote(note:any): Observable<any> {
 }
 
 reminder(noteId : number, notes, data) {
-  console.log(notes,data,noteId);
-  return this.http.post<any>(environment.notesApiURL+environment.reminderNoteUrl+noteId+'/'+data, notes, {headers:new HttpHeaders({'token':this.token})});
+  console.log(notes,'sssssssss');
+  console.log(notes,'notes',data,'data',noteId,'notes information remaindefr');
+  return this.http.post<any>(environment.notesApiURL+environment.reminderNoteUrl+'?noteId='+noteId+'/'+data ,{headers:new HttpHeaders({'token':this.token})});
   }
+  removeremainder(note:any): Observable<any> { 
+    console.log(note,'remove reaminfderreddder');
+    return this.httpService.get(this.notesApiURL+environment.removeremainder+'?noteId='+note.id,{headers:new HttpHeaders({'token':this.token})});    
+}
+
+setView(data:any){
+  console.log('Service set ');
+  
+ this.view.next({view:data});
+ console.log('data ',this.view);
+ 
+}
+getView():Observable<any>{
+ console.log('Service get');
+ return this.view.asObservable();
+}
+addremainder(note:any): Observable<any> { 
+
+  return this.httpService.post(this.notesApiURL+environment.addremainder+'?noteId='+note.id,{note},{headers:new HttpHeaders({'token':this.token})});
 
   
+
+}
+
 }

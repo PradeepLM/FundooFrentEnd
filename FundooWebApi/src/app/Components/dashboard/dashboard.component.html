@@ -31,13 +31,11 @@
         <button mat-icon-button class="list"*ngIf = "listview" (click) = "onclicked()">
           <img src="../../../assets/images/grislisticon.svg" matTooltip="Grid View">
         </button> -->
-        <button mat-icon-button  *ngIf="list" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
+        <button mat-icon-button  *ngIf="!gridList" (click)="gridList()" fxShow="true" fxHide.lt-sm="true">
           <mat-icon class="icon">grid_view</mat-icon>
         </button>
 
-  
-
-        <button mat-icon-button  *ngIf="grid" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
+        <button mat-icon-button  *ngIf="gridList" (click)="gridList()" fxShow="true" fxHide.lt-sm="true">
           <mat-icon class="icon">view_module</mat-icon>
         </button>
 
@@ -49,13 +47,10 @@
         <button mat-icon-button class="apps" >
           <mat-icon>apps</mat-icon>
         </button>
-        <!-- <button mat-icon-button class="apps" (click)="signout()">
-          
-          <img src="../../../assets/images/profileIcon.png">
-        </button> -->
-        <button mat-icon-button  [matMenuTriggerFor]="menu" class="refreshs">
+        
+        <button mat-icon-button  [matMenuTriggerFor]="menu" class="refresh">
                             
-          <mat-icon><img style="width: 35px;height: 35px; border-radius: 21em;"  src="../../../assets/images/profileIcon.png"></mat-icon>
+          <mat-icon><img style="width: 35px;height: 35px; border-radius: 21em;"  src="../../../assets/images/profileIcon.jpg"></mat-icon>
          
          <mat-menu #menu="matMenu" >
              <div style="width: 280px; height: 220px;">
@@ -63,16 +58,16 @@
             <div class="up">
                <label for="file-input">
 
-         <mat-icon><img style="width: 70px;height: 70px; border-radius: 21em; justify-content: center; " type="file"src="../../../assets/images/profileIcon.png"></mat-icon>
-         <input id="file-input" type="file" placeholder="selectFile" />
+         <mat-icon><img style="width: 70px;height: 70px; border-radius: 21em; justify-content: center; " type="file"src="../../../assets/images/profileIcon.jpg"></mat-icon>
+         <!-- <input id="file-input" type="file" placeholder="selectFile" /> -->
      </label>
  </div>
          </div>
          
              <div class="profile-content">
                  <div style="height: 10%; width: 100;">
-                 <mat-label class="namelabel" style="color: rgb(65, 64, 64);  font-family: 'Sen', sans-serif;">pradeep</mat-label>
-                 <h4 style="color: rgb(71, 82, 94); font-family: 'Sen', sans-serif;">pradeep@gmail.com</h4>
+                 <mat-label class="namelabel" style="color: rgb(65, 64, 64);  font-family: 'Sen', sans-serif;float: center;">pradeep</mat-label>
+                 <h4 style="color: rgb(71, 82, 94); font-family: 'Sen', sans-serif; float: center;">pradeep@gmail.com</h4>
                  </div>
                </div>
                <div class="div-profile">
@@ -101,13 +96,14 @@
           <span > Notes</span>
         </button></a>
         
-        
-        <button mat-button class="remindbutton">
+        <a [routerLink]="['notes']" [queryParams]="{ page: 'reminder' }">
+        <button mat-button  class="remindbutton">
           <div class="icondiv">
             <mat-icon>notifications</mat-icon>
           </div>
           <span>Reminder</span>
-        </button>
+        </button></a>
+
       </div>
       <mat-divider></mat-divider>
       
